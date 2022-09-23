@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJLibrary'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of AJLibrary.'
 
 # This description is used to generate tags and improve search results.
@@ -28,10 +28,48 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/Tianbao Wang/AJLibrary.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
+  s.swift_version = '5.0'
 
-  s.source_files = 'AJLibrary/Classes/**/*'
+  s.vendored_frameworks = "libs/*.{framework}"
+#   s.source_files = 'AJLibrary/Classes/**/*'
+
+  s.frameworks   = 'OpenGLES','Foundation','SystemConfiguration','OpenAL','Security','MediaPlayer','AVFoundation','CoreVideo','CoreAudio','CoreMedia','VideoToolbox','AudioToolbox','AdSupport','NetworkExtension','GLKit'
   
+#    s.libraries = "libc++.1", "libiconv", "libz", "libbz2.1.0"
+
+  s.dependency 'HandyJSON', '~> 5.0.3-beta'
+  s.dependency 'Alamofire', '4.9.1'
+  s.dependency 'Firebase/Crashlytics'
+  s.dependency 'Firebase/Core'
+  s.dependency 'Firebase/Messaging' 
+  s.dependency 'Firebase/Analytics'
+
+  s.dependency 'MBProgressHUD'
+  s.dependency 'SnapKit'
+  s.dependency 'CocoaAsyncSocket', '7.6.5'
+  s.dependency 'MJRefresh'
+  s.dependency 'Material'
+  s.dependency 'lottie-ios','2.5.0'
+  s.dependency 'EFMarkdown'
+  s.dependency 'SDWebImage', "~> 5.11.0"
+  s.dependency 'AFNetworking', "~> 4.0.1"
+  s.dependency 'FCUUID'
+  s.dependency 'CocoaSecurity'
+  s.dependency 'Sodium', '0.8.0'
+  s.dependency 'AliyunOSSiOS'
+  s.dependency 'Masonry'
+  s.dependency 'SDVersion'
+  s.dependency 'SocketRocket'
+  s.dependency 'XCGLogger'
+  s.dependency 'ZipArchive'
+  s.dependency 'LSTCategory'
+  s.dependency 'CHIPageControl'
+  s.dependency 'ZKCycleScrollView'
+  s.dependency 'MobileVLCKit', "~> 3.4.1b11"
+  s.dependency 'mobile-ffmpeg-full', '~> 4.4'
+
+
   # s.resource_bundles = {
   #   'AJLibrary' => ['AJLibrary/Assets/*.png']
   # }
