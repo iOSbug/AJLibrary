@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AJError.h"
+#import <UserNotifications/UserNotifications.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 *    单例
 */
 + (instancetype)shared;
+
+- (void)initPush;
+
+- (void)handleApnsNotiReponse:(UNNotificationResponse *)notiResponse;
 
 @end
 

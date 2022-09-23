@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJLibrary'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = 'A short description of AJLibrary.'
 
 # This description is used to generate tags and improve search results.
@@ -36,7 +36,7 @@ TODO: Add long description of the pod here.
 
   s.frameworks   = 'OpenGLES','Foundation','SystemConfiguration','OpenAL','Security','MediaPlayer','AVFoundation','CoreVideo','CoreAudio','CoreMedia','VideoToolbox','AudioToolbox','AdSupport','NetworkExtension','GLKit'
   
-#    s.libraries = "libc++.1", "libiconv", "libz", "libbz2.1.0"
+#   s.libraries = "libc++.1", "libiconv", "libz", "libbz2.1.0"
 
   s.dependency 'HandyJSON', '~> 5.0.3-beta'
   s.dependency 'Alamofire', '4.9.1'

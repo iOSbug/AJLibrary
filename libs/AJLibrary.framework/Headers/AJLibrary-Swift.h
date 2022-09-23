@@ -266,6 +266,17 @@ SWIFT_CLASS("_TtC9AJLibrary11AFNetClient")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class AJError;
+
+SWIFT_CLASS("_TtC9AJLibrary16AJBinderResponse")
+@interface AJBinderResponse : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJBinderResponse * _Nonnull shared;)
++ (AJBinderResponse * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, copy) void (^ _Nullable ajBinderSuccessBlock)(void);
+@property (nonatomic, copy) void (^ _Nullable ajBinderFailBlock)(AJError * _Nullable);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class WKWebViewConfiguration;
 @class NSCoder;
 
@@ -379,6 +390,18 @@ SWIFT_CLASS_NAMED("AllyModel")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UNNotificationResponse;
+
+SWIFT_CLASS("_TtC9AJLibrary11ApnsManager")
+@interface ApnsManager : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ApnsManager * _Nonnull shared;)
++ (ApnsManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (void)handleApnsNotiReponse:(UNNotificationResponse * _Nonnull)notiResponse;
+- (void)dismissPreviousWithCompletion:(void (^ _Nullable)(void))completion;
+- (void)initPush SWIFT_METHOD_FAMILY(none);
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1901,14 +1924,14 @@ SWIFT_CLASS("_TtC9AJLibrary12UIFlatButton")
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
++ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
