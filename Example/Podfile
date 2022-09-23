@@ -1,0 +1,6 @@
+use_frameworks!
+target 'AJLibrary_Tests' do
+  pod 'AJLibrary', :path => '../'
+  
+  
+end

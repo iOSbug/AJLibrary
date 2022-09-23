@@ -1,0 +1,29 @@
+# AJLibrary
+
+[![CI Status](https://img.shields.io/travis/Tianbao Wang/AJLibrary.svg?style=flat)](https://travis-ci.org/Tianbao Wang/AJLibrary)
+[![Version](https://img.shields.io/cocoapods/v/AJLibrary.svg?style=flat)](https://cocoapods.org/pods/AJLibrary)
+[![License](https://img.shields.io/cocoapods/l/AJLibrary.svg?style=flat)](https://cocoapods.org/pods/AJLibrary)
+[![Platform](https://img.shields.io/cocoapods/p/AJLibrary.svg?style=flat)](https://cocoapods.org/pods/AJLibrary)
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+AJLibrary is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'AJLibrary'
+```
+
+## Author
+
+Tianbao Wang, 519955268@qq.com
+
+## License
+
+AJLibrary is available under the MIT license. See the LICENSE file for more info.
