@@ -22,7 +22,7 @@ pod 'AJLibrary'
 
 ## Author
 
-Tianbao Wang, 519955268@qq.com
+
 
 ## License
 
