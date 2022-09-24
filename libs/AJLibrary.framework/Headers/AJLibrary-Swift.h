@@ -233,7 +233,6 @@ using UInt = size_t;
 @import CoreFoundation;
 @import CoreGraphics;
 @import Foundation;
-@import Material;
 @import MessageUI;
 @import ObjectiveC;
 @import UIKit;
@@ -266,6 +265,27 @@ SWIFT_CLASS("_TtC9AJLibrary11AFNetClient")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class UIViewController;
+@class UIGestureRecognizer;
+@class NSString;
+@class NSBundle;
+@class NSCoder;
+
+SWIFT_CLASS("_TtC9AJLibrary26AJBaseNavigationController")
+@interface AJBaseNavigationController : UINavigationController <UIGestureRecognizerDelegate>
+- (void)viewDidLoad;
+- (void)pushViewController:(UIViewController * _Nonnull)viewController animated:(BOOL)animated;
+@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
+@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
+- (void)setStatusBarHidden:(BOOL)hidden;
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=5.0);
+- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class AJError;
 
 SWIFT_CLASS("_TtC9AJLibrary16AJBinderResponse")
@@ -278,7 +298,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJBinderResp
 @end
 
 @class WKWebViewConfiguration;
-@class NSCoder;
 
 SWIFT_CLASS("_TtC9AJLibrary10AJCWebView")
 @interface AJCWebView : WKWebView
@@ -292,7 +311,6 @@ SWIFT_CLASS("_TtC9AJLibrary14BaseNetManager")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSString;
 @class ErrorModel;
 
 SWIFT_CLASS("_TtC9AJLibrary12AJLibManager")
@@ -377,11 +395,18 @@ SWIFT_CLASS("_TtC9AJLibrary17AlarmSummaryModel")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM(NSInteger, AlarmType, closed) {
+typedef SWIFT_ENUM(NSInteger, AlarmType, open) {
   AlarmTypeAlarmMove = 1,
   AlarmTypeAlarmVisitor = 2,
   AlarmTypeTamperAlarm = 4,
 };
+
+
+SWIFT_CLASS("_TtC9AJLibrary11AlarmsModel")
+@interface AlarmsModel : ResultModel
+@property (nonatomic, copy) NSArray<AlarmModel *> * _Nullable alarms;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 
 SWIFT_CLASS_NAMED("AllyModel")
@@ -469,7 +494,6 @@ SWIFT_CLASS("_TtC9AJLibrary18AttributeLabelView")
 - (nonnull instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer * _Nullable)textContainer SWIFT_UNAVAILABLE;
 @end
 
-@class NSBundle;
 
 SWIFT_CLASS("_TtC9AJLibrary18BaseViewController")
 @interface BaseViewController : UIViewController <UIGestureRecognizerDelegate>
@@ -513,23 +537,6 @@ SWIFT_CLASS("_TtC9AJLibrary10AutoPolicy")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class UIGestureRecognizer;
-
-SWIFT_CLASS("_TtC9AJLibrary24BaseNavigationController")
-@interface BaseNavigationController : UINavigationController <UIGestureRecognizerDelegate>
-- (void)viewDidLoad;
-- (void)pushViewController:(UIViewController * _Nonnull)viewController animated:(BOOL)animated;
-@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
-@property (nonatomic, readonly) BOOL prefersStatusBarHidden;
-- (void)setStatusBarHidden:(BOOL)hidden;
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer * _Nonnull)gestureRecognizer SWIFT_WARN_UNUSED_RESULT;
-- (void)didReceiveMemoryWarning;
-- (nonnull instancetype)initWithNavigationBarClass:(Class _Nullable)navigationBarClass toolbarClass:(Class _Nullable)toolbarClass OBJC_DESIGNATED_INITIALIZER SWIFT_AVAILABILITY(ios,introduced=5.0);
-- (nonnull instancetype)initWithRootViewController:(UIViewController * _Nonnull)rootViewController OBJC_DESIGNATED_INITIALIZER;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
-
 
 enum CameraStatus : NSInteger;
 
@@ -539,6 +546,7 @@ SWIFT_CLASS("_TtC9AJLibrary11BaseSetting")
 @property (nonatomic, copy) NSString * _Nullable aliasName;
 @property (nonatomic, copy) NSString * _Nullable deviceId;
 @property (nonatomic, copy) NSString * _Nullable deviceMode;
+@property (nonatomic) NSInteger onlineStatus;
 @property (nonatomic, copy) NSString * _Nullable masterUid;
 @property (nonatomic, copy) NSString * _Nullable prodName;
 @property (nonatomic, readonly) enum CameraStatus status;
@@ -669,7 +677,7 @@ SWIFT_CLASS("_TtC9AJLibrary27CameraSettingViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM(NSInteger, CameraStatus, closed) {
+typedef SWIFT_ENUM(NSInteger, CameraStatus, open) {
   CameraStatusOffline = 1,
   CameraStatusOnline = 2,
   CameraStatusUpgrading = 4,
@@ -679,6 +687,7 @@ typedef SWIFT_ENUM(NSInteger, CameraStatus, closed) {
 
 SWIFT_CLASS("_TtC9AJLibrary18CameraSummaryModel")
 @interface CameraSummaryModel : ResultModel
+@property (nonatomic, copy) NSString * _Nullable devEmcUrl;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1045,7 +1054,7 @@ SWIFT_CLASS("_TtC9AJLibrary16DeviceBindStatus")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-typedef SWIFT_ENUM(NSInteger, DeviceModeType, closed) {
+typedef SWIFT_ENUM(NSInteger, DeviceModeType, open) {
   DeviceModeTypeCamera = 1,
   DeviceModeTypeLock = 2,
   DeviceModeTypeBatteryCamera = 3,
@@ -1090,6 +1099,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) DevicesManager * _Nonn
 + (void)setSharedInstance:(DevicesManager * _Nonnull)value;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull camerasArray;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull devicesArray;
+- (CameraSummaryModel * _Nullable)cameraSummary:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (CameraModel * _Nullable)cameraInfo:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (UserInviteModel * _Nullable)userInvite:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (CameraInfomation * _Nonnull)cameraInfomation:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
@@ -1128,6 +1138,20 @@ SWIFT_CLASS("_TtC9AJLibrary22DiagnoseViewController")
 
 SWIFT_CLASS("_TtC9AJLibrary15EmailCheckModel")
 @interface EmailCheckModel : ResultModel
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary19EmcPortalNetManager")
+@interface EmcPortalNetManager : BaseNetManager
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) EmcPortalNetManager * _Nonnull shared;)
++ (EmcPortalNetManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+/// 获取消息概览
+/// \param params params
+///
+/// \param complete complete
+///
+- (void)fetchAlarmsSurveyWithParams:(NSDictionary<NSString *, id> * _Nonnull)params complete:(void (^ _Nonnull)(AlarmsModel * _Nullable, ErrorModel * _Nullable))complete;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1352,6 +1376,7 @@ SWIFT_CLASS("_TtC9AJLibrary15LocalStorConfig")
 SWIFT_CLASS("_TtC9AJLibrary5Login")
 @interface Login : NSObject
 + (BOOL)isLogin SWIFT_WARN_UNUSED_RESULT;
++ (void)doLogout;
 + (NSString * _Nullable)curUsername SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)accountUsername SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)curUid SWIFT_WARN_UNUSED_RESULT;
@@ -1667,6 +1692,24 @@ SWIFT_CLASS("_TtC9AJLibrary18SuccessResultModel")
 
 
 
+SWIFT_CLASS("_TtC9AJLibrary13SysMsgGoModel")
+@interface SysMsgGoModel : ResultModel
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary18SystemMsgListModel")
+@interface SystemMsgListModel : ResultModel
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary20SystemMsgStatusModel")
+@interface SystemMsgStatusModel : ResultModel
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary12TSDownloader")
 @interface TSDownloader : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1870,7 +1913,7 @@ SWIFT_CLASS("_TtC9AJLibrary13UICommonLabel")
 
 /// 蓝底白字按钮
 SWIFT_CLASS("_TtC9AJLibrary17UIContainedButton")
-@interface UIContainedButton : RaisedButton
+@interface UIContainedButton : UIButton
 - (nonnull instancetype)init:(NSString * _Nullable)title target:(id _Nullable)target action:(SEL _Nullable)action OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
@@ -1914,24 +1957,16 @@ SWIFT_CLASS("_TtC9AJLibrary14UIExplainLabel")
 @end
 
 
-/// 纯文本按钮
-SWIFT_CLASS("_TtC9AJLibrary12UIFlatButton")
-@interface UIFlatButton : FlatButton
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-@end
 
+@interface UIFont (SWIFT_EXTENSION(AJLibrary))
++ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
+@end
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
 + (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
 + (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
 + (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-@interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
@@ -1945,10 +1980,10 @@ SWIFT_CLASS("_TtC9AJLibrary12UIIconButton")
 @end
 
 
+
 @interface UIImage (SWIFT_EXTENSION(AJLibrary))
 + (UIImage * _Nullable)mixed_imageNamed:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 

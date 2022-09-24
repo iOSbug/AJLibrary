@@ -81,6 +81,11 @@ NS_ASSUME_NONNULL_BEGIN
        failure:(nullable void (^)(AJError *))failure;
 
 
+/**
+ *    退出
+ *
+ */
++ (void)logout;
 
 @end
 

@@ -7,6 +7,9 @@
 
 #import <Foundation/Foundation.h>
 #import "AJError.h"
+#import "AJDeviceInfoModel.h"
+//#import "SwiftHeader.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AJDevice : NSObject
@@ -23,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  *    @param     success                成功 回调
  *    @param     failure                失败回调
  */
-- (void)queryDevices:(nullable void (^)(void))success
+- (void)queryDevices:(nullable void (^)(NSArray<AJDeviceInfoModel *> *))success
              failure:(nullable void (^)(AJError *))failure;
 
 
@@ -41,12 +44,12 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *    加载摄像头页面
  *    @param     deviceId              摄像头id
- *    @param     success                成功 回调
- *    @param     failure                失败回调
  */
-- (void)startCameraView:(NSString *)deviceId
-                success:(nullable void (^)(void))success
-                failure:(nullable void (^)(AJError *))failure;
+- (void)startCameraView:(NSString *)deviceId;
+
+
+
+
 @end
 
 NS_ASSUME_NONNULL_END

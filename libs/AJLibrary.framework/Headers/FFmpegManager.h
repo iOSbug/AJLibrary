@@ -7,9 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <mobileffmpeg/MobileFFmpegConfig.h>
-#import <mobileffmpeg/MobileFFmpeg.h>
-#import <mobileffmpeg/MobileFFprobe.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FFmpegManager : NSObject
@@ -24,7 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
     
 -(void)stopRuning;
 
--(MediaInformation *)videoFileIsH265Hevc:(NSString *)videoPath;
+//-(MediaInformation *)videoFileIsH265Hevc:(NSString *)videoPath;
+
+- (NSArray *)getStreams:(NSString *)videoPath;
 @end
 
 NS_ASSUME_NONNULL_END
