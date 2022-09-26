@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJLibrary'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'A short description of AJLibrary.'
 
 # This description is used to generate tags and improve search results.
@@ -32,10 +32,10 @@ TODO: Add long description of the pod here.
 
  s.subspec 'Core' do |ss|
 
-#  s.vendored_frameworks = "libs/*.{framework}"
+  ss.vendored_frameworks = "libs/*.{framework}"
 #   s.source_files = 'AJLibrary/Classes/**/*'
 
-    ss.source_files        = 'AJLibrary.framework/Headers/*.{h}'
+#    ss.source_files        = 'AJLibrary.framework/Headers/*.{h}'
     ss.resources           = 'AJBundle.bundle'
     ss.preserve_paths      = 'AJLibrary.framework/*', 'AJBundle.bundle'
 
