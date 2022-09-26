@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJLibrary'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'A short description of AJLibrary.'
 
 # This description is used to generate tags and improve search results.
@@ -22,59 +22,58 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/iOSbug/AJLibrary'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Tianbao Wang' => '519955268@qq.com' }
   s.source           = { :git => 'https://github.com/iOSbug/AJLibrary.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
+  s.default_subspec     = 'Core'
 
-  s.vendored_frameworks = "libs/*.{framework}"
+ s.subspec 'Core' do |ss|
+
+#  s.vendored_frameworks = "libs/*.{framework}"
 #   s.source_files = 'AJLibrary/Classes/**/*'
 
-  s.frameworks   = 'OpenGLES','Foundation','SystemConfiguration','OpenAL','Security','MediaPlayer','AVFoundation','CoreVideo','CoreAudio','CoreMedia','VideoToolbox','AudioToolbox','AdSupport','NetworkExtension','GLKit'
+    ss.source_files        = 'AJLibrary.framework/Headers/*.{h}'
+    ss.resources           = 'AJBundle.bundle'
+    ss.preserve_paths      = 'AJLibrary.framework/*', 'AJBundle.bundle'
+
+  ss.frameworks   = 'OpenGLES','Foundation','SystemConfiguration','OpenAL','Security','MediaPlayer','AVFoundation','CoreVideo','CoreAudio','CoreMedia','VideoToolbox','AudioToolbox','AdSupport','NetworkExtension','GLKit'
   
-#   s.libraries = "libc++.1", "libiconv", "libz", "libbz2.1.0"
+  ss.libraries = "c++.1", "iconv", "z", "bz2.1.0"
 
-  s.dependency 'HandyJSON', '~> 5.0.3-beta'
-  s.dependency 'Alamofire', '4.9.1'
-  s.dependency 'Firebase/Crashlytics'
-  s.dependency 'Firebase/Core'
-  s.dependency 'Firebase/Messaging' 
-  s.dependency 'Firebase/Analytics'
-
-  s.dependency 'MBProgressHUD'
-  s.dependency 'SnapKit'
-  s.dependency 'CocoaAsyncSocket', '7.6.5'
+  ss.dependency 'HandyJSON', '~> 5.0.3-beta'
+  ss.dependency 'Alamofire', '4.9.1'
+  ss.dependency 'Firebase/Crashlytics'
+  ss.dependency 'Firebase/Core'
+  ss.dependency 'Firebase/Messaging' 
+  ss.dependency 'Firebase/Analytics'
+  ss.dependency 'MBProgressHUD'
+  ss.dependency 'SnapKit'
+  ss.dependency 'CocoaAsyncSocket', '7.6.5'
   s.dependency 'MJRefresh'
-  s.dependency 'Material'
-  s.dependency 'lottie-ios','2.5.0'
-  s.dependency 'EFMarkdown'
-  s.dependency 'SDWebImage', "~> 5.11.0"
-  s.dependency 'AFNetworking', "~> 4.0.1"
-  s.dependency 'FCUUID'
-  s.dependency 'CocoaSecurity'
-  s.dependency 'Sodium', '0.8.0'
-  s.dependency 'AliyunOSSiOS'
-  s.dependency 'Masonry'
-  s.dependency 'SDVersion'
-  s.dependency 'SocketRocket'
-  s.dependency 'XCGLogger'
-  s.dependency 'ZipArchive'
-  s.dependency 'LSTCategory'
-  s.dependency 'CHIPageControl'
-  s.dependency 'ZKCycleScrollView'
-  s.dependency 'MobileVLCKit', "~> 3.4.1b11"
-  s.dependency 'mobile-ffmpeg-full', '~> 4.4'
+  ss.dependency 'Material'
+  ss.dependency 'lottie-ios','2.5.0'
+  ss.dependency 'EFMarkdown'
+  ss.dependency 'SDWebImage', "~> 5.11.0"
+  ss.dependency 'AFNetworking', "~> 4.0.1"
+  ss.dependency 'FCUUID'
+  ss.dependency 'CocoaSecurity'
+  ss.dependency 'Sodium', '0.8.0'
+  ss.dependency 'AliyunOSSiOS'
+  ss.dependency 'Masonry'
+  ss.dependency 'SDVersion'
+  ss.dependency 'SocketRocket'
+  ss.dependency 'XCGLogger'
+  ss.dependency 'ZipArchive'
+  ss.dependency 'LSTCategory'
+  ss.dependency 'CHIPageControl'
+  ss.dependency 'ZKCycleScrollView'
+  ss.dependency 'MobileVLCKit', "~> 3.4.1b11"
+  ss.dependency 'mobile-ffmpeg-full', '~> 4.4'
+
+ end
 
 
-  # s.resource_bundles = {
-  #   'AJLibrary' => ['AJLibrary/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
