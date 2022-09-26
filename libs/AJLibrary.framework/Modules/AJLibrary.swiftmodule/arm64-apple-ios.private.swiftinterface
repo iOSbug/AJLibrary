@@ -18,7 +18,6 @@ import CoreLocation
 import CoreMedia
 import CoreTelephony
 import EFMarkdown
-import ESTabBarController_swift
 import FCUUID
 import Firebase
 import FirebaseMessaging
