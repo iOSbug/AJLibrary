@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  *    加载摄像头告警页面
  *    @param     deviceId              摄像头id
- *    @param     date                       展示告警的日期 (若传空，则展示最新一天的数据)
+ *    @param     date                       展示告警的日期 (格式：yyyyMMdd，若传空，则展示最新一天的数据)
  */
 - (void)startAlertView:(NSString *)deviceId
                   date:(NSString *)date;

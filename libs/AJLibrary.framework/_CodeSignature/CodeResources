@@ -4,13 +4,17 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>.DS_Store</key>
+		<data>
+		39Wf3fbpMmxJZ4m6B9Angm7k9Rg=
+		</data>
 		<key>AliyunEmasServices-Info.plist</key>
 		<data>
 		dYw039OrMKKtZc5HQ29NNIqFY9w=
 		</data>
 		<key>Headers/AJAlertSurveyModel.h</key>
 		<data>
-		Zcd4vMbXsM9uB/MP82KbVB5K7Ds=
+		bHPm3KfQSqndg3HEegQ8MmsjIoo=
 		</data>
 		<key>Headers/AJBinder.h</key>
 		<data>
@@ -42,7 +46,7 @@
 		</data>
 		<key>Headers/AJMessage.h</key>
 		<data>
-		fxT+PrMLkWVp1d9mgPagXV9kjoo=
+		WrZFE8zwpXuU0XSLTvYR/ARbED0=
 		</data>
 		<key>Headers/AlbumManager.h</key>
 		<data>
@@ -214,11 +218,11 @@
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		/EJ8HTopHP1YAkj2e8YQxZlj+eM=
+		VPaQXMzx/QNN3WXMTuE7fx8J74U=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		/EJ8HTopHP1YAkj2e8YQxZlj+eM=
+		VPaQXMzx/QNN3WXMTuE7fx8J74U=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -266,11 +270,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Zcd4vMbXsM9uB/MP82KbVB5K7Ds=
+			bHPm3KfQSqndg3HEegQ8MmsjIoo=
 			</data>
 			<key>hash2</key>
 			<data>
-			TjG7TZ2SOf+qoM3W+w3uUsSU3Y5VdfXBbEDgko4ftfo=
+			OwqdgKmEQnsgjvmyr19Gk3EMH13zlBcsEnIRaizcTVQ=
 			</data>
 		</dict>
 		<key>Headers/AJBinder.h</key>
@@ -354,11 +358,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fxT+PrMLkWVp1d9mgPagXV9kjoo=
+			WrZFE8zwpXuU0XSLTvYR/ARbED0=
 			</data>
 			<key>hash2</key>
 			<data>
-			IdeE2Isyp0Awx3PNEQhZcUXZGsBFmbahpMDvX2yP6Ls=
+			TBEOQfiypH9B47BEwb8c3q9iCJv0MUXxmHs9No4/P30=
 			</data>
 		</dict>
 		<key>Headers/AlbumManager.h</key>
@@ -816,22 +820,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/EJ8HTopHP1YAkj2e8YQxZlj+eM=
+			VPaQXMzx/QNN3WXMTuE7fx8J74U=
 			</data>
 			<key>hash2</key>
 			<data>
-			F4RfMVyJ0h71FtEM+SghTgaFW+1Oxptu/whxTy1uT5g=
+			8nb2gyY6u8ScR85xzLKPFdFdXek04ZuPmgs8Onf6CNs=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/EJ8HTopHP1YAkj2e8YQxZlj+eM=
+			VPaQXMzx/QNN3WXMTuE7fx8J74U=
 			</data>
 			<key>hash2</key>
 			<data>
-			F4RfMVyJ0h71FtEM+SghTgaFW+1Oxptu/whxTy1uT5g=
+			8nb2gyY6u8ScR85xzLKPFdFdXek04ZuPmgs8Onf6CNs=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
