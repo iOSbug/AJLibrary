@@ -7,8 +7,18 @@
 
 #import <Foundation/Foundation.h>
 #import "AJError.h"
+#import "AJWifiListModel.h"
+#import "AJDiscoverDeviceModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+typedef enum : NSUInteger {
+    AJBinderModeQR,
+    AJBinderModeSoftAP,
+    AJBinderModeEth,
+    AJBinderModeOnlineSetWiFi,
+} AJBinderMode;
+
 
 @interface AJBinder : NSObject
 
@@ -25,6 +35,87 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)startBinderView:(nullable void (^)(void))success
                 failure:(nullable void (^)(AJError *))failure;
+
+
+
+/**
+ *    获取配网token
+ *
+ *    @param     success                成功 回调
+ *    @param     failure                失败回调
+ */
+- (void)getToken:(nullable void (^)(NSString *))success
+         failure:(nullable void (^)(AJError *))failure;
+
+
+/// Create QR code string
+/// @param ssid Name of route
+/// @param password Password of route
+/// @param token Bind Token
+/// @param success success
+/// @param failure failure
+- (void)createQRString:(NSString *)ssid
+              password:(NSString *)password
+             bindToken:(NSString *)token
+               success:(nullable void (^)(NSString *))success
+               failure:(nullable void (^)(AJError *))failure;
+
+
+/// 二维码配网
+/// @param token 配网token，从getToken获取
+/// @param timeout 配网超时时长 (秒)
+/// @param success 回调当前绑定的设备 ID
+/// @param failure failure
+- (void)startQRWiFiConfig:(NSString *)token
+                  timeout:(NSTimeInterval)timeout
+                  success:(nullable void (^)(NSString *))success
+                  failure:(nullable void (^)(AJError *))failure;
+
+
+
+
+/// SoftAP 配网，获取 WIFI 列表
+/// @param ssid 连接的设备 SSID 名称
+/// @param success 回调 WIFI 列表
+/// @param failure failure
+- (void)startSoftAPConfig:(NSString *)ssid
+                  success:(nullable void (^)(NSArray<AJWifiListModel *> *))success
+                  failure:(nullable void (^)(AJError *))failure;
+
+
+
+
+/// SoftAP 配网，配网绑定
+/// @param ssid SSID 名称
+/// @param password SSID 密码
+/// @param success success
+/// @param failure failure
+- (void)softAPConnect:(NSString *)ssid
+             password:(NSString *)password
+              success:(nullable void (^)(void))success
+              failure:(nullable void (^)(AJError *))failure;
+
+
+
+/// 网线配网，局域网发现设备列表
+/// @param success success
+/// @param failure failure
+- (void)startEthConfig:(nullable void (^)(NSArray<AJDiscoverDeviceModel *> *))success
+               failure:(nullable void (^)(AJError *))failure;
+
+
+
+
+/// 网线配网，绑定设备
+/// @param deviceId 设备ID
+/// @param ipAddress  设备IP 地址，从 startEthConfig -> AJDiscoverDeviceModel 获取
+/// @param success success
+/// @param failure failure
+- (void)ethBindDevice:(NSString *)deviceId
+            ipAddress:(NSString *)ipAddress
+              success:(nullable void (^)(void))success
+              failure:(nullable void (^)(AJError *))failure;
+
 
 @end
 

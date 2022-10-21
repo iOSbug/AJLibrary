@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, assign) NSInteger code;
 
++ (AJError *)errorWithMessage:(NSString *)message code:(NSInteger)code;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -40,6 +40,9 @@
 #import <AJLibrary/AJBinder.h>
 #import <AJLibrary/AJDevice.h>
 #import <AJLibrary/AJMessage.h>
+#import <AJLibrary/AJMediaPlayer.h>
+#import <AJLibrary/AJWifiListModel.h>
+#import <AJLibrary/AJDiscoverDeviceModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
