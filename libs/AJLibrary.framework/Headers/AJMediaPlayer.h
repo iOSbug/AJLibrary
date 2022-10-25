@@ -103,6 +103,11 @@ typedef void (^snapShotDoneAction)(UIImage *image);
  */
 - (void)showPlaceHolderImage:(UIImage *)image;
 /**
+ *  截图动画
+ *  @param     image                图片
+ */
+- (void)showSnapAnimation:(UIImage *)snapImage;
+/**
  *  设置视频预览封面URL 和 视频URL
  *  @param     imageUrl                封面图片URL
  *  @param     videoUrl                视频URL
@@ -116,8 +121,9 @@ typedef void (^snapShotDoneAction)(UIImage *image);
 /**
  *  开始直播
  *  @param     cameraID                设备ID
+ *  @param     qualityNum              分辨率
  */
-- (void)playVideoWithCameraId:(NSString *)cameraID;
+- (void)playVideoWithCameraId:(NSString *)cameraID qualityNum:(NSString *)qualityNum;
 /**
  *  开始播放直播音频
  *  @param     cameraID                设备ID
@@ -163,6 +169,7 @@ typedef void (^snapShotDoneAction)(UIImage *image);
  *
  */
 - (void)setRate:(float)rate;
+
 
 
 @end

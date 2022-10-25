@@ -43,6 +43,8 @@
 #import <AJLibrary/AJMediaPlayer.h>
 #import <AJLibrary/AJWifiListModel.h>
 #import <AJLibrary/AJDiscoverDeviceModel.h>
+#import <AJLibrary/AJAlertsCalendarModel.h>
+#import <AJLibrary/AJAlertsListModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

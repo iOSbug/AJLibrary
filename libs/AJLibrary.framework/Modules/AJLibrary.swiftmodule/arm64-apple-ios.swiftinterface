@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
+// swift-compiler-version: Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name AJLibrary
 import AFNetworking
 @_exported import AJLibrary
@@ -68,7 +68,7 @@ import mobileffmpeg
   @objc @_Concurrency.MainActor(unsafe) public init(_ title: Swift.String?, target: Any?, action: ObjectiveC.Selector?)
   @_Concurrency.MainActor(unsafe) open var isCustomEnabled: Swift.Bool {
     get
-    set
+    set(value)
   }
   @objc deinit
 }
@@ -77,13 +77,13 @@ import mobileffmpeg
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class UIImageButton : UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc @_Concurrency.MainActor(unsafe) override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func titleRect(forContentRect contentRect: CoreGraphics.CGRect) -> CoreGraphics.CGRect
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func imageRect(forContentRect contentRect: CoreGraphics.CGRect) -> CoreGraphics.CGRect
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class UITabButton : UIKit.UIButton {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc @_Concurrency.MainActor(unsafe) override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func titleRect(forContentRect contentRect: CoreGraphics.CGRect) -> CoreGraphics.CGRect
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func imageRect(forContentRect contentRect: CoreGraphics.CGRect) -> CoreGraphics.CGRect
   @objc deinit
@@ -97,7 +97,7 @@ import mobileffmpeg
 extension AJLibrary.UIContainedButton {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
     @_Concurrency.MainActor(unsafe) @objc get
-    @_Concurrency.MainActor(unsafe) @objc set
+    @_Concurrency.MainActor(unsafe) @objc set(value)
   }
 }
 extension Swift.Int {
@@ -135,7 +135,7 @@ public protocol NetRequest {
   var domainHost: Swift.String? { get }
   associatedtype Response : AJLibrary.NetDecodable
 }
-public let kLoginAuthData: Swift.String
+public var kLoginAuthData: Swift.String
 public enum LoginType : Swift.String {
   case moblie
   case email
@@ -214,7 +214,7 @@ public enum ReceiveStatus : Swift.String {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers open class LanguageManager : ObjectiveC.NSObject {
-  @objc public static let sharedInstance: AJLibrary.LanguageManager
+  @objc public static var sharedInstance: AJLibrary.LanguageManager
   @objc open var languageBundle: Foundation.Bundle?
   public var supportLanguagesArray: [AJLibrary.SupportLanguage]
   @objc public func currentLanguage() -> Swift.String
@@ -232,33 +232,33 @@ public protocol TwicketSegmentedControlDelegate : AnyObject {
   func didSelect(_ segmentIndex: Swift.Int)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class TwicketSegmentedControl : UIKit.UIControl {
-  @_Concurrency.MainActor(unsafe) public static let height: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public static var height: CoreGraphics.CGFloat
   public struct Constants {
   }
   @_Concurrency.MainActor(unsafe) weak open var delegate: AJLibrary.TwicketSegmentedControlDelegate?
   @_Concurrency.MainActor(unsafe) open var defaultTextColor: UIKit.UIColor {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) open var highlightTextColor: UIKit.UIColor {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) open var segmentsBackgroundColor: UIKit.UIColor {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) open var sliderBackgroundColor: UIKit.UIColor {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) open var font: UIKit.UIFont {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) open var isSliderShadowHidden: Swift.Bool {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) open var selectedSegmentIndex: Swift.Int
   @_Concurrency.MainActor(unsafe) public var numberOfSegments: Swift.Int {
@@ -269,15 +269,15 @@ public protocol TwicketSegmentedControlDelegate : AnyObject {
   }
   @_Concurrency.MainActor(unsafe) public var containerView: UIKit.UIView {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) public var backgroundView: UIKit.UIView {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) public var selectedContainerView: UIKit.UIView {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -325,10 +325,10 @@ public typealias ArrNetCompletionHandler<T> = ([T.Response]?, AJLibrary.ErrorMod
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
-public let SystemMsgTableViewCellIdentifier: Swift.String
-public let FetchInfosApi: Swift.String
+public var SystemMsgTableViewCellIdentifier: Swift.String
+public var FetchInfosApi: Swift.String
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DeviceNetManager : AJLibrary.BaseNetManager {
-  @objc public static let sharedInstance: AJLibrary.DeviceNetManager
+  @objc public static var sharedInstance: AJLibrary.DeviceNetManager
   public func fetchCamerasInfos(deviceIds: [Swift.String], deviceTypesDic: [Swift.String : AJLibrary.DeviceModeType], scopes: [Swift.String] = [], complete: @escaping (AJLibrary.CamerasModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchDevicesInfos(deviceIds: [Swift.String], params: [Swift.String : Any], complete: @escaping (AJLibrary.CamerasModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   public func setAliasName(deviceId: Swift.String, aliasName: Swift.String, complete: @escaping (AJLibrary.ErrorModel?) -> Swift.Void)
@@ -619,7 +619,7 @@ public enum AutoLightMode : Swift.String {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class CameraGlobals {
-  public static let shared: AJLibrary.CameraGlobals
+  public static var shared: AJLibrary.CameraGlobals
   public var stringsTable: Swift.String
   public var photoLibraryThumbnailSize: CoreGraphics.CGSize
   public var defaultCameraPosition: AVFoundation.AVCaptureDevice.Position
@@ -725,7 +725,7 @@ extension UIKit.UIView {
   @_Concurrency.MainActor(unsafe) open var rightAccessoryGap: CoreGraphics.CGFloat
   @_Concurrency.MainActor(unsafe) open var item: AJLibrary.WVTableItem {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) final public let iconView: UIKit.UIImageView
   @_Concurrency.MainActor(unsafe) final public let titleLabel: UIKit.UILabel
@@ -761,7 +761,7 @@ extension UIKit.UIView {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class ApnsManager : ObjectiveC.NSObject {
-  @objc public static let shared: AJLibrary.ApnsManager
+  @objc public static var shared: AJLibrary.ApnsManager
   public var notiTimeStamp: Swift.String?
   @objc public func handleApnsNotiReponse(_ notiResponse: UserNotifications.UNNotificationResponse)
   public func showApnsDetail(_ apnsModel: AJLibrary.ApnsModel)
@@ -780,9 +780,9 @@ extension UIKit.UIView {
 extension Swift.Array {
   public func element(at index: Swift.Int) -> Element?
 }
-public let DiagnoseTableRowHeight: CoreGraphics.CGFloat
+public var DiagnoseTableRowHeight: CoreGraphics.CGFloat
 @objc @_inheritsConvenienceInitializers public class AJLibManager : AJLibrary.BaseNetManager {
-  @objc public static let shared: AJLibrary.AJLibManager
+  @objc public static var shared: AJLibrary.AJLibManager
   @objc public static func sdkInit(_ appKey: Swift.String, appSecret: Swift.String, success: @escaping (() -> ()), failure: @escaping ((AJLibrary.ErrorModel?) -> ()))
   @objc public static func fastSignIn(_ allyName: Swift.String, allyToken: Swift.String, account: Swift.String, success: @escaping (() -> ()), failure: @escaping ((AJLibrary.ErrorModel?) -> ()))
   @objc override dynamic public init()
@@ -799,7 +799,7 @@ public let DiagnoseTableRowHeight: CoreGraphics.CGFloat
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class AJBinderResponse : ObjectiveC.NSObject {
-  @objc public static let shared: AJLibrary.AJBinderResponse
+  @objc public static var shared: AJLibrary.AJBinderResponse
   @objc public var ajBinderSuccessBlock: (() -> ())?
   @objc public var ajBinderFailBlock: ((AJLibrary.AJError?) -> ())?
   @objc override dynamic public init()
@@ -837,7 +837,7 @@ public let DiagnoseTableRowHeight: CoreGraphics.CGFloat
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class AJSettingsManager : ObjectiveC.NSObject {
-  @objc public static let shared: AJLibrary.AJSettingsManager
+  @objc public static var shared: AJLibrary.AJSettingsManager
   @objc public func changeAliasName(_ deviceId: Swift.String, aliasName: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func setAliasName(_ deviceId: Swift.String, aliasName: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func firmwareUpgrade(_ deviceId: Swift.String, version: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
@@ -1069,7 +1069,7 @@ public enum FileFolder : Swift.String {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class AJEthBinderManager : ObjectiveC.NSObject {
-  @objc public static let shared: AJLibrary.AJEthBinderManager
+  @objc public static var shared: AJLibrary.AJEthBinderManager
   public var timeout: Swift.Double
   @objc public func discoverDevices(success: (([AJLibrary.DiscoverDeviceItem]?) -> ())?, failure: ((AJLibrary.ErrorModel?) -> ())?)
   @objc public func bindDevice(_ deviceId: Swift.String, ipAddress: Swift.String, success: (() -> ())?, failure: ((AJLibrary.ErrorModel?) -> ())?)
@@ -1077,7 +1077,7 @@ public enum FileFolder : Swift.String {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class UACNetManager : AJLibrary.BaseNetManager {
-  @objc public static let sharedInstance: AJLibrary.UACNetManager
+  @objc public static var sharedInstance: AJLibrary.UACNetManager
   public var mAccessToken: Swift.String?
   public var mRefreshToken: Swift.String?
   public var mSecretAccessKey: Swift.String?
@@ -1218,55 +1218,55 @@ public typealias EditBlock = (_ isEditing: Swift.Bool) -> ()
   @objc override dynamic public init()
   @objc deinit
 }
-public let kWechatLoginAppId: Swift.String
-public let kWechatLoginSecret: Swift.String
-public let AppUniversalLinks: Swift.String
-public let kAppkey: Swift.String
-public let kAppSecret: Swift.String
-public let IPCSupportDevType: Swift.Int
-public let BatterySupportDevType: Swift.Int
-public let AppName: Swift.String
-public let CloudSaleRegion: Swift.Int
-public let DefaultLanDiscoVendorCodes: Swift.String
-public let FetchDeviceList: Swift.String
-public let RefreshCloudOrders: Swift.String
-public let RefreshCloudOrdersTable: Swift.String
-public let RefreshUpgradingCameras: Swift.String
-public let ShowSystemMessageDot: Swift.String
-public let ShowNotifySupportCenterDot: Swift.String
-public let RefreshHomeDeviceList: Swift.String
-public let CentralRemoteNotification: Swift.String
-public let RefreshLocalVideos: Swift.String
-public let ShowCloudStorageBuyTips: Swift.String
-public let ShowCloudStorageTabDot: Swift.String
-public let HideCloudStorageTabDot: Swift.String
-public let ShowAcceptShareNotification: Swift.String
-public let ShowAlertMessageDot: Swift.String
-public let HideAlertMessageDot: Swift.String
-public let PushToTrailOrder: Swift.String
-public let DisconnectBatterySingle: Swift.String
-public let ShowMergeAccountDot: Swift.String
-public let LaunchHomeShowCompleteAccount: Swift.String
-public let CelularAlertTips: Swift.String
-public let MotionAlertEnable: Swift.String
-public let SystemMsgEnable: Swift.String
-public let MarketMsgEnable: Swift.String
-public let PushSoundFollowSystemEnable: Swift.String
-public let SPTMallURL: Swift.String
-public let HaveNewMallURL: Swift.String
-public let CloudURL: Swift.String
-public let HaveNewCloudURL: Swift.String
-public let RefreshShareAccountList: Swift.String
-public let RefreshAlertViewController: Swift.String
-public let HaveShowedAddDeviceToCloudGuide: Swift.String
-public let RefreshDeviceInfo: Swift.String
-public let ShowCouponDot: Swift.String
-public let CouponDeadlineKey: Swift.String
-public let WechatLoginInResponseCode: Swift.String
-public let WXLoginUnionKey: Swift.String
-public let PhotoLoadingEndNotification: Swift.String
-public let PhotoProgressNotification: Swift.String
-public let BoundBatteryCountMaxNumber: Swift.Int
+public var kWechatLoginAppId: Swift.String
+public var kWechatLoginSecret: Swift.String
+public var AppUniversalLinks: Swift.String
+public var kAppkey: Swift.String
+public var kAppSecret: Swift.String
+public var IPCSupportDevType: Swift.Int
+public var BatterySupportDevType: Swift.Int
+public var AppName: Swift.String
+public var CloudSaleRegion: Swift.Int
+public var DefaultLanDiscoVendorCodes: Swift.String
+public var FetchDeviceList: Swift.String
+public var RefreshCloudOrders: Swift.String
+public var RefreshCloudOrdersTable: Swift.String
+public var RefreshUpgradingCameras: Swift.String
+public var ShowSystemMessageDot: Swift.String
+public var ShowNotifySupportCenterDot: Swift.String
+public var RefreshHomeDeviceList: Swift.String
+public var CentralRemoteNotification: Swift.String
+public var RefreshLocalVideos: Swift.String
+public var ShowCloudStorageBuyTips: Swift.String
+public var ShowCloudStorageTabDot: Swift.String
+public var HideCloudStorageTabDot: Swift.String
+public var ShowAcceptShareNotification: Swift.String
+public var ShowAlertMessageDot: Swift.String
+public var HideAlertMessageDot: Swift.String
+public var PushToTrailOrder: Swift.String
+public var DisconnectBatterySingle: Swift.String
+public var ShowMergeAccountDot: Swift.String
+public var LaunchHomeShowCompleteAccount: Swift.String
+public var CelularAlertTips: Swift.String
+public var MotionAlertEnable: Swift.String
+public var SystemMsgEnable: Swift.String
+public var MarketMsgEnable: Swift.String
+public var PushSoundFollowSystemEnable: Swift.String
+public var SPTMallURL: Swift.String
+public var HaveNewMallURL: Swift.String
+public var CloudURL: Swift.String
+public var HaveNewCloudURL: Swift.String
+public var RefreshShareAccountList: Swift.String
+public var RefreshAlertViewController: Swift.String
+public var HaveShowedAddDeviceToCloudGuide: Swift.String
+public var RefreshDeviceInfo: Swift.String
+public var ShowCouponDot: Swift.String
+public var CouponDeadlineKey: Swift.String
+public var WechatLoginInResponseCode: Swift.String
+public var WXLoginUnionKey: Swift.String
+public var PhotoLoadingEndNotification: Swift.String
+public var PhotoProgressNotification: Swift.String
+public var BoundBatteryCountMaxNumber: Swift.Int
 public enum NetEntrance {
   case addDevice
   case cameraSetting
@@ -1288,7 +1288,7 @@ public enum NetEntrance {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AppVariable : ObjectiveC.NSObject {
-  @objc public static let sharedInstance: AJLibrary.AppVariable
+  @objc public static var sharedInstance: AJLibrary.AppVariable
   @objc public var currentCameraId: Swift.String?
   public var netConfigEntrance: AJLibrary.NetEntrance
   public var netConfigurationType: AJLibrary.NetConfigurationType
@@ -1430,7 +1430,7 @@ public enum SupportLanguageOption : Swift.String {
 }
 public func GetImage(named: Swift.String) -> UIKit.UIImage?
 @objc @_inheritsConvenienceInitializers public class AppUtils : ObjectiveC.NSObject {
-  @objc public static let AJCWebViewBridgeInterface: Swift.String
+  @objc public static var AJCWebViewBridgeInterface: Swift.String
   @objc public static var appVendorCode: Swift.String {
     @objc get
   }
@@ -1485,7 +1485,7 @@ public func GetImage(named: Swift.String) -> UIKit.UIImage?
   @objc dynamic public init()
   @objc deinit
 }
-public let orderHistoryTableViewCellIdentifier: Swift.String
+public var orderHistoryTableViewCellIdentifier: Swift.String
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CameraSettingViewController : AJLibrary.UIBaseTableViewController {
   @objc @_Concurrency.MainActor(unsafe) public var deviceId: Swift.String
   @objc @_Concurrency.MainActor(unsafe) public var fromPlay: Swift.Bool
@@ -1558,6 +1558,11 @@ public let orderHistoryTableViewCellIdentifier: Swift.String
   @objc required dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class AlarmsCalendarModel : AJLibrary.ResultModel {
+  @objc public var cdates: [Swift.String]?
+  @objc required dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers public class AlarmListModel : AJLibrary.ResultModel {
   @objc public var alarms: [AJLibrary.AlarmModel]?
   @objc public var cts: Swift.String?
@@ -1576,13 +1581,13 @@ public let orderHistoryTableViewCellIdentifier: Swift.String
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class WebCloudUtils : ObjectiveC.NSObject {
-  @objc public static let webStartUrl: Swift.String
-  @objc public static let webGetUserInfo: Swift.String
-  public static let webFinish: Swift.String
-  public static let webSubscribe: Swift.String
-  @objc public static let webStartEmail: Swift.String
-  public static let webGetPlanInfo: Swift.String
-  public static let webSetApp: Swift.String
+  @objc public static var webStartUrl: Swift.String
+  @objc public static var webGetUserInfo: Swift.String
+  public static var webFinish: Swift.String
+  public static var webSubscribe: Swift.String
+  @objc public static var webStartEmail: Swift.String
+  public static var webGetPlanInfo: Swift.String
+  public static var webSetApp: Swift.String
   @objc public static func getUserInfo() -> Swift.String
   public static func getPlanInfo(_ order: AJLibrary.OrderModel?) -> Swift.String
   @objc public static func deserializeWebBridgeBody(json: Swift.String) -> AJLibrary.WebBridgeParamsModel?
@@ -1605,7 +1610,7 @@ extension UIKit.UIFont {
   @objc(mixed_don58Medium:) dynamic public class func mixed_don58Medium(size fontSize: CoreGraphics.CGFloat) -> UIKit.UIFont?
 }
 extension UIKit.UIFont {
-  public static let mixed_registerFonts: ()
+  public static var mixed_registerFonts: ()
   @objc(mixed_registerFont:filename:type:error:) public static func mixed_registerFont(in bundle: Foundation.Bundle?, name fileName: Swift.String, type: Swift.String?) throws
 }
 public enum RequestResult {
@@ -1641,11 +1646,11 @@ public enum RequestResult {
   }
   @_Concurrency.MainActor(unsafe) final public var urlRequest: Foundation.URLRequest {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) final public var displaysWebViewTitle: Swift.Bool
   @_Concurrency.MainActor(unsafe) public init(urlRequest: Foundation.URLRequest, configuration: WebKit.WKWebViewConfiguration = WKWebViewConfiguration(), activities: [UIKit.UIActivity]? = nil)
-  @objc @_Concurrency.MainActor(unsafe) convenience public init(url: Foundation.URL)
+  @objc @_Concurrency.MainActor(unsafe) public convenience init(url: Foundation.URL)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
@@ -1685,7 +1690,7 @@ public enum RequestResult {
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class AttributeLabelView : UIKit.UITextView, UIKit.UITextViewDelegate {
   @_Concurrency.MainActor(unsafe) public var attributes: [AJLibrary.AttributeItem] {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) public var string: Swift.String
   @_Concurrency.MainActor(unsafe) public init(_ string: Swift.String)
@@ -1727,7 +1732,7 @@ public func takePhoto(_ stillImageOutput: AVFoundation.AVCaptureStillImageOutput
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class NetAPI : ObjectiveC.NSObject {
-  @objc public static let shared: AJLibrary.NetAPI
+  @objc public static var shared: AJLibrary.NetAPI
   public var haveLoadAppStartUpRequestSuccess: Swift.Bool
   public var haveFirstRefreshedToken: Swift.Bool
   public var sdcUrl: Swift.String
@@ -1781,11 +1786,11 @@ public func takePhoto(_ stillImageOutput: AVFoundation.AVCaptureStillImageOutput
   }
   public var haveNewMallUrl: Swift.Bool {
     get
-    set
+    set(newValue)
   }
   public var haveNewCloudUrl: Swift.Bool {
     get
-    set
+    set(newValue)
   }
   @objc final public let b2OriginalAPI: Swift.String
   @objc final public let b2DelegateAPI: Swift.String
@@ -1803,21 +1808,21 @@ extension UIKit.UIFont {
   public static func getFont(_ size: Swift.Double) -> UIKit.UIFont
   public static func getFont(_ name: Swift.String, _ size: Swift.Double) -> UIKit.UIFont
 }
-public let RefreshTokenApi: Swift.String
-public let ChallenageApi: Swift.String
-public let SignInApi: Swift.String
-public let DeviceListApi: Swift.String
-public let SmsSignUpApi: Swift.String
-public let SignUpApi: Swift.String
-public let AppStartupApi: Swift.String
-public let TimezonesApi: Swift.String
-public let SignoutApi: Swift.String
-public let LogoutApi: Swift.String
-public let ResetPassword: Swift.String
-public let SmsResetPassword: Swift.String
-public let AccountActiveApi: Swift.String
-public let FastSignInApi: Swift.String
-public let SDKInitApi: Swift.String
+public var RefreshTokenApi: Swift.String
+public var ChallenageApi: Swift.String
+public var SignInApi: Swift.String
+public var DeviceListApi: Swift.String
+public var SmsSignUpApi: Swift.String
+public var SignUpApi: Swift.String
+public var AppStartupApi: Swift.String
+public var TimezonesApi: Swift.String
+public var SignoutApi: Swift.String
+public var LogoutApi: Swift.String
+public var ResetPassword: Swift.String
+public var SmsResetPassword: Swift.String
+public var AccountActiveApi: Swift.String
+public var FastSignInApi: Swift.String
+public var SDKInitApi: Swift.String
 @objc @_inheritsConvenienceInitializers public class BaseNetManager : ObjectiveC.NSObject {
   public func modelName() -> Swift.String
   public func agentName() -> Swift.String
@@ -1926,7 +1931,7 @@ public enum ProductNameType : Swift.String {
   @objc public static var sharedInstance: AJLibrary.DevicesManager
   @objc public var camerasArray: [Swift.String] {
     @objc get
-    @objc set
+    @objc set(newValue)
   }
   public var homeListArray: [Swift.String] {
     get
@@ -1937,7 +1942,7 @@ public enum ProductNameType : Swift.String {
   public var sharedCamerasArray: [Swift.String]
   public var cameraInfomationDic: [Swift.String : AJLibrary.CameraInfomation] {
     get
-    set
+    set(newValue)
   }
   public var setNickname: Swift.Bool
   @objc public func cameraSummary(_ deviceId: Swift.String) -> AJLibrary.CameraSummaryModel?
@@ -2014,8 +2019,8 @@ public enum EMCAction : Swift.String {
     get
   }
 }
-public let RemoteTFDownloadHost: Swift.String
-public let LocalTFDownloadHost: Swift.String
+public var RemoteTFDownloadHost: Swift.String
+public var LocalTFDownloadHost: Swift.String
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(M3U8Task) public class M3U8Task : ObjectiveC.NSObject {
   weak public var manager: AJLibrary.CloudManager?
   public var progressHandler: AJLibrary.TaskHandler?
@@ -2028,7 +2033,7 @@ public let LocalTFDownloadHost: Swift.String
   public var taskModel: AJLibrary.TaskModel
   public var status: AJLibrary.DownloadStatus {
     get
-    set
+    set(newValue)
   }
   public var tsProgressPercent: Swift.Float
   public var progress: Swift.Float {
@@ -2094,7 +2099,7 @@ extension AJLibrary.M3U8Task {
   public static func canEvaluatePolicy() -> (canEvaluate: Swift.Bool, error: Foundation.NSError?)
   @objc deinit
 }
-public let TextFieldTableViewCellId: Swift.String
+public var TextFieldTableViewCellId: Swift.String
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CameraView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) public var currentPosition: AVFoundation.AVCaptureDevice.Position
   @_Concurrency.MainActor(unsafe) public func startSession()
@@ -2146,9 +2151,9 @@ extension Swift.Double {
   public func cautionTSToString() -> Swift.String
 }
 extension UIKit.UIColor {
-  convenience public init(rgb: Swift.Int, alpha: CoreGraphics.CGFloat = 1)
-  convenience public init(_ r: CoreGraphics.CGFloat, _ g: CoreGraphics.CGFloat, _ b: CoreGraphics.CGFloat, _ a: CoreGraphics.CGFloat = 1)
-  convenience public init(colorString: Swift.String)
+  public convenience init(rgb: Swift.Int, alpha: CoreGraphics.CGFloat = 1)
+  public convenience init(_ r: CoreGraphics.CGFloat, _ g: CoreGraphics.CGFloat, _ b: CoreGraphics.CGFloat, _ a: CoreGraphics.CGFloat = 1)
+  public convenience init(colorString: Swift.String)
   public func purecolorImage() -> UIKit.UIImage?
   public func purecolorImage(_ rect: CoreGraphics.CGRect) -> UIKit.UIImage?
 }
@@ -2231,7 +2236,7 @@ extension AJLibrary.TSDownloader {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class AJQRBinderManager : ObjectiveC.NSObject {
-  @objc public static let shared: AJLibrary.AJQRBinderManager
+  @objc public static var shared: AJLibrary.AJQRBinderManager
   @objc public var timeout: Swift.Double
   @objc public func getToken(_ success: @escaping ((Swift.String) -> ()), failure: @escaping ((AJLibrary.ErrorModel?) -> ()))
   @objc public func checkBindStatus(_ token: Swift.String, success: @escaping ((Swift.String) -> ()), failure: @escaping ((AJLibrary.ErrorModel?) -> ()))
@@ -2327,8 +2332,8 @@ extension AJLibrary.CloudManager {
   @discardableResult
   public func failure(_ handler: @escaping AJLibrary.ManagerHandler) -> Self
 }
-public let CameraAddTableViewCellIdentifier: Swift.String
-public let CameraAddCellHeight: CoreGraphics.CGFloat
+public var CameraAddTableViewCellIdentifier: Swift.String
+public var CameraAddCellHeight: CoreGraphics.CGFloat
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ConnectModeViewController : AJLibrary.BaseViewController, UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
   @_Concurrency.MainActor(unsafe) public var networkConfig: Swift.String?
   @_Concurrency.MainActor(unsafe) public var isFromNotHeard: Swift.Bool
@@ -2372,18 +2377,18 @@ public let CameraAddCellHeight: CoreGraphics.CGFloat
   @objc @_Concurrency.MainActor(unsafe) public var openCameraBlock: (() -> ())?
   @objc @_Concurrency.MainActor(unsafe) public var isSharedCamera: Swift.Bool {
     @objc get
-    @objc set
+    @objc set(value)
   }
   @objc dynamic public init()
   @objc deinit
 }
-public let SegmentedSpaceWidth: Swift.Int
+public var SegmentedSpaceWidth: Swift.Int
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class UIEdgeInsetsLabel : UIKit.UILabel {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreGraphics.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) public var edgeInsets: UIKit.UIEdgeInsets {
     get
-    set
+    set(value)
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func textRect(forBounds bounds: CoreGraphics.CGRect, limitedToNumberOfLines numberOfLines: Swift.Int) -> CoreGraphics.CGRect
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func drawText(in rect: CoreGraphics.CGRect)
@@ -2403,7 +2408,7 @@ public enum Validate {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class CalloutManager : ObjectiveC.NSObject {
-  @objc public static let shared: AJLibrary.CalloutManager
+  @objc public static var shared: AJLibrary.CalloutManager
   @objc public var isCalloutPresent: Swift.Bool
   @objc public func pushToCallout(_ deviceId: Swift.String, countDown: Swift.Int = 60)
   @objc deinit
@@ -2441,17 +2446,17 @@ extension Swift.Array : AJLibrary.LogLevel {
   @objc @_Concurrency.MainActor(unsafe) dynamic public func imageToUp()
 }
 @objc @_inheritsConvenienceInitializers public class FBAnalyticsEventId : ObjectiveC.NSObject {
-  @objc public static let playing_net_type: Swift.String
-  @objc public static let playing_request_type: Swift.String
-  @objc public static let playing_duration_time: Swift.String
-  @objc public static let replay_duration_time: Swift.String
-  @objc public static let replay_down_num: Swift.String
-  @objc public static let replay_delete_num: Swift.String
-  public static let alert_click_video_num: Swift.String
-  public static let diagnose_num: Swift.String
-  public static let set_camera_restart_num: Swift.String
-  public static let set_camera_restore_fac_num: Swift.String
-  public static let set_camera_delete_num: Swift.String
+  @objc public static var playing_net_type: Swift.String
+  @objc public static var playing_request_type: Swift.String
+  @objc public static var playing_duration_time: Swift.String
+  @objc public static var replay_duration_time: Swift.String
+  @objc public static var replay_down_num: Swift.String
+  @objc public static var replay_delete_num: Swift.String
+  public static var alert_click_video_num: Swift.String
+  public static var diagnose_num: Swift.String
+  public static var set_camera_restart_num: Swift.String
+  public static var set_camera_restore_fac_num: Swift.String
+  public static var set_camera_delete_num: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2521,7 +2526,7 @@ extension Foundation.URL {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class EmcPortalNetManager : AJLibrary.BaseNetManager {
-  @objc public static let shared: AJLibrary.EmcPortalNetManager
+  @objc public static var shared: AJLibrary.EmcPortalNetManager
   public func fetchSystemMessageStatus(complete: @escaping (AJLibrary.SystemMsgStatusModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchSystemMessageList(complete: @escaping (AJLibrary.SystemMsgListModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchAlarmsSummary(complete: @escaping (AJLibrary.AlarmsModel?, AJLibrary.ErrorModel?) -> Swift.Void)
@@ -2544,7 +2549,7 @@ extension Foundation.URL {
   @objc required dynamic public init()
   @objc deinit
 }
-public let CommonTableCellId: Swift.String
+public var CommonTableCellId: Swift.String
 @objc @_inheritsConvenienceInitializers public class ImageDownloadManager : ObjectiveC.NSObject {
   @objc public static func downloadImages(_ imageUrls: [Swift.String], toPath path: Swift.String, complete: (() -> ())?)
   @objc override dynamic public init()
@@ -2601,7 +2606,7 @@ public enum OrderStatusEnum : Swift.String {
   @objc required dynamic public init()
   @objc deinit
 }
-public let DevConfigApi: Swift.String
+public var DevConfigApi: Swift.String
 @_hasMissingDesignatedInitializers public class VolumeControl {
   @objc deinit
 }
@@ -2630,7 +2635,7 @@ public let DevConfigApi: Swift.String
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class AJSoftAPBinderManager : ObjectiveC.NSObject {
-  @objc public static let shared: AJLibrary.AJSoftAPBinderManager
+  @objc public static var shared: AJLibrary.AJSoftAPBinderManager
   @objc public var timeout: Swift.Double
   @objc public func softAPConnect(_ ssid: Swift.String, password: Swift.String, success: @escaping (() -> ()), failure: @escaping ((AJLibrary.ErrorModel?) -> ()))
   @objc public func connect(_ curSsid: Swift.String, success: (([AJLibrary.WiFiListModel]?) -> ())?, failure: ((AJLibrary.ErrorModel?) -> ())?)
@@ -2669,8 +2674,8 @@ public func GetHeight(_ height: CoreGraphics.CGFloat) -> CoreGraphics.CGFloat
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-public let DeviceCellHeight: CoreGraphics.CGFloat
-public let CellSubUIDistance: Swift.Int
+public var DeviceCellHeight: CoreGraphics.CGFloat
+public var CellSubUIDistance: Swift.Int
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class CloudBuyView : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) public var refreshBlock: (() -> ())?
   @_Concurrency.MainActor(unsafe) final public let cloudStatusTips: AJLibrary.UIBoldLabel
@@ -2683,7 +2688,7 @@ public let CellSubUIDistance: Swift.Int
   @objc @_Concurrency.MainActor(unsafe) public var noDataView: AJLibrary.UIRefreshView?
   @objc @_Concurrency.MainActor(unsafe) public var activityPolicy: AJLibrary.CloudStorActivity? {
     @objc get
-    @objc set
+    @objc set(value)
   }
   @objc @_Concurrency.MainActor(unsafe) public var learnMoreBlock: (() -> ())?
   @objc @_Concurrency.MainActor(unsafe) public var buyBlock: (() -> ())?
@@ -2699,10 +2704,10 @@ public let CellSubUIDistance: Swift.Int
 }
 public func CameraLocalizedString(_ key: Swift.String) -> Swift.String
 public func CommonCameraLocalizedString(_ key: Swift.String) -> Swift.String
-public let NavigationHeight: (CoreGraphics.CGFloat)
-public let StatusBarHeight: CoreGraphics.CGFloat
-public let isIPhoneX: Swift.Bool
-public let IphoneXBottom: CoreGraphics.CGFloat
+public var NavigationHeight: (CoreGraphics.CGFloat)
+public var StatusBarHeight: CoreGraphics.CGFloat
+public var isIPhoneX: Swift.Bool
+public var IphoneXBottom: CoreGraphics.CGFloat
 @objc @_inheritsConvenienceInitializers public class CameraUtils : ObjectiveC.NSObject {
   @objc public static var isNetworkConnect: Swift.Bool {
     @objc get
@@ -2752,9 +2757,9 @@ public typealias ActionSheetAction = () -> Swift.Void
   @objc @_Concurrency.MainActor(unsafe) public func show()
   @objc deinit
 }
-public let ScreenWidth: CoreGraphics.CGFloat
-public let ScreenHeight: CoreGraphics.CGFloat
-public let isPhoneX: Swift.Bool
+public var ScreenWidth: CoreGraphics.CGFloat
+public var ScreenHeight: CoreGraphics.CGFloat
+public var isPhoneX: Swift.Bool
 @objc @_inheritsConvenienceInitializers public class ObjUIAdapt : ObjectiveC.NSObject {
   @objc override dynamic public init()
   @objc deinit
@@ -2830,7 +2835,26 @@ extension AVKit.AVPlayerViewController {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-public let GatewayCellHeight: CoreGraphics.CGFloat
+public enum OrderType {
+  case upsert
+  case remove
+  public static func == (a: AJLibrary.OrderType, b: AJLibrary.OrderType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class EMCNetManager : AJLibrary.BaseNetManager {
+  @objc public static var shared: AJLibrary.EMCNetManager
+  @objc public func fetchAlarmsCalendar(_ deviceId: Swift.String, tzValue: Swift.String, accessKey: Swift.String, complete: @escaping (AJLibrary.AlarmsCalendarModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  public func fetchFeedLogs(_ deviceId: Swift.String, ctime: Swift.String, limit: ObjectiveC.NSInteger, complete: @escaping (AJLibrary.feedLogsModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc public func fetchAlarmList(_ deviceId: Swift.String, accessKey: Swift.String, tzValue: Swift.String, today: ObjectiveC.NSInteger, todayFirst: ObjectiveC.NSInteger, ctime: ObjectiveC.NSInteger, cdate: Swift.String, limit: ObjectiveC.NSInteger, complete: @escaping (AJLibrary.AlarmListModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  public func removeShareRel(_ deviceId: Swift.String, slaveUid: Swift.String, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  public func pushSetting(_ deviceId: Swift.String, aliasName: Swift.String, devEmcUrl: Swift.String, orderType: AJLibrary.OrderType, clearPushToken: Swift.Bool = false, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc public func deleteAlarmsMessage(_ deviceId: Swift.String, accessKey: Swift.String, cdate: Swift.String, ctss: [Swift.String], devTzName: Swift.String, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc deinit
+}
+public var GatewayCellHeight: CoreGraphics.CGFloat
 public enum OnlineSetResult : Swift.Int {
   case NotDefine
   case Success
@@ -2968,71 +2992,3 @@ public enum OnlineSetResult : Swift.Int {
   @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
-extension AJLibrary.NetHTTPMethod : Swift.Equatable {}
-extension AJLibrary.NetHTTPMethod : Swift.Hashable {}
-extension AJLibrary.NetHTTPMethod : Swift.RawRepresentable {}
-extension AJLibrary.LoginType : Swift.Equatable {}
-extension AJLibrary.LoginType : Swift.Hashable {}
-extension AJLibrary.LoginType : Swift.RawRepresentable {}
-extension AJLibrary.ReceiveStatus : Swift.Equatable {}
-extension AJLibrary.ReceiveStatus : Swift.Hashable {}
-extension AJLibrary.ReceiveStatus : Swift.RawRepresentable {}
-extension AJLibrary.CameraStatus : Swift.Equatable {}
-extension AJLibrary.CameraStatus : Swift.Hashable {}
-extension AJLibrary.CameraStatus : Swift.RawRepresentable {}
-extension AJLibrary.AutoLightMode : Swift.Equatable {}
-extension AJLibrary.AutoLightMode : Swift.Hashable {}
-extension AJLibrary.AutoLightMode : Swift.RawRepresentable {}
-extension AJLibrary.ShakeDirection : Swift.Equatable {}
-extension AJLibrary.ShakeDirection : Swift.Hashable {}
-extension AJLibrary.ShakeDirection : Swift.RawRepresentable {}
-extension AJLibrary.ImageType : Swift.Equatable {}
-extension AJLibrary.ImageType : Swift.Hashable {}
-extension AJLibrary.ImageType : Swift.RawRepresentable {}
-extension AJLibrary.InviteStatus : Swift.Equatable {}
-extension AJLibrary.InviteStatus : Swift.Hashable {}
-extension AJLibrary.InviteStatus : Swift.RawRepresentable {}
-extension AJLibrary.DeviceModeType : Swift.Equatable {}
-extension AJLibrary.DeviceModeType : Swift.Hashable {}
-extension AJLibrary.DeviceModeType : Swift.RawRepresentable {}
-extension AJLibrary.ConAcountType : Swift.Equatable {}
-extension AJLibrary.ConAcountType : Swift.Hashable {}
-extension AJLibrary.ConAcountType : Swift.RawRepresentable {}
-extension AJLibrary.ShareDeviceStatus : Swift.Equatable {}
-extension AJLibrary.ShareDeviceStatus : Swift.Hashable {}
-extension AJLibrary.ShareDeviceStatus : Swift.RawRepresentable {}
-extension AJLibrary.FileFolder : Swift.Equatable {}
-extension AJLibrary.FileFolder : Swift.Hashable {}
-extension AJLibrary.FileFolder : Swift.RawRepresentable {}
-extension AJLibrary.DownloadStatus : Swift.Equatable {}
-extension AJLibrary.DownloadStatus : Swift.Hashable {}
-extension AJLibrary.DownloadStatus : Swift.RawRepresentable {}
-extension AJLibrary.NetEntrance : Swift.Equatable {}
-extension AJLibrary.NetEntrance : Swift.Hashable {}
-extension AJLibrary.NetConfigurationType : Swift.Equatable {}
-extension AJLibrary.NetConfigurationType : Swift.Hashable {}
-extension AJLibrary.NetConfigurationType : Swift.RawRepresentable {}
-extension AJLibrary.SupportLanguageOption : Swift.Equatable {}
-extension AJLibrary.SupportLanguageOption : Swift.Hashable {}
-extension AJLibrary.SupportLanguageOption : Swift.RawRepresentable {}
-extension AJLibrary.AlarmType : Swift.Equatable {}
-extension AJLibrary.AlarmType : Swift.Hashable {}
-extension AJLibrary.AlarmType : Swift.RawRepresentable {}
-extension AJLibrary.DeviceModeOption : Swift.Equatable {}
-extension AJLibrary.DeviceModeOption : Swift.Hashable {}
-extension AJLibrary.DeviceModeOption : Swift.RawRepresentable {}
-extension AJLibrary.ProductNameType : Swift.Equatable {}
-extension AJLibrary.ProductNameType : Swift.Hashable {}
-extension AJLibrary.ProductNameType : Swift.RawRepresentable {}
-extension AJLibrary.EMCAction : Swift.Equatable {}
-extension AJLibrary.EMCAction : Swift.Hashable {}
-extension AJLibrary.EMCAction : Swift.RawRepresentable {}
-extension AJLibrary.BindStatus : Swift.Equatable {}
-extension AJLibrary.BindStatus : Swift.Hashable {}
-extension AJLibrary.BindStatus : Swift.RawRepresentable {}
-extension AJLibrary.OrderStatusEnum : Swift.Equatable {}
-extension AJLibrary.OrderStatusEnum : Swift.Hashable {}
-extension AJLibrary.OrderStatusEnum : Swift.RawRepresentable {}
-extension AJLibrary.OnlineSetResult : Swift.Equatable {}
-extension AJLibrary.OnlineSetResult : Swift.Hashable {}
-extension AJLibrary.OnlineSetResult : Swift.RawRepresentable {}

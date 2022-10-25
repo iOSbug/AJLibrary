@@ -9,6 +9,8 @@
 #import "AJError.h"
 #import "AJAlertSurveyModel.h"
 #import <UserNotifications/UserNotifications.h>
+#import "AJAlertsCalendarModel.h"
+#import "AJAlertsListModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -38,6 +40,44 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)queryAlertsSurvey:(nullable void (^)(NSArray<AJAlertSurveyModel *> *))success
                   failure:(nullable void (^)(AJError *))failure;
+
+
+/// 获取含有告警视频的日历小蓝点
+/// @param deviceId 设备 ID
+/// @param tzValue  设备时区，从 camera.timeConfig.tzValue 获取
+/// @param accessKey 密钥，从 camera.base.accessKey 获取
+/// @param success success
+/// @param failure failure
+- (void)fetchAlertsCalendar:(NSString *)deviceId
+                    tzValue:(NSString *)tzValue
+                  accessKey:(NSString *)accessKey
+                    success:(nullable void (^)(AJAlertsCalendarModel *))success
+                    failure:(nullable void (^)(AJError *))failure;
+
+
+
+/// 获取告警列表
+/// @param deviceId 设备ID
+/// @param accessKey 密钥，从 camera.base.accessKey 获取
+/// @param tzValue 设备时区，从 camera.timeConfig.tzValue 获取
+/// @param today 是否为今日, 若是:1, 否则:0
+/// @param todayFirst 今天的第一次拉取，是为1，否为0
+/// @param ctime 20180711000000, // 数值
+/// @param cdate 摄像头时区的日期，20180710
+/// @param limit 每页数量, 缺省值: 10
+/// @param success success
+/// @param failure failure
+- (void)getAlertsList:(NSString *)deviceId
+            accessKey:(NSString *)accessKey
+              tzValue:(NSString *)tzValue
+                today:(NSString *)today
+           todayFirst:(NSString *)todayFirst
+                ctime:(NSString *)ctime
+                cdate:(NSString *)cdate
+                limit:(NSString *)limit
+              success:(nullable void (^)(AJAlertsListModel *))success
+              failure:(nullable void (^)(AJError *))failure;
+
 
 /**
  *    加载摄像头告警页面
