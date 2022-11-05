@@ -1070,7 +1070,7 @@ public enum FileFolder : Swift.String {
 }
 @objc @_inheritsConvenienceInitializers public class AJEthBinderManager : ObjectiveC.NSObject {
   @objc public static var shared: AJLibrary.AJEthBinderManager
-  public var timeout: Swift.Double
+  @objc public var timeout: Swift.Double
   @objc public func discoverDevices(success: (([AJLibrary.DiscoverDeviceItem]?) -> ())?, failure: ((AJLibrary.ErrorModel?) -> ())?)
   @objc public func bindDevice(_ deviceId: Swift.String, ipAddress: Swift.String, success: (() -> ())?, failure: ((AJLibrary.ErrorModel?) -> ())?)
   @objc override dynamic public init()

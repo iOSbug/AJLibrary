@@ -267,6 +267,7 @@ SWIFT_CLASS("_TtC9AJLibrary18AJEthBinderManager")
 @interface AJEthBinderManager : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJEthBinderManager * _Nonnull shared;)
 + (AJEthBinderManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic) NSTimeInterval timeout;
 - (void)discoverDevicesWithSuccess:(void (^ _Nullable)(NSArray<DiscoverDeviceItem *> * _Nullable))success failure:(void (^ _Nullable)(ErrorModel * _Nullable))failure;
 - (void)bindDevice:(NSString * _Nonnull)deviceId ipAddress:(NSString * _Nonnull)ipAddress success:(void (^ _Nullable)(void))success failure:(void (^ _Nullable)(ErrorModel * _Nullable))failure;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;

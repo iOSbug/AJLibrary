@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "AJError.h"
 #import "AJDeviceInfoModel.h"
+#import "AJCloudStorageModel.h"
 //#import "SwiftHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -178,6 +179,57 @@ typedef enum : NSUInteger {
  *    @param     deviceId              摄像头id
  */
 - (void)forceDisconenct:(NSString *)deviceId;
+
+
+/**
+ *    获取云存储日历列表
+ *
+ *    @param     success                成功 回调
+ *    @param     failure                失败回调
+ */
+- (void)queryCloudStorageCalendarMasterUid:(NSString*)masterUid
+                                  deviceId:(NSString *)deviceId
+                                   success:(nullable void (^)(NSArray<NSString *> *))success
+                                   failure:(nullable void (^)(AJError *))failure;
+
+/**
+ *    获取云存储列表
+ *
+ *    @param     success                成功 回调
+ *    @param     failure                失败回调
+ */
+- (void)queryCloudStorageVideoListMasterUid:(NSString*)masterUid
+                                   deviceId:(NSString *)deviceId
+                                 dayStartTs:(double)dayStartTs
+                                   dayEndTs:(double)dayEndTs
+                                    success:(nullable void (^)(NSArray<AJCloudStorageModel *> *))success
+                                    failure:(nullable void (^)(AJError *))failure;
+
+
+/**
+ *    获取TFCard日历列表
+ *     !!!!只有当remoteTFCardInit 成功后才有效
+ *    @param     success                成功 回调
+ *    @param     failure                失败回调
+ */
+- (void)queryTFCardCalendarDeviceId:(NSString *)deviceId
+                            success:(nullable void (^)(NSArray<NSString *> *))success
+                            failure:(nullable void (^)(AJError *))failure;
+
+
+/**
+ *    获取TFCard视频列表
+ *
+ *    @param     success                成功 回调
+ *    @param     failure                失败回调
+ */
+- (void)queryTFCardVideoListDeviceId:(NSString *)deviceId
+                          dayStartTs:(double)dayStartTs
+                            dayEndTs:(double)dayEndTs
+                             success:(nullable void (^)(NSArray<AJCloudStorageModel *> *))success
+                             failure:(nullable void (^)(AJError *))failure;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

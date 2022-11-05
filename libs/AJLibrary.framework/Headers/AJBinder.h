@@ -88,10 +88,12 @@ typedef enum : NSUInteger {
 /// SoftAP 配网，配网绑定
 /// @param ssid SSID 名称
 /// @param password SSID 密码
+/// @param timeout 绑定超时时间
 /// @param success success
 /// @param failure failure
 - (void)softAPConnect:(NSString *)ssid
              password:(NSString *)password
+              timeout:(NSTimeInterval)timeout
               success:(nullable void (^)(void))success
               failure:(nullable void (^)(AJError *))failure;
 
@@ -109,10 +111,12 @@ typedef enum : NSUInteger {
 /// 网线配网，绑定设备
 /// @param deviceId 设备ID
 /// @param ipAddress  设备IP 地址，从 startEthConfig -> AJDiscoverDeviceModel 获取
+/// @param timeout 绑定超时时间
 /// @param success success
 /// @param failure failure
 - (void)ethBindDevice:(NSString *)deviceId
             ipAddress:(NSString *)ipAddress
+              timeout:(NSTimeInterval)timeout
               success:(nullable void (^)(void))success
               failure:(nullable void (^)(AJError *))failure;
 

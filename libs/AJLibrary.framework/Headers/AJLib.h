@@ -45,6 +45,7 @@
 #import <AJLibrary/AJDiscoverDeviceModel.h>
 #import <AJLibrary/AJAlertsCalendarModel.h>
 #import <AJLibrary/AJAlertsListModel.h>
+#import <AJLibrary/AJCloudStorageModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
