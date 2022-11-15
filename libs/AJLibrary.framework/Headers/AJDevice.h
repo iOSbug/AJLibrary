@@ -63,16 +63,6 @@ typedef enum : NSUInteger {
              failure:(nullable void (^)(AJError *))failure;
 
 
-/**
- *    设备解绑
- *
- *    @param     success                成功 回调
- *    @param     failure                失败回调
- */
-- (void)unbindDevice:(NSString *)deviceId
-             success:(nullable void (^)(void))success
-             failure:(nullable void (^)(AJError *))failure;
-
 
 /**
  *    加载摄像头页面

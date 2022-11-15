@@ -310,6 +310,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJSettingsMa
 - (void)changeAliasName:(NSString * _Nonnull)deviceId aliasName:(NSString * _Nonnull)aliasName complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)setAliasName:(NSString * _Nonnull)deviceId aliasName:(NSString * _Nonnull)aliasName complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)firmwareUpgrade:(NSString * _Nonnull)deviceId version:(NSString * _Nonnull)version complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)removeDevice:(NSString * _Nonnull)deviceId complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)orientationSetting:(NSString * _Nonnull)deviceId orientationValue:(NSString * _Nonnull)orientationValue complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)lightingFreqConfig:(NSString * _Nonnull)deviceId freqValue:(NSInteger)freqValue complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)microphoneSetting:(NSString * _Nonnull)deviceId micEnable:(NSString * _Nonnull)micEnable speakerVolume:(NSString * _Nonnull)speakerVolume complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
@@ -317,6 +318,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJSettingsMa
 - (void)autoTrackConfig:(NSString * _Nonnull)deviceId toggle:(NSString * _Nonnull)toggle complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)autoHibernateConfig:(NSString * _Nonnull)deviceId enable:(NSString * _Nonnull)enable wholeDayEnable:(NSString * _Nonnull)wholeDayEnable wholeStartTime:(NSString * _Nonnull)wholeStartTime wholeEndTime:(NSString * _Nonnull)wholeEndTime wholeWeekDays:(NSArray<NSString *> * _Nonnull)wholeWeekDays enable1:(NSString * _Nonnull)enable1 startTime1:(NSString * _Nonnull)startTime1 endTime1:(NSString * _Nonnull)endTime1 weekDays1:(NSArray<NSString *> * _Nonnull)weekDays1 enable2:(NSString * _Nonnull)enable2 startTime2:(NSString * _Nonnull)startTime2 endTime2:(NSString * _Nonnull)endTime2 weekDays2:(NSArray<NSString *> * _Nonnull)weekDays2 complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)privateRegionConfig:(NSString * _Nonnull)deviceId enable:(NSString * _Nonnull)enable areas:(NSArray<NSString *> * _Nullable)areas complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)nightVisionConfig:(NSString * _Nonnull)deviceId nightMode:(NSString * _Nonnull)nightMode colorWhenOff:(NSString * _Nonnull)colorWhenOff complete:(void (^ _Nonnull)(ErrorModel * _Nullable))complete;
 - (void)localAccountConfigWithDeviceId:(NSString * _Nonnull)deviceId username:(NSString * _Nonnull)username password:(NSString * _Nonnull)password complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)rtspConfigWithDeviceId:(NSString * _Nonnull)deviceId port:(NSString * _Nonnull)port complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)onvifConfigWithDeviceId:(NSString * _Nonnull)deviceId enable:(NSString * _Nonnull)enable port:(NSString * _Nonnull)port verify:(NSString * _Nonnull)verify complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
@@ -1191,6 +1193,7 @@ SWIFT_CLASS("_TtC9AJLibrary18DiscoverDeviceItem")
 @end
 
 
+enum OrderType : NSInteger;
 
 SWIFT_CLASS("_TtC9AJLibrary13EMCNetManager")
 @interface EMCNetManager : BaseNetManager
@@ -1218,6 +1221,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) EMCNetManage
 /// \param complete complete
 ///
 - (void)fetchAlarmList:(NSString * _Nonnull)deviceId accessKey:(NSString * _Nonnull)accessKey tzValue:(NSString * _Nonnull)tzValue today:(NSInteger)today todayFirst:(NSInteger)todayFirst ctime:(NSInteger)ctime cdate:(NSString * _Nonnull)cdate limit:(NSInteger)limit complete:(void (^ _Nonnull)(AlarmListModel * _Nullable, ErrorModel * _Nullable))complete;
+/// 设置推送设置
+/// \param cameraSimples cameraSimples
+///
+/// \param complete complete
+///
+- (void)pushSetting:(NSString * _Nonnull)deviceId aliasName:(NSString * _Nonnull)aliasName devEmcUrl:(NSString * _Nonnull)devEmcUrl orderType:(enum OrderType)orderType clearPushToken:(BOOL)clearPushToken complete:(void (^ _Nonnull)(SuccessResultModel * _Nullable, ErrorModel * _Nullable))complete;
 /// 消息删除
 /// \param deviceId deviceId
 ///
@@ -1572,6 +1581,11 @@ SWIFT_CLASS("_TtC9AJLibrary10OrderModel")
 @interface OrderModel : ResultModel
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+typedef SWIFT_ENUM(NSInteger, OrderType, open) {
+  OrderTypeUpsert = 1,
+  OrderTypeRemove = 2,
+};
 
 
 SWIFT_CLASS("_TtC9AJLibrary11OrdersModel")
@@ -2095,11 +2109,11 @@ SWIFT_CLASS("_TtC9AJLibrary12UIIconButton")
 
 
 
-
 @interface UIImage (SWIFT_EXTENSION(AJLibrary))
 + (UIImage * _Nullable)mixed_imageNamed:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)static_sdkimage:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 /// 图片在上文字在下

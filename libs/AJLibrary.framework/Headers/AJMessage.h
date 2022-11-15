@@ -14,6 +14,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef enum : NSUInteger {
+    PushSettingTypeUpsert,
+    PushSettingTypeRemove
+} PushSettingType;
+
 @interface AJMessage : NSObject
 
 /**
@@ -86,6 +91,24 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)startAlertView:(NSString *)deviceId
                   date:(NSString *)date;
+
+
+/// 推送配置
+/// @param deviceId 设备ID
+/// @param aliasName 推送通知设备名称
+/// @param devEmcUrl 设备接入 devEmcUrl 地址
+/// @param settingType 推送配置方式 PushSettingTypeUpsert - 更新，PushSettingTypeRemove - 移除
+/// @param clearPushToken 分享设备的退出登录操作和关闭推送开关操作，传 OrderTypeUpsert 并且 clearPushToken  为 YES
+/// @param success success
+/// @param failure failure
+- (void)pushSetting:(NSString *)deviceId
+          aliasName:(NSString *)aliasName
+          devEmcUrl:(NSString *)devEmcUrl
+          orderType:(PushSettingType)settingType
+     clearPushToken:(BOOL)clearPushToken
+            success:(nullable void (^)(void))success
+            failure:(nullable void (^)(AJError *))failure;
+
 
 @end
 

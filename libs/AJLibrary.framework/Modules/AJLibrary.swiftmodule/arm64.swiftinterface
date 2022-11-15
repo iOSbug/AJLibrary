@@ -841,6 +841,7 @@ public var DiagnoseTableRowHeight: CoreGraphics.CGFloat
   @objc public func changeAliasName(_ deviceId: Swift.String, aliasName: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func setAliasName(_ deviceId: Swift.String, aliasName: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func firmwareUpgrade(_ deviceId: Swift.String, version: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func removeDevice(_ deviceId: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func orientationSetting(_ deviceId: Swift.String, orientationValue: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func lightingFreqConfig(_ deviceId: Swift.String, freqValue: Swift.Int, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func microphoneSetting(_ deviceId: Swift.String, micEnable: Swift.String, speakerVolume: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
@@ -848,6 +849,7 @@ public var DiagnoseTableRowHeight: CoreGraphics.CGFloat
   @objc public func autoTrackConfig(_ deviceId: Swift.String, toggle: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func autoHibernateConfig(_ deviceId: Swift.String, enable: Swift.String, wholeDayEnable: Swift.String, wholeStartTime: Swift.String, wholeEndTime: Swift.String, wholeWeekDays: [Swift.String], enable1: Swift.String, startTime1: Swift.String, endTime1: Swift.String, weekDays1: [Swift.String], enable2: Swift.String, startTime2: Swift.String, endTime2: Swift.String, weekDays2: [Swift.String], complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func privateRegionConfig(_ deviceId: Swift.String, enable: Swift.String, areas: [Swift.String]?, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func nightVisionConfig(_ deviceId: Swift.String, nightMode: Swift.String, colorWhenOff: Swift.String, complete: @escaping (AJLibrary.ErrorModel?) -> Swift.Void)
   @objc public func localAccountConfig(deviceId: Swift.String, username: Swift.String, password: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func rtspConfig(deviceId: Swift.String, port: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func onvifConfig(deviceId: Swift.String, enable: Swift.String, port: Swift.String, verify: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
@@ -2835,12 +2837,12 @@ extension AVKit.AVPlayerViewController {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-public enum OrderType {
-  case upsert
-  case remove
-  public static func == (a: AJLibrary.OrderType, b: AJLibrary.OrderType) -> Swift.Bool
-  public func hash(into hasher: inout Swift.Hasher)
-  public var hashValue: Swift.Int {
+@objc public enum OrderType : Swift.Int {
+  case upsert = 1
+  case remove = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
     get
   }
 }
@@ -2850,7 +2852,7 @@ public enum OrderType {
   public func fetchFeedLogs(_ deviceId: Swift.String, ctime: Swift.String, limit: ObjectiveC.NSInteger, complete: @escaping (AJLibrary.feedLogsModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   @objc public func fetchAlarmList(_ deviceId: Swift.String, accessKey: Swift.String, tzValue: Swift.String, today: ObjectiveC.NSInteger, todayFirst: ObjectiveC.NSInteger, ctime: ObjectiveC.NSInteger, cdate: Swift.String, limit: ObjectiveC.NSInteger, complete: @escaping (AJLibrary.AlarmListModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   public func removeShareRel(_ deviceId: Swift.String, slaveUid: Swift.String, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
-  public func pushSetting(_ deviceId: Swift.String, aliasName: Swift.String, devEmcUrl: Swift.String, orderType: AJLibrary.OrderType, clearPushToken: Swift.Bool = false, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc public func pushSetting(_ deviceId: Swift.String, aliasName: Swift.String, devEmcUrl: Swift.String, orderType: AJLibrary.OrderType, clearPushToken: Swift.Bool = false, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   @objc public func deleteAlarmsMessage(_ deviceId: Swift.String, accessKey: Swift.String, cdate: Swift.String, ctss: [Swift.String], devTzName: Swift.String, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   @objc deinit
 }
