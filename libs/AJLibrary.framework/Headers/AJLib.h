@@ -47,6 +47,8 @@
 #import <AJLibrary/AJAlertsCalendarModel.h>
 #import <AJLibrary/AJAlertsListModel.h>
 #import <AJLibrary/AJCloudStorageModel.h>
+#import <AJLibrary/AJAlarmListModel.h>
+#import <AJLibrary/AJCloudStorageDeleteModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -56,6 +58,12 @@ NS_ASSUME_NONNULL_BEGIN
 *    单例
 */
 + (instancetype)shared;
+
+///用户是否已登录
+@property(nonatomic,readonly) BOOL isLogin;
+
+///当前用户的账号信息，登录时的account
+@property(nonatomic,strong,readonly)NSString *userAccount;
 
 
 /**

@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AJError.h"
+#import "AJDiagnoseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -480,6 +481,9 @@ NS_ASSUME_NONNULL_BEGIN
         success:(nullable void (^)(void))success
         failure:(nullable void (^)(AJError *))failure;
 
+
+/// 加载诊断服务器地址
+- (NSArray<AJDiagnoseModel *>*)loadDiagnoseServiceUrls;
 
 @end
 

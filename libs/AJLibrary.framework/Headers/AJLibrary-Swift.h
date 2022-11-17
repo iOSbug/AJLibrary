@@ -260,6 +260,16 @@ SWIFT_CLASS("_TtC9AJLibrary10AJCWebView")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 @end
 
+@class CameraModel;
+
+SWIFT_CLASS("_TtC9AJLibrary13AJDeviceUtils")
+@interface AJDeviceUtils : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJDeviceUtils * _Nonnull shared;)
++ (AJDeviceUtils * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (CameraModel * _Nullable)getDeviceInfoWithDeviceId:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class DiscoverDeviceItem;
 @class ErrorModel;
 
@@ -365,6 +375,22 @@ SWIFT_CLASS_NAMED("AccessNodeModel")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+@class Policy;
+
+SWIFT_CLASS("_TtC9AJLibrary18ActionDetectConfig")
+@interface ActionDetectConfig : ResultModel
+@property (nonatomic) NSInteger clipEndMode;
+@property (nonatomic) NSInteger clipLength;
+@property (nonatomic) BOOL enable;
+@property (nonatomic, copy) NSString * _Nullable expireAt;
+@property (nonatomic) NSInteger retriggerTime;
+@property (nonatomic) float susceptiveness;
+@property (nonatomic) BOOL backupToLocalStor;
+@property (nonatomic) NSInteger respondMode;
+@property (nonatomic, copy) NSArray<Policy *> * _Nullable policies;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC9AJLibrary17ActionDetectModel")
 @interface ActionDetectModel : ResultModel
@@ -411,6 +437,23 @@ SWIFT_CLASS("_TtC9AJLibrary10AlarmModel")
 - (enum AlarmType)alarmType SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)videoUrl SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)alertTimeWithFormatter:(NSString * _Nonnull)formatter SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary14AlarmRekConfig")
+@interface AlarmRekConfig : ResultModel <NSCopying>
+@property (nonatomic) BOOL pnmHumanoid;
+@property (nonatomic) BOOL pnmO1;
+@property (nonatomic) BOOL pnmPackage;
+@property (nonatomic) BOOL pnmPet;
+@property (nonatomic) BOOL pnmVehicle;
+@property (nonatomic) BOOL rekHumanoid;
+@property (nonatomic) BOOL rekPackage;
+@property (nonatomic) BOOL rekPet;
+@property (nonatomic) BOOL rekVehicle;
+@property (nonatomic) BOOL __persistent;
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -476,6 +519,7 @@ SWIFT_CLASS("_TtC9AJLibrary10AppFeature")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class DiagnoseTaskModel;
 
 SWIFT_CLASS("_TtC9AJLibrary8AppUtils")
 @interface AppUtils : NSObject
@@ -492,6 +536,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (void)systemSettingOpen;
 + (void)systemAppSettingOpen;
 + (NSString * _Nonnull)appName SWIFT_WARN_UNUSED_RESULT;
++ (NSArray<DiagnoseTaskModel *> * _Nonnull)loadDiagnoseUrls SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -526,6 +571,22 @@ SWIFT_CLASS("_TtC9AJLibrary18AttributeLabelView")
 - (BOOL)textView:(UITextView * _Nonnull)textView shouldInteractWithURL:(NSURL * _Nonnull)URL inRange:(NSRange)characterRange SWIFT_WARN_UNUSED_RESULT;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer * _Nullable)textContainer SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary11AudioConfig")
+@interface AudioConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable micEnable;
+@property (nonatomic, copy) NSString * _Nullable speakerVolume;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary19AutoHibernateConfig")
+@interface AutoHibernateConfig : ResultModel
+@property (nonatomic) BOOL enable;
+@property (nonatomic, copy) NSArray<Policy *> * _Nullable timePolicies;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -579,12 +640,35 @@ enum CameraStatus : NSInteger;
 
 SWIFT_CLASS("_TtC9AJLibrary11BaseSetting")
 @interface BaseSetting : ResultModel
+@property (nonatomic, copy) NSString * _Nullable whiteBalance;
+@property (nonatomic, copy) NSString * _Nullable freqValue;
+@property (nonatomic, copy) NSString * _Nullable nightMode;
 @property (nonatomic, copy) NSString * _Nonnull lightMode;
+@property (nonatomic, copy) NSString * _Nullable orientationValue;
 @property (nonatomic, copy) NSString * _Nullable aliasName;
 @property (nonatomic, copy) NSString * _Nullable deviceId;
 @property (nonatomic, copy) NSString * _Nullable deviceMode;
+@property (nonatomic, copy) NSString * _Nullable fwVersion;
+@property (nonatomic, copy) NSString * _Nullable newFwVersion;
+@property (nonatomic, copy) NSString * _Nullable onlineModified;
 @property (nonatomic) NSInteger onlineStatus;
+@property (nonatomic, copy) NSString * _Nullable remoteAddr;
+@property (nonatomic, copy) NSString * _Nullable tunnelSyncTime;
+@property (nonatomic, copy) NSString * _Nullable vendorCode;
+@property (nonatomic, copy) NSString * _Nullable snapshotTs;
+@property (nonatomic, copy) NSString * _Nullable snapshotUrl;
+@property (nonatomic, copy) NSString * _Nullable accessKey;
+@property (nonatomic) NSInteger batteryCapacity;
+@property (nonatomic) NSInteger wifiSignal;
+@property (nonatomic, copy) NSString * _Nullable batteryCapacityTs;
+@property (nonatomic, copy) NSString * _Nullable channelId;
+@property (nonatomic, copy) NSString * _Nullable chargeStatusTs;
+@property (nonatomic, copy) NSString * _Nullable wifiSignalTs;
+@property (nonatomic, copy) NSString * _Nullable lastPingTime;
 @property (nonatomic, copy) NSString * _Nullable masterUid;
+@property (nonatomic, copy) NSString * _Nullable continent;
+@property (nonatomic, copy) NSString * _Nullable country;
+@property (nonatomic) NSInteger deviceType;
 @property (nonatomic, copy) NSString * _Nullable prodName;
 @property (nonatomic, readonly) enum CameraStatus status;
 - (BOOL)isCharging SWIFT_WARN_UNUSED_RESULT;
@@ -621,6 +705,15 @@ SWIFT_CLASS("_TtC9AJLibrary29BatteryCloudSetViewController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC9AJLibrary13BatteryConfig")
+@interface BatteryConfig : ResultModel
+@property (nonatomic) NSInteger capacity;
+@property (nonatomic) NSInteger charge;
+@property (nonatomic) NSInteger quantity;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 typedef SWIFT_ENUM(NSInteger, BindStatus, open) {
   BindStatusSuccess = 0,
   BindStatusBinding = 1,
@@ -650,7 +743,6 @@ SWIFT_CLASS("_TtC9AJLibrary15CameraInfoModel")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class CameraModel;
 @class ConDeviceModel;
 
 SWIFT_CLASS("_TtC9AJLibrary16CameraInfomation")
@@ -663,20 +755,79 @@ SWIFT_CLASS("_TtC9AJLibrary16CameraInfomation")
 @end
 
 @class WCapability;
+@class StreamConfig;
+@class LivePolicy;
+@class LocalAccountConfig;
+@class NetworkConfig;
+@class ViewAnglesConfig;
 @class LocalStorConfig;
+@class MonitorConfig;
+@class MotionDetectConfig;
+@class CloudStorConfig;
+@class CloudStorPlan;
+@class PictureConfig;
+@class TimeConfig;
+@class TfCardConfig;
+@class IndicatorLightConfig;
+@class OnvifConfig;
+@class NewFwversionModel;
+@class LightingFreqConfig;
+@class HibernateConfig;
+@class PelcoConfig;
+@class DetectionsConfig;
+@class RtspConfig;
+@class PirConfig;
 @class FloodlightConfig;
+@class SirenConfig;
+@class ProtectionPlan;
 @class feedTimingConfig;
 @class feedConfig;
+@class PrivateRegionConfig;
+@class NightVisionConfig;
+@class TrackConfig;
 @class UIImage;
 
 SWIFT_CLASS("_TtC9AJLibrary11CameraModel")
 @interface CameraModel : ResultModel
+@property (nonatomic, strong) AutoHibernateConfig * _Nullable autoHibernateConfig;
 @property (nonatomic, strong) BaseSetting * _Nullable base;
 @property (nonatomic, strong) WCapability * _Nullable capability;
+@property (nonatomic, strong) StreamConfig * _Nullable streamConfig;
+@property (nonatomic, strong) LivePolicy * _Nullable livePolicy;
+@property (nonatomic, strong) LocalAccountConfig * _Nullable localAccountConfig;
+@property (nonatomic, strong) NetworkConfig * _Nullable networkConfig;
+@property (nonatomic, strong) ViewAnglesConfig * _Nullable viewAnglesConfig;
 @property (nonatomic, strong) LocalStorConfig * _Nullable localStorConfig;
+@property (nonatomic, strong) MonitorConfig * _Nullable moveMonitorConfig;
+@property (nonatomic, strong) MotionDetectConfig * _Nullable motionDetectConfig;
+@property (nonatomic, strong) MonitorConfig * _Nullable soundMonitorConfig;
+@property (nonatomic, strong) CloudStorConfig * _Nullable cloudStorConfig;
+@property (nonatomic, strong) CloudStorPlan * _Nullable cloudStorPlan;
+@property (nonatomic, strong) AudioConfig * _Nullable audioConfig;
+@property (nonatomic, strong) PictureConfig * _Nullable pictureConfig;
+@property (nonatomic, strong) TimeConfig * _Nullable timeConfig;
+@property (nonatomic, strong) TfCardConfig * _Nullable tfcardConfig;
+@property (nonatomic, strong) IndicatorLightConfig * _Nullable indicatorLightConfig;
+@property (nonatomic, strong) OnvifConfig * _Nullable onvifConfig;
+@property (nonatomic, strong) NewFwversionModel * _Nullable newFwversion;
+@property (nonatomic, strong) ActionDetectConfig * _Nullable actionDetectConfig;
+@property (nonatomic, strong) LightingFreqConfig * _Nullable lightingFreqConfig;
+@property (nonatomic, strong) HibernateConfig * _Nullable hibernateConfig;
+@property (nonatomic, strong) PelcoConfig * _Nullable pelcoConfig;
+@property (nonatomic, strong) DetectionsConfig * _Nullable detectionsConfig;
+@property (nonatomic, strong) RtspConfig * _Nullable rtspConfig;
+@property (nonatomic, strong) BatteryConfig * _Nullable batteryConfig;
+@property (nonatomic, strong) PirConfig * _Nullable pirConfig;
 @property (nonatomic, strong) FloodlightConfig * _Nullable floodlightConfig;
+@property (nonatomic, strong) SirenConfig * _Nullable sirenConfig;
+@property (nonatomic, strong) ProtectionPlan * _Nullable protectionPlan;
 @property (nonatomic, strong) feedTimingConfig * _Nullable feedTimingConfig;
 @property (nonatomic, strong) feedConfig * _Nullable feedConfig;
+@property (nonatomic, strong) PrivateRegionConfig * _Nullable privateRegionConfig;
+@property (nonatomic, strong) NightVisionConfig * _Nullable nightVisionConfig;
+@property (nonatomic, strong) NightVisionConfig * _Nullable nightVision2Config;
+@property (nonatomic, strong) TrackConfig * _Nullable trackConfig;
+@property (nonatomic, strong) AlarmRekConfig * _Nullable alarmRekConfig;
 - (BOOL)isCloudEnable SWIFT_WARN_UNUSED_RESULT;
 - (UIImage * _Nullable)playerNetworkImage SWIFT_WARN_UNUSED_RESULT;
 - (UIImage * _Nullable)homeWifiSignalImage SWIFT_WARN_UNUSED_RESULT;
@@ -908,6 +1059,33 @@ SWIFT_CLASS("_TtC9AJLibrary17CloudStorActivity")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary15CloudStorConfig")
+@interface CloudStorConfig : ResultModel
+@property (nonatomic) BOOL enable;
+@property (nonatomic, copy) NSString * _Nullable quality;
+@property (nonatomic) NSInteger ecoRecordDurationLimit;
+@property (nonatomic, copy) NSArray<Policy *> * _Nullable policies;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary13CloudStorPlan")
+@interface CloudStorPlan : ResultModel
+@property (nonatomic, copy) NSString * _Nullable sku;
+@property (nonatomic, copy) NSString * _Nullable level;
+@property (nonatomic, copy) NSString * _Nullable validTsStart;
+@property (nonatomic, copy) NSString * _Nullable validTsEnd;
+@property (nonatomic, copy) NSString * _Nullable keepDays;
+@property (nonatomic) BOOL alarmVideo;
+@property (nonatomic) BOOL fullDay;
+@property (nonatomic, copy) NSString * _Nullable lastStoreTs;
+@property (nonatomic, copy) NSString * _Nullable expireViewAt;
+@property (nonatomic, copy) NSString * _Nullable uid;
+@property (nonatomic, copy) NSString * _Nullable orderId;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary21CloudStorageDeleModel")
 @interface CloudStorageDeleModel : ResultModel
 @property (nonatomic, copy) NSString * _Nullable groupId;
@@ -1061,6 +1239,13 @@ SWIFT_CLASS("_TtC9AJLibrary14DetectionShare")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary16DetectionsConfig")
+@interface DetectionsConfig : ResultModel
+@property (nonatomic, strong) DetectionShare * _Nullable share;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary28DetectiveLightViewController")
 @interface DetectiveLightViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, copy) NSString * _Nonnull deviceId;
@@ -1163,6 +1348,27 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary20DiagnoseServiceModel")
+@interface DiagnoseServiceModel : ResultModel
+@property (nonatomic, copy) NSString * _Nonnull serviceUrl;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary17DiagnoseTaskModel")
+@interface DiagnoseTaskModel : ResultModel
+@property (nonatomic, copy) NSArray<DiagnoseServiceModel *> * _Nonnull services;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary18DiagnoseTasksModel")
+@interface DiagnoseTasksModel : ResultModel
+@property (nonatomic, copy) NSArray<DiagnoseTaskModel *> * _Nonnull diagnoseServices;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1362,6 +1568,7 @@ SWIFT_CLASS("_TtC9AJLibrary11GroupsModel")
 
 SWIFT_CLASS("_TtC9AJLibrary15HibernateConfig")
 @interface HibernateConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable enable;
 - (BOOL)isOn SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1392,6 +1599,13 @@ SWIFT_CLASS("_TtC9AJLibrary20ImageDownloadManager")
 SWIFT_CLASS("_TtC9AJLibrary14ImageTypeUtils")
 @interface ImageTypeUtils : NSObject
 + (UIImage * _Nullable)objcDeviceIconImage:(NSString * _Nonnull)productName SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary20IndicatorLightConfig")
+@interface IndicatorLightConfig : ResultModel
+@property (nonatomic) BOOL enable;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1446,14 +1660,39 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) LanguageMana
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary18LightingFreqConfig")
+@interface LightingFreqConfig : ResultModel
+@property (nonatomic) NSInteger freqValue;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary17LightingFreqModel")
 @interface LightingFreqModel : ResultModel
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary10LivePolicy")
+@interface LivePolicy : ResultModel
+@property (nonatomic, copy) NSString * _Nullable p2p;
+@property (nonatomic, copy) NSString * _Nullable relay;
+@property (nonatomic, copy) NSString * _Nullable rtmp;
+@property (nonatomic, copy) NSString * _Nullable upnp;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary12LiveSecToken")
 @interface LiveSecToken : ResultModel
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary18LocalAccountConfig")
+@interface LocalAccountConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable username;
+@property (nonatomic, copy) NSString * _Nullable password;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1475,6 +1714,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) LocalFileManager * _No
 
 SWIFT_CLASS("_TtC9AJLibrary15LocalStorConfig")
 @interface LocalStorConfig : ResultModel
+@property (nonatomic) BOOL enable;
+@property (nonatomic, copy) NSString * _Nullable storageType;
+@property (nonatomic, copy) NSString * _Nullable writeMode;
+@property (nonatomic, copy) NSString * _Nullable triggerMode;
+@property (nonatomic, copy) NSString * _Nullable nasPath;
+@property (nonatomic, copy) NSString * _Nullable playUrlRoot;
+@property (nonatomic, copy) NSArray<Policy *> * _Nullable policies;
+@property (nonatomic, copy) NSString * _Nullable quality;
+@property (nonatomic) NSInteger ecoRecordDurationLimit;
 @property (nonatomic, copy) NSString * _Nullable remoteTFUrl;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -1529,6 +1777,27 @@ SWIFT_CLASS_NAMED("M3U8Task")
 
 
 
+SWIFT_CLASS("_TtC9AJLibrary13MonitorConfig")
+@interface MonitorConfig : ResultModel
+@property (nonatomic) BOOL enable;
+@property (nonatomic) NSInteger susceptiveness;
+@property (nonatomic) BOOL genAlarmThumb;
+@property (nonatomic, copy) NSArray<Policy *> * _Nullable policies;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary18MotionDetectConfig")
+@interface MotionDetectConfig : ResultModel <NSCopying>
+@property (nonatomic) NSInteger pirDetectRange;
+@property (nonatomic) NSInteger pirLingerDuration;
+@property (nonatomic) NSInteger retriggerInterval;
+@property (nonatomic) NSInteger susceptiveness;
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary13MultiSdcModel")
 @interface MultiSdcModel : ResultModel
 @property (nonatomic, copy) NSString * _Nullable name;
@@ -1562,6 +1831,41 @@ typedef SWIFT_ENUM(NSInteger, NetConfigurationType, open) {
 };
 
 
+SWIFT_CLASS("_TtC9AJLibrary13NetworkConfig")
+@interface NetworkConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable ethMac;
+@property (nonatomic, copy) NSString * _Nullable localDirectProbeUrl;
+@property (nonatomic, copy) NSString * _Nullable localIp;
+@property (nonatomic, copy) NSString * _Nullable localIpMask;
+@property (nonatomic, copy) NSString * _Nullable wanIp;
+@property (nonatomic, copy) NSString * _Nullable wlanMac;
+@property (nonatomic, copy) NSString * _Nullable ssid;
+@property (nonatomic, copy) NSString * _Nullable netLinkType;
+@property (nonatomic) NSInteger wifiSignal;
+@property (nonatomic) NSInteger wifiRssi;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary17NewFwversionModel")
+@interface NewFwversionModel : ResultModel
+@property (nonatomic, copy) NSString * _Nullable version;
+@property (nonatomic, copy) NSString * _Nullable priority;
+@property (nonatomic, copy) NSString * _Nullable downloadUrl;
+@property (nonatomic, copy) NSString * _Nullable releaseNoteUrl;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary17NightVisionConfig")
+@interface NightVisionConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable nightMode;
+@property (nonatomic, copy) NSString * _Nullable colorWhenOff;
+@property (nonatomic, copy) NSString * _Nullable ledMode;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS_NAMED("OauthModel")
 @interface OauthModel : ResultModel <NSCoding>
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1573,6 +1877,15 @@ SWIFT_CLASS_NAMED("OauthModel")
 
 SWIFT_CLASS("_TtC9AJLibrary10ObjUIAdapt")
 @interface ObjUIAdapt : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary11OnvifConfig")
+@interface OnvifConfig : ResultModel
+@property (nonatomic) BOOL enable;
+@property (nonatomic, copy) NSString * _Nullable port;
+@property (nonatomic) BOOL verify;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1597,6 +1910,34 @@ SWIFT_CLASS("_TtC9AJLibrary11OrdersModel")
 - (OrderModel * _Nullable)orderForDevice:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)haveTrial SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isShowExperienceTips SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary11PelcoConfig")
+@interface PelcoConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable baudRate;
+@property (nonatomic, copy) NSString * _Nullable protocol;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary13PictureConfig")
+@interface PictureConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable brightness;
+@property (nonatomic, copy) NSString * _Nullable contrast;
+@property (nonatomic, copy) NSString * _Nullable saturation;
+@property (nonatomic, copy) NSString * _Nullable sharpness;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary9PirConfig")
+@interface PirConfig : ResultModel <NSCopying>
+@property (nonatomic) NSInteger lingerDuration;
+@property (nonatomic) NSInteger detectionRange;
+@property (nonatomic, copy) NSString * _Nullable level;
+- (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1710,8 +2051,47 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PlayViewDataManager * 
 
 SWIFT_CLASS("_TtC9AJLibrary6Policy")
 @interface Policy : ResultModel <NSCopying>
+@property (nonatomic, copy) NSString * _Nullable no;
+@property (nonatomic) BOOL enable;
+@property (nonatomic, copy) NSString * _Nullable format;
+@property (nonatomic, copy) NSString * _Nullable quality;
+@property (nonatomic, copy) NSString * _Nullable startTime;
+@property (nonatomic, copy) NSString * _Nullable endTime;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable weekDays;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (id _Nonnull)copyWithZone:(struct _NSZone * _Nullable)zone SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary19PrivateRegionConfig")
+@interface PrivateRegionConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable coverMode;
+@property (nonatomic) BOOL enable;
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic, copy) NSArray<NSString *> * _Nonnull areas;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary14ProtectionPlan")
+@interface ProtectionPlan : ResultModel
+@property (nonatomic) BOOL alarmVideo;
+@property (nonatomic, copy) NSString * _Nullable buyerId;
+@property (nonatomic, copy) NSString * _Nullable cloudStorFullDay;
+@property (nonatomic, copy) NSString * _Nullable expireViewAt;
+@property (nonatomic) BOOL fullDay;
+@property (nonatomic) BOOL genAlarmThumb;
+@property (nonatomic, copy) NSString * _Nullable keepDays;
+@property (nonatomic, copy) NSString * _Nullable lastStoreTs;
+@property (nonatomic, copy) NSString * _Nullable level;
+@property (nonatomic, copy) NSString * _Nullable limitDevices;
+@property (nonatomic) BOOL localStorFullDay;
+@property (nonatomic, copy) NSString * _Nullable orderId;
+@property (nonatomic, copy) NSString * _Nullable sku;
+@property (nonatomic, copy) NSString * _Nullable validTsEnd;
+@property (nonatomic, copy) NSString * _Nullable validTsStart;
+@property (nonatomic) BOOL alarmRek;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1728,6 +2108,15 @@ SWIFT_CLASS("_TtC9AJLibrary12QualityModel")
 
 SWIFT_CLASS("_TtC9AJLibrary19RscUploadTokenModel")
 @interface RscUploadTokenModel : ResultModel
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary10RtspConfig")
+@interface RtspConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable enable;
+@property (nonatomic) NSInteger port;
+@property (nonatomic, copy) NSString * _Nullable verify;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1769,6 +2158,14 @@ SWIFT_CLASS("_TtC9AJLibrary20ShareUserInviteModel")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary11SirenConfig")
+@interface SirenConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nonnull toggle;
+@property (nonatomic, strong) AutoPolicy * _Nullable autoPolicy;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary22SnapshotUrlReauthModel")
 @interface SnapshotUrlReauthModel : ResultModel
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1788,6 +2185,27 @@ SWIFT_CLASS_NAMED("StartUpModel")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary6Stream")
+@interface Stream : ResultModel
+@property (nonatomic, copy) NSString * _Nullable bitRate;
+@property (nonatomic, copy) NSString * _Nullable frameRate;
+@property (nonatomic, copy) NSString * _Nullable localUrl;
+@property (nonatomic, copy) NSString * _Nullable no;
+@property (nonatomic, copy) NSString * _Nonnull quality;
+@property (nonatomic, copy) NSString * _Nullable resHeight;
+@property (nonatomic, copy) NSString * _Nullable resWidth;
+@property (nonatomic, copy) NSString * _Nullable wanUrl;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary12StreamConfig")
+@interface StreamConfig : ResultModel
+@property (nonatomic, copy) NSArray<Stream *> * _Nullable streams;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1849,6 +2267,34 @@ SWIFT_CLASS_NAMED("TaskModel")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary12TfCardConfig")
+@interface TfCardConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable status;
+@property (nonatomic, copy) NSString * _Nullable label;
+@property (nonatomic, copy) NSString * _Nullable serialNo;
+@property (nonatomic, copy) NSString * _Nullable manufacturerId;
+@property (nonatomic, copy) NSString * _Nullable manufactureDate;
+@property (nonatomic, copy) NSString * _Nullable oemId;
+@property (nonatomic, copy) NSString * _Nullable hwReversion;
+@property (nonatomic, copy) NSString * _Nullable fwReversion;
+@property (nonatomic, copy) NSString * _Nullable capacityBytes;
+@property (nonatomic, copy) NSString * _Nullable freespaceBytes;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary10TimeConfig")
+@interface TimeConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable tzName;
+@property (nonatomic, copy) NSString * _Nullable tzValue;
+@property (nonatomic, copy) NSString * _Nullable dst;
+@property (nonatomic, copy) NSString * _Nullable tzGmt;
+@property (nonatomic, copy) NSString * _Nullable tzUtc;
+@property (nonatomic, copy) NSString * _Nullable tzString;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary15TimeConfigModel")
 @interface TimeConfigModel : ResultModel
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1906,6 +2352,13 @@ SWIFT_CLASS("_TtC9AJLibrary5Toast")
 + (void)showMessageHud:(NSString * _Nullable)message :(UIView * _Nullable)view;
 + (void)hideHud;
 + (void)hideHud:(UIView * _Nullable)view;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary11TrackConfig")
+@interface TrackConfig : ResultModel
+@property (nonatomic, copy) NSString * _Nullable toggle;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2213,6 +2666,13 @@ SWIFT_CLASS("_TtC9AJLibrary9ViewAngle")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary16ViewAnglesConfig")
+@interface ViewAnglesConfig : ResultModel
+@property (nonatomic, copy) NSArray<ViewAngle *> * _Nullable viewAngles;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary13ViewCloudView")
 @interface ViewCloudView : UIView
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -2223,7 +2683,53 @@ SWIFT_CLASS("_TtC9AJLibrary13ViewCloudView")
 
 SWIFT_CLASS("_TtC9AJLibrary11WCapability")
 @interface WCapability : ResultModel
+@property (nonatomic, copy) NSString * _Nullable audioSample;
+@property (nonatomic) BOOL autoTrack;
+@property (nonatomic, copy) NSString * _Nullable battery;
+@property (nonatomic, copy) NSString * _Nullable diagnose;
+@property (nonatomic, copy) NSString * _Nullable duplexVoice;
+@property (nonatomic, copy) NSString * _Nullable encryptMode;
+@property (nonatomic, copy) NSString * _Nullable localStorRmt;
+@property (nonatomic, copy) NSString * _Nullable localStorageTypes;
+@property (nonatomic, copy) NSString * _Nullable networkConfig;
+@property (nonatomic, copy) NSString * _Nullable pirDetect;
+@property (nonatomic, copy) NSString * _Nullable ptz;
+@property (nonatomic, copy) NSString * _Nullable cognitiveTypes;
+@property (nonatomic, copy) NSString * _Nullable whiteLightCtl;
+@property (nonatomic, copy) NSString * _Nullable opticalZoom;
+@property (nonatomic, copy) NSString * _Nullable variFocus;
+@property (nonatomic, copy) NSString * _Nullable qualities;
+@property (nonatomic, copy) NSString * _Nullable streams;
+@property (nonatomic, copy) NSString * _Nullable voiceDetect;
+@property (nonatomic, copy) NSString * _Nullable privLiveStream;
+@property (nonatomic) BOOL onvif;
+@property (nonatomic) BOOL mic;
+@property (nonatomic) BOOL speaker;
+@property (nonatomic) BOOL indicatorLightCtl;
+@property (nonatomic) BOOL hibernate;
+@property (nonatomic) BOOL wlanOnlineSet;
+@property (nonatomic) BOOL pelco;
+@property (nonatomic) BOOL newtz;
+@property (nonatomic, copy) NSString * _Nullable pirDetectionRanges;
+@property (nonatomic) BOOL localRtsp;
+@property (nonatomic) BOOL detectEnhance;
+@property (nonatomic) BOOL manualNightVersion;
+@property (nonatomic) BOOL floodlight;
+@property (nonatomic) BOOL floodlightBrightCtrl;
+@property (nonatomic) BOOL floodlightTimeCtrl;
+@property (nonatomic) BOOL siren;
+@property (nonatomic) BOOL feeding;
+@property (nonatomic) BOOL genAlarmThumb;
+@property (nonatomic) BOOL localStorFullDay;
+@property (nonatomic) BOOL cloudStorFullDay;
+@property (nonatomic) BOOL privateBase;
+@property (nonatomic) BOOL nightVisionColorCtrl;
 @property (nonatomic) BOOL lowPowerStorage;
+@property (nonatomic) BOOL nightVision2;
+@property (nonatomic) BOOL floodlightNightMode;
+@property (nonatomic) BOOL floodlightTiming;
+@property (nonatomic) BOOL floodlightDual;
+@property (nonatomic) BOOL staticLocalIp;
 - (BOOL)isOldLightDevice SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
