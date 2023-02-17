@@ -494,6 +494,21 @@ SWIFT_CLASS_NAMED("AllyModel")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class AnimationView;
+
+SWIFT_CLASS("_TtC9AJLibrary17AnimationOCHelper")
+@interface AnimationOCHelper : NSObject
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AnimationOCHelper * _Nonnull shared;)
++ (AnimationOCHelper * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
+- (AnimationView * _Nonnull)createAnimationView:(NSString * _Nonnull)name bundle:(NSBundle * _Nonnull)bundle speed:(CGFloat)speed SWIFT_WARN_UNUSED_RESULT;
+- (AnimationView * _Nonnull)createAnimationRepeatCountView:(NSString * _Nonnull)name bundle:(NSBundle * _Nonnull)bundle time:(float)time speed:(CGFloat)speed SWIFT_WARN_UNUSED_RESULT;
+- (void)play:(AnimationView * _Nonnull)animationview;
+- (void)stop:(AnimationView * _Nonnull)animationview;
+- (BOOL)isAnimationPlaying:(AnimationView * _Nonnull)animationview SWIFT_WARN_UNUSED_RESULT;
+- (void)play:(AnimationView * _Nonnull)animationview complete:(void (^ _Nonnull)(BOOL))complete;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class UNNotificationResponse;
 
 SWIFT_CLASS("_TtC9AJLibrary11ApnsManager")
@@ -2562,11 +2577,11 @@ SWIFT_CLASS("_TtC9AJLibrary12UIIconButton")
 
 
 
+
 @interface UIImage (SWIFT_EXTENSION(AJLibrary))
 + (UIImage * _Nullable)mixed_imageNamed:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)static_sdkimage:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 /// 图片在上文字在下

@@ -1957,6 +1957,17 @@ public var orderHistoryTableViewCellIdentifier: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class AnimationOCHelper : ObjectiveC.NSObject {
+  @objc public static var shared: AJLibrary.AnimationOCHelper
+  @objc public func createAnimationView(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, speed: CoreGraphics.CGFloat = 1) -> Lottie.AnimationView
+  @objc public func createAnimationRepeatCountView(_ name: Swift.String, bundle: Foundation.Bundle = Bundle.main, time: Swift.Float, speed: CoreGraphics.CGFloat = 1) -> Lottie.AnimationView
+  @objc public func play(_ animationview: Lottie.AnimationView)
+  @objc public func stop(_ animationview: Lottie.AnimationView)
+  @objc public func isAnimationPlaying(_ animationview: Lottie.AnimationView) -> Swift.Bool
+  @objc public func play(_ animationview: Lottie.AnimationView, complete: @escaping ((Swift.Bool) -> ()))
+  @objc override dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers public class WebCloudUtils : ObjectiveC.NSObject {
   @objc public static var webStartUrl: Swift.String
   @objc public static var webGetUserInfo: Swift.String
@@ -1995,7 +2006,7 @@ public enum RequestResult {
   case failure(AJLibrary.ErrorModel)
 }
 @objc @_inheritsConvenienceInitializers open class AFNetClient : ObjectiveC.NSObject {
-  public var afManager: Alamofire.SessionManager?
+  public var afManager: Alamofire.Session?
   open func send<T>(_ request: T, _ completionHandler: @escaping AJLibrary.CompletionHandler<T>) where T : AJLibrary.NetRequest
   @objc public var isReachableOnWWAN: Swift.Bool {
     @objc get
