@@ -33,7 +33,7 @@ typedef enum{
 
 
 
-@interface PlayViewController : UIViewController
+@interface AJPlayViewController : UIViewController
     
 @property (nonatomic, copy) NSString *cameraId;
 @property (assign, nonatomic) BOOL backNeedDissmiss;

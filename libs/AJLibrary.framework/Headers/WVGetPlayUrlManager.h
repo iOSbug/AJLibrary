@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PlayViewController.h"
+#import "AJPlayViewController.h"
 #import <objc/runtime.h>
 #import "quadPlayer.h"
 #define kGetPlayUrlSuccessKey "GetPlayUrlSuccess"
