@@ -325,6 +325,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJSettingsMa
 - (void)lightingFreqConfig:(NSString * _Nonnull)deviceId freqValue:(NSInteger)freqValue complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)microphoneSetting:(NSString * _Nonnull)deviceId micEnable:(NSString * _Nonnull)micEnable speakerVolume:(NSString * _Nonnull)speakerVolume complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)indicatorLightConfig:(NSString * _Nonnull)deviceId enable:(NSString * _Nonnull)enable complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)unmountTfCard:(NSString * _Nonnull)deviceId label:(NSString * _Nonnull)label complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)autoTrackConfig:(NSString * _Nonnull)deviceId toggle:(NSString * _Nonnull)toggle complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)autoHibernateConfig:(NSString * _Nonnull)deviceId enable:(NSString * _Nonnull)enable wholeDayEnable:(NSString * _Nonnull)wholeDayEnable wholeStartTime:(NSString * _Nonnull)wholeStartTime wholeEndTime:(NSString * _Nonnull)wholeEndTime wholeWeekDays:(NSArray<NSString *> * _Nonnull)wholeWeekDays enable1:(NSString * _Nonnull)enable1 startTime1:(NSString * _Nonnull)startTime1 endTime1:(NSString * _Nonnull)endTime1 weekDays1:(NSArray<NSString *> * _Nonnull)weekDays1 enable2:(NSString * _Nonnull)enable2 startTime2:(NSString * _Nonnull)startTime2 endTime2:(NSString * _Nonnull)endTime2 weekDays2:(NSArray<NSString *> * _Nonnull)weekDays2 complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)privateRegionConfig:(NSString * _Nonnull)deviceId enable:(NSString * _Nonnull)enable areas:(NSArray<NSString *> * _Nullable)areas complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
@@ -758,10 +759,12 @@ SWIFT_CLASS("_TtC9AJLibrary15CameraInfoModel")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class CameraSummaryModel;
 @class ConDeviceModel;
 
 SWIFT_CLASS("_TtC9AJLibrary16CameraInfomation")
 @interface CameraInfomation : NSObject
+@property (nonatomic, strong) CameraSummaryModel * _Nullable summary;
 @property (nonatomic, strong) CameraModel * _Nullable camera;
 @property (nonatomic, strong) ConDeviceModel * _Nullable conDevice;
 @property (nonatomic, strong) OrdersModel * _Nullable orderModel;
@@ -1191,6 +1194,35 @@ SWIFT_CLASS("_TtC9AJLibrary22CloudWebViewController")
 @end
 
 
+/// <h2>the default height is 62 and styles like:</h2>
+/// <h2>icon  Title                >
+/// Comment</h2>
+SWIFT_CLASS("_TtC9AJLibrary11WVTableCell")
+@interface WVTableCell : UITableViewCell
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)awakeFromNib;
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
+- (void)layoutSubviews;
+- (void)valueChanged;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary15WVThinTableCell")
+@interface WVThinTableCell : WVTableCell
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary15CommonTableCell")
+@interface CommonTableCell : WVThinTableCell
+- (void)valueChanged;
+- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary12WVTableGroup")
 @interface WVTableGroup : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1203,8 +1235,21 @@ SWIFT_CLASS("_TtC9AJLibrary16CommonTableGroup")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary11WVTableItem")
+@interface WVTableItem : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary15CommonTableItem")
+@interface CommonTableItem : WVTableItem
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS_NAMED("ConDeviceModel")
 @interface ConDeviceModel : ResultModel <NSSecureCoding>
+@property (nonatomic, copy) NSString * _Nullable aliasName;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureCoding;)
 + (BOOL)supportsSecureCoding SWIFT_WARN_UNUSED_RESULT;
 - (void)encodeWithCoder:(NSCoder * _Nonnull)coder;
@@ -1543,6 +1588,14 @@ SWIFT_CLASS("_TtC9AJLibrary6French")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary13FwUpgradeView")
+@interface FwUpgradeView : UIView
+- (void)dismiss;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary21FwVersionUpgradeModel")
 @interface FwVersionUpgradeModel : ResultModel
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -1719,6 +1772,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) LocalFileManager * _No
 + (void)setShared:(LocalFileManager * _Nonnull)value;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)createLocalPath;
 - (void)removeFile:(NSString * _Nonnull)path;
 - (NSString * _Nonnull)localLogPath SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)objcSaveSnapPath SWIFT_WARN_UNUSED_RESULT;
@@ -1785,11 +1839,19 @@ SWIFT_CLASS_NAMED("M3U8InfoModel")
 
 SWIFT_CLASS_NAMED("M3U8Task")
 @interface M3U8Task : NSObject
+@property (nonatomic) NSError * _Nullable error;
+@property (nonatomic, readonly) float progress;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-+ (M3U8Task * _Nonnull)createTask:(NSString * _Nonnull)taskId deviceId:(NSString * _Nonnull)deviceId aliasName:(NSString * _Nonnull)aliasName intraPicture:(NSString * _Nonnull)intraPicture m3u8Infos:(NSArray<M3U8InfoModel *> * _Nonnull)m3u8Infos progress:(float)progress SWIFT_WARN_UNUSED_RESULT;
++ (M3U8Task * _Nonnull)createTask:(NSString * _Nonnull)taskId deviceId:(NSString * _Nonnull)deviceId aliasName:(NSString * _Nonnull)aliasName intraPicture:(NSString * _Nonnull)intraPicture downloadPath:(NSString * _Nullable)downloadPath m3u8Infos:(NSArray<M3U8InfoModel *> * _Nonnull)m3u8Infos progress:(float)progress SWIFT_WARN_UNUSED_RESULT;
 @end
 
+
+@interface M3U8Task (SWIFT_EXTENSION(AJLibrary))
+- (nonnull instancetype)progress:(void (^ _Nonnull)(M3U8Task * _Nonnull))handler;
+- (nonnull instancetype)success:(void (^ _Nonnull)(M3U8Task * _Nonnull))handler;
+- (nonnull instancetype)failure:(void (^ _Nonnull)(M3U8Task * _Nonnull))handler;
+@end
 
 
 SWIFT_CLASS("_TtC9AJLibrary13MonitorConfig")
@@ -2806,20 +2868,6 @@ SWIFT_CLASS("_TtC9AJLibrary6WVFont")
 @end
 
 
-/// <h2>the default height is 62 and styles like:</h2>
-/// <h2>icon  Title                >
-/// Comment</h2>
-SWIFT_CLASS("_TtC9AJLibrary11WVTableCell")
-@interface WVTableCell : UITableViewCell
-- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)awakeFromNib;
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated;
-- (void)layoutSubviews;
-- (void)valueChanged;
-@end
-
-
 /// <h2>the default height is 22 and styles like:</h2>
 /// \code
 ///   title        comment >
@@ -2834,17 +2882,6 @@ SWIFT_CLASS("_TtC9AJLibrary14WVSubTableCell")
 
 
 
-SWIFT_CLASS("_TtC9AJLibrary11WVTableItem")
-@interface WVTableItem : NSObject
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
-
-SWIFT_CLASS("_TtC9AJLibrary15WVThinTableCell")
-@interface WVThinTableCell : WVTableCell
-- (nonnull instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString * _Nullable)reuseIdentifier OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
 
 @class WebParams;
 

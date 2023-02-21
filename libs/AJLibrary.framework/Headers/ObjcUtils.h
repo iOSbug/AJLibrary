@@ -138,4 +138,7 @@ extern const MJEncryptStringData * const wxAjcloudTenBridge;
 +(NSDate *)dateBeforeCurrentDateDay:(NSInteger)day offset:(NSInteger)mins;
 + (NSString *)resolutionDisplayNameWithQualityNum:(NSString *)QualityNum;
 + (void)postNotificationSaveToAlbumFilePath:(NSString *)filePath;
+
++ (NSString *)toTimeStamp:(NSString *)time format:(NSString *)format;
++ (NSString *)toDate:(NSString *)time format:(NSString *)format;
 @end

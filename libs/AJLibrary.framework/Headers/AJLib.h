@@ -40,6 +40,7 @@
 #import <AJLibrary/AJBinder.h>
 #import <AJLibrary/AJDevice.h>
 #import <AJLibrary/AJMessage.h>
+#import <AJLibrary/AJDownload.h>
 #import <AJLibrary/AJSettings.h>
 #import <AJLibrary/AJMediaPlayer.h>
 #import <AJLibrary/AJWifiListModel.h>

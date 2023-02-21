@@ -11,6 +11,7 @@
 #import "AJCloudStorageModel.h"
 #import "AJAlarmListModel.h"
 #import "AJCloudStorageDeleteModel.h"
+#import "AJQualityModel.h"
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN

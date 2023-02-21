@@ -25,15 +25,15 @@ NS_ASSUME_NONNULL_BEGIN
                       success:(nullable void (^)(void))success
                       failure:(nullable void (^)(AJError *))failure;
 
-/// 修改设备别名
+/// 修改UAC服务设备的别名
 /// @param deviceId 设备 ID
 /// @param aliasName 别名
 /// @param success success
 /// @param failure failure
-- (void)changeSharedDeviceAliasName:(NSString *)deviceId
-                          aliasName:(NSString *)aliasName
-                            success:(nullable void (^)(void))success
-                            failure:(nullable void (^)(AJError *))failure;
+- (void)changeUACDeviceAliasName:(NSString *)deviceId
+                       aliasName:(NSString *)aliasName
+                         success:(nullable void (^)(void))success
+                         failure:(nullable void (^)(AJError *))failure;
 
 /// 固件升级
 /// @param deviceId  设备 ID
@@ -205,6 +205,18 @@ NS_ASSUME_NONNULL_BEGIN
              verify:(NSString *)verify
             success:(nullable void (^)(void))success
             failure:(nullable void (^)(AJError *))failure;
+
+
+
+/// 卸载SD卡
+/// @param deviceId 设备 ID
+/// @param label label
+/// @param success success
+/// @param failure failure
+- (void)unmountTfCard:(NSString *)deviceId
+                label:(NSString *)label
+              success:(nullable void (^)(void))success
+              failure:(nullable void (^)(AJError *))failure;
 
 
 /// 时区配置

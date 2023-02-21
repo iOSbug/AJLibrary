@@ -1205,6 +1205,7 @@ public var DiagnoseTableRowHeight: CoreGraphics.CGFloat
   @objc public func lightingFreqConfig(_ deviceId: Swift.String, freqValue: Swift.Int, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func microphoneSetting(_ deviceId: Swift.String, micEnable: Swift.String, speakerVolume: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func indicatorLightConfig(_ deviceId: Swift.String, enable: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func unmountTfCard(_ deviceId: Swift.String, label: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func autoTrackConfig(_ deviceId: Swift.String, toggle: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func autoHibernateConfig(_ deviceId: Swift.String, enable: Swift.String, wholeDayEnable: Swift.String, wholeStartTime: Swift.String, wholeEndTime: Swift.String, wholeWeekDays: [Swift.String], enable1: Swift.String, startTime1: Swift.String, endTime1: Swift.String, weekDays1: [Swift.String], enable2: Swift.String, startTime2: Swift.String, endTime2: Swift.String, weekDays2: [Swift.String], complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func privateRegionConfig(_ deviceId: Swift.String, enable: Swift.String, areas: [Swift.String]?, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
@@ -1285,6 +1286,8 @@ public enum ShareDeviceStatus : Swift.String {
   }
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(ConDeviceModel) public class ConDeviceModel : AJLibrary.ResultModel, Foundation.NSSecureCoding {
+  public var deviceId: Swift.String?
+  @objc public var aliasName: Swift.String?
   @objc public static var supportsSecureCoding: Swift.Bool {
     @objc get
   }
@@ -1407,7 +1410,7 @@ public enum FileFolder : Swift.String {
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LocalFileManager : ObjectiveC.NSObject {
   @objc public static var shared: AJLibrary.LocalFileManager
   public var logFileName: Swift.String
-  public func createLocalPath()
+  @objc public func createLocalPath()
   public func moveLocalItems()
   public func writeToFile(_ filePath: Swift.String, data: Foundation.Data?)
   public func loadData(from filePath: Swift.String) -> Foundation.Data?
@@ -1493,6 +1496,14 @@ public enum FileFolder : Swift.String {
   public func getShareReceiveInfo(_ params: [Swift.String : Any], complete: @escaping ([AJLibrary.ShareSendReceiverModel]?, AJLibrary.ErrorModel?) -> Swift.Void)
   public func baseNode(crCode: Swift.String, ctCode: Swift.String, complete: @escaping (AJLibrary.AccessNodeModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   public func accountNode(_ account: Swift.String, crCode: Swift.String, ctCode: Swift.String, accoutType: Swift.String, ext: [Swift.String : Swift.String]?, complete: @escaping (AJLibrary.AccessNodeModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class FwUpgradeView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var dissmissBlock: (() -> ())?
+  @_Concurrency.MainActor(unsafe) public var forceBlock: (() -> ())?
+  @_Concurrency.MainActor(unsafe) public init(contentUrl: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func show()
+  @objc @_Concurrency.MainActor(unsafe) public func dismiss()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class WVColor : UIKit.UIColor {
@@ -2306,6 +2317,7 @@ public enum ProductNameType : Swift.String {
   }
 }
 @objc @_inheritsConvenienceInitializers public class CameraInfomation : ObjectiveC.NSObject {
+  @objc public var summary: AJLibrary.CameraSummaryModel?
   @objc public var camera: AJLibrary.CameraModel?
   @objc public var conDevice: AJLibrary.ConDeviceModel?
   @objc public var orderModel: AJLibrary.OrdersModel?
@@ -2416,21 +2428,23 @@ public var LocalTFDownloadHost: Swift.String
   public var failureHandler: AJLibrary.TaskHandler?
   public var statusHandler: AJLibrary.TaskHandler?
   public var cameraId: Swift.String?
+  public var downloadPath: Swift.String?
   public var fileName: Swift.String
   public var taskId: Swift.String
+  @objc public var error: Swift.Error?
   public var taskModel: AJLibrary.TaskModel
   public var status: AJLibrary.DownloadStatus {
     get
     set(newValue)
   }
   public var tsProgressPercent: Swift.Float
-  public var progress: Swift.Float {
-    get
+  @objc public var progress: Swift.Float {
+    @objc get
   }
   public var speed: Swift.Int64 {
     get
   }
-  @objc public class func createTask(_ taskId: Swift.String, deviceId: Swift.String, aliasName: Swift.String, intraPicture: Swift.String, m3u8Infos: [AJLibrary.M3U8InfoModel], progress: Swift.Float = 0) -> AJLibrary.M3U8Task
+  @objc public class func createTask(_ taskId: Swift.String, deviceId: Swift.String, aliasName: Swift.String, intraPicture: Swift.String, downloadPath: Swift.String? = nil, m3u8Infos: [AJLibrary.M3U8InfoModel], progress: Swift.Float = 0) -> AJLibrary.M3U8Task
   public func start()
   public func remove()
   public func pause()
@@ -2440,11 +2454,11 @@ public var LocalTFDownloadHost: Swift.String
 }
 extension AJLibrary.M3U8Task {
   @discardableResult
-  public func progress(_ handler: @escaping AJLibrary.TaskHandler) -> Self
+  @objc dynamic public func progress(_ handler: @escaping AJLibrary.TaskHandler) -> Self
   @discardableResult
-  public func success(_ handler: @escaping AJLibrary.TaskHandler) -> Self
+  @objc dynamic public func success(_ handler: @escaping AJLibrary.TaskHandler) -> Self
   @discardableResult
-  public func failure(_ handler: @escaping AJLibrary.TaskHandler) -> Self
+  @objc dynamic public func failure(_ handler: @escaping AJLibrary.TaskHandler) -> Self
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class JoinCloudViewController : AJLibrary.BaseViewController, UIKit.UITableViewDelegate, UIKit.UITableViewDataSource, WebKit.WKScriptMessageHandler, WebKit.WKNavigationDelegate, MessageUI.MFMailComposeViewControllerDelegate {
   @objc @_Concurrency.MainActor(unsafe) public var removeJoinViewBlock: (() -> ())?
@@ -2458,6 +2472,13 @@ extension AJLibrary.M3U8Task {
   @_Concurrency.MainActor(unsafe) @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class CommonTableItem : AJLibrary.WVTableItem {
+  public var showTopLine: Swift.Bool
+  public var showBottomLine: Swift.Bool
+  public var isEnable: Swift.Bool
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class LightingFreqModel : AJLibrary.ResultModel {
@@ -2984,6 +3005,22 @@ extension Foundation.URL {
   @objc deinit
 }
 public var CommonTableCellId: Swift.String
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CommonTableCell : AJLibrary.WVThinTableCell {
+  @_Concurrency.MainActor(unsafe) public var materailSwitch: Material.Switch
+  @_Concurrency.MainActor(unsafe) final public let dotView: UIKit.UIView
+  @_Concurrency.MainActor(unsafe) override public var leftIconGap: CoreGraphics.CGFloat {
+    @_Concurrency.MainActor(unsafe) get
+    @_Concurrency.MainActor(unsafe) set(newValue)
+  }
+  @_Concurrency.MainActor(unsafe) override public func loadUIs()
+  @_Concurrency.MainActor(unsafe) @objc override public func valueChanged()
+  @_Concurrency.MainActor(unsafe) override public func setupSwitch()
+  @_Concurrency.MainActor(unsafe) public func setTopLine()
+  @_Concurrency.MainActor(unsafe) public func setDotView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers public class ImageDownloadManager : ObjectiveC.NSObject {
   @objc public static func downloadImages(_ imageUrls: [Swift.String], toPath path: Swift.String, complete: (() -> ())?)
   @objc override dynamic public init()
@@ -3405,6 +3442,21 @@ public enum OnlineSetResult : Swift.Int {
   @objc public func getWeekdaysText(_ weekDays: [Swift.String]) -> Swift.String
   @objc public func fetchOrderList_ex(refresh: Swift.Bool = false, masterUid: Swift.String? = nil, supportDevType: Swift.Int = IPCSupportDevType, status: [Swift.String], complete: @escaping (AJLibrary.OrdersModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   @objc override dynamic public init()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class UIMaterialTextField : Material.TextField {
+  @_Concurrency.MainActor(unsafe) public var allToRed: Swift.Bool {
+    get
+    set(value)
+  }
+  @_Concurrency.MainActor(unsafe) public var detailToRed: Swift.Bool {
+    get
+    set(value)
+  }
+  @_Concurrency.MainActor(unsafe) public init(_ placeholder: Swift.String?)
+  @_Concurrency.MainActor(unsafe) public func showError(_ detail: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func hideError()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func layoutSubviews()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CloudWebViewController : AJLibrary.CustomWebViewController, WebKit.WKScriptMessageHandler, MessageUI.MFMailComposeViewControllerDelegate {
