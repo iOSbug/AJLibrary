@@ -141,4 +141,6 @@ extern const MJEncryptStringData * const wxAjcloudTenBridge;
 
 + (NSString *)toTimeStamp:(NSString *)time format:(NSString *)format;
 + (NSString *)toDate:(NSString *)time format:(NSString *)format;
++ (NSString *)toyyyymmddStr:(NSString *)time;
++ (NSTimeInterval )timeIntervalWithDateString:(NSString *)dateStr cameraId:(NSString *)cameraId;
 @end

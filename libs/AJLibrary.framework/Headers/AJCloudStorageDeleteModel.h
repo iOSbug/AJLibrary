@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString * _Nullable groupId;
 @property (nonatomic, strong) NSNumber * _Nullable tsStart;
 @property (nonatomic, strong) NSNumber * _Nullable tsEnd;
-@property (nonatomic, strong) NSNumber * _Nullable delIndex;
+@property (nonatomic, strong) NSNumber * delIndex;
 @end
 
 @interface AJCloudStorageDeleteRealDayModel : NSObject

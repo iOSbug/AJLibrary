@@ -30,7 +30,7 @@
 		</data>
 		<key>Headers/AJCloudStorageDeleteModel.h</key>
 		<data>
-		XzfmDOmIRZCUdgGphV/aGrbnKDk=
+		jAW73huQLQ6iaUnEiGUIAQrLS4Y=
 		</data>
 		<key>Headers/AJCloudStorageModel.h</key>
 		<data>
@@ -182,7 +182,7 @@
 		</data>
 		<key>Headers/ObjcUtils.h</key>
 		<data>
-		etPwZjI6/q4CbvVjm/WM9LPYj+g=
+		g6S4VIgkOSJdoykj+Xznmd72Vkc=
 		</data>
 		<key>Headers/SimplePingHelper.h</key>
 		<data>
@@ -278,7 +278,7 @@
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		a/FlwFB/xIHfJbsW9o2fuhtpbcw=
+		lHA2qjoInMof49ltFRgMraoTAxU=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -290,7 +290,7 @@
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		a/FlwFB/xIHfJbsW9o2fuhtpbcw=
+		lHA2qjoInMof49ltFRgMraoTAxU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -369,11 +369,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XzfmDOmIRZCUdgGphV/aGrbnKDk=
+			jAW73huQLQ6iaUnEiGUIAQrLS4Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			FGvsdX+hnva4qax+jURqVhD48WlbtuIQ/ntveld3ubQ=
+			c1W6wE7gIV47o8t0B//j8Jk6+M9Kp3iagnO3KgoVw6w=
 			</data>
 		</dict>
 		<key>Headers/AJCloudStorageModel.h</key>
@@ -787,11 +787,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			etPwZjI6/q4CbvVjm/WM9LPYj+g=
+			g6S4VIgkOSJdoykj+Xznmd72Vkc=
 			</data>
 			<key>hash2</key>
 			<data>
-			kX5AwmTWfY7KNz905sRimOl73dPLcGd/6359nke21EQ=
+			wcaT6ooYKGI+cVkOY0XnD7EzifQWdeIPFS4hMYNzcLs=
 			</data>
 		</dict>
 		<key>Headers/SimplePingHelper.h</key>
@@ -1040,11 +1040,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			a/FlwFB/xIHfJbsW9o2fuhtpbcw=
+			lHA2qjoInMof49ltFRgMraoTAxU=
 			</data>
 			<key>hash2</key>
 			<data>
-			xg2kmrCjsG+kbnRZ/DaGtMNpEPlM6gIBeftc9Uuk9oo=
+			zpCSNjL55oiawtCL4iXxCXZIl85jE2zYTwMl2Irq9HM=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64.swiftdoc</key>
@@ -1073,11 +1073,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			a/FlwFB/xIHfJbsW9o2fuhtpbcw=
+			lHA2qjoInMof49ltFRgMraoTAxU=
 			</data>
 			<key>hash2</key>
 			<data>
-			xg2kmrCjsG+kbnRZ/DaGtMNpEPlM6gIBeftc9Uuk9oo=
+			zpCSNjL55oiawtCL4iXxCXZIl85jE2zYTwMl2Irq9HM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
