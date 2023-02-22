@@ -17,7 +17,8 @@ AJLibrary is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AJLibrary'
+pod 'AJLibrary','2.0.4'     //Alamofire, '4.9.1'
+pod 'AJLibrary','5.0.2'     //Alamofire, '5.6.2'
 ```
 
 ## Author
