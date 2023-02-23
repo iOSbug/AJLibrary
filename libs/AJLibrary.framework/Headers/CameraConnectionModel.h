@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "WVGetPlayUrlManager.h"
-#import "AJPlayViewController.h"
+#import "PlayViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
 

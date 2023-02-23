@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJLibrary'
-  s.version          = '5.0.3'
+  s.version          = '2.0.5'
   s.summary          = 'A short description of AJLibrary.'
 
 # This description is used to generate tags and improve search results.
@@ -44,7 +44,7 @@ TODO: Add long description of the pod here.
   ss.libraries = "c++.1", "iconv", "z", "bz2.1.0"
 
   ss.dependency 'HandyJSON', '~> 5.0.3-beta'
-  ss.dependency 'Alamofire', '5.6.2'
+  ss.dependency 'Alamofire', '4.9.1'
   ss.dependency 'Firebase/Crashlytics'
   ss.dependency 'Firebase/Core'
   ss.dependency 'Firebase/Messaging' 
@@ -54,7 +54,7 @@ TODO: Add long description of the pod here.
   ss.dependency 'CocoaAsyncSocket', '7.6.5'
   s.dependency 'MJRefresh'
   ss.dependency 'Material'
-  ss.dependency 'lottie-ios','3.4.4'
+  ss.dependency 'lottie-ios','2.5.0'
   ss.dependency 'EFMarkdown'
   ss.dependency 'SDWebImage', "~> 5.11.0"
   ss.dependency 'AFNetworking', "~> 4.0.1"
@@ -70,8 +70,8 @@ TODO: Add long description of the pod here.
   ss.dependency 'LSTCategory'
   ss.dependency 'CHIPageControl'
   ss.dependency 'ZKCycleScrollView'
-  ss.dependency 'MobileVLCKit', "3.4.0"
-  ss.dependency 'mobile-ffmpeg-full', '4.4'
+  ss.dependency 'MobileVLCKit', "~> 3.4.1b11"
+  ss.dependency 'mobile-ffmpeg-full', '~> 4.4'
 
  end
 

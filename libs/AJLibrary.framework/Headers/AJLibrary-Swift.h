@@ -495,21 +495,6 @@ SWIFT_CLASS_NAMED("AllyModel")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class AnimationView;
-
-SWIFT_CLASS("_TtC9AJLibrary17AnimationOCHelper")
-@interface AnimationOCHelper : NSObject
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AnimationOCHelper * _Nonnull shared;)
-+ (AnimationOCHelper * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-- (AnimationView * _Nonnull)createAnimationView:(NSString * _Nonnull)name bundle:(NSBundle * _Nonnull)bundle speed:(CGFloat)speed SWIFT_WARN_UNUSED_RESULT;
-- (AnimationView * _Nonnull)createAnimationRepeatCountView:(NSString * _Nonnull)name bundle:(NSBundle * _Nonnull)bundle time:(float)time speed:(CGFloat)speed SWIFT_WARN_UNUSED_RESULT;
-- (void)play:(AnimationView * _Nonnull)animationview;
-- (void)stop:(AnimationView * _Nonnull)animationview;
-- (BOOL)isAnimationPlaying:(AnimationView * _Nonnull)animationview SWIFT_WARN_UNUSED_RESULT;
-- (void)play:(AnimationView * _Nonnull)animationview complete:(void (^ _Nonnull)(BOOL))complete;
-- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class UNNotificationResponse;
 
 SWIFT_CLASS("_TtC9AJLibrary11ApnsManager")
@@ -2617,14 +2602,14 @@ SWIFT_CLASS("_TtC9AJLibrary14UIExplainLabel")
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
++ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
