@@ -18,7 +18,9 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'AJLibrary','2.0.5'     //Alamofire, '4.9.1'
-pod 'AJLibrary','5.0.3'     //Alamofire, '5.6.2'
+
+pod 'AJLibrary','5.0.4'     //Alamofire, '5.6.2' xcode 14.1
+
 ```
 
 ## Author
