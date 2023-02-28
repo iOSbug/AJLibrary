@@ -6,6 +6,6 @@ framework module AJLibrary {
 }
 
 module AJLibrary.Swift {
-    header "AJLibrary-Swift.h"
-    requires objc
+  header "AJLibrary-Swift.h"
+  requires objc
 }
