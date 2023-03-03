@@ -1132,6 +1132,7 @@ extension UIKit.UIView {
   public func kickout()
   @objc public func dismissPrevious(completion: (() -> ())? = nil)
   @objc public func initPush()
+  @objc public func setFirebaseToken(_ deviceToken: Swift.String)
   public func registAPNS()
   public func reloadPushSetting()
   public func aliSendNotificationAck(_ data: [Swift.AnyHashable : Any]?)

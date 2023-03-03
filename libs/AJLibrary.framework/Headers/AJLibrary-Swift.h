@@ -564,6 +564,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) ApnsManager 
 - (void)handleApnsNotiReponse:(UNNotificationResponse * _Nonnull)notiResponse;
 - (void)dismissPreviousWithCompletion:(void (^ _Nullable)(void))completion;
 - (void)initPush SWIFT_METHOD_FAMILY(none);
+- (void)setFirebaseToken:(NSString * _Nonnull)deviceToken;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

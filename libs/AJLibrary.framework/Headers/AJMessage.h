@@ -31,6 +31,12 @@ typedef enum : NSUInteger {
  */
 - (void)initPush;
 
+
+/**
+ *    设置firebase的pushtoken
+ */
+- (void)setFirebasePushToken:(NSString *)deviceToken;
+
 /**
  *    处理推送消息
  *    @param     notiResponse               推送消息
