@@ -85,7 +85,7 @@ typedef void(^BatterySingleCallBack)(NSInteger localPort);
 -(void)voiceDidChange:(NSInteger )type;
 -(void)resetVoiceChnage;
 -(void)forceDisconenct:(NSString *)cameraID;
-
+-(void)resetP2PSDK;
 @property (nonatomic) ALCdevice     *m_alDevice;
 
 

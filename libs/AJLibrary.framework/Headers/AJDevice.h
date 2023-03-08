@@ -16,6 +16,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^tfSuccess)(NSString* portNum);
+
+typedef void(^tfFailure)(AJError *error);
+
+
 typedef enum {
     AJDeviceConnectStatusConnecting=1,
     AJDeviceConnectStatusConnected,
@@ -101,6 +106,11 @@ typedef enum : NSUInteger {
  */
 -(void)resetConnection;
 
+
+- (void)connectionShouldEncrypt:(BOOL)ShouldEncrypt DeviceId:(NSString *)deviceId;
+
+
+
 /**
  *    网络环境发生变化请调用
  *
@@ -165,7 +175,9 @@ typedef enum : NSUInteger {
  *    YES :成功
  *    NO: 失败
  */
-- (BOOL)initRemoteTF:(NSString *)deviceId;
+- (void)initRemoteTF:(NSString *)deviceId
+             success:(nullable void (^)(NSString *))success
+             failure:(nullable void (^)(AJError *))failure;
 
 /**
  *    强制断开设备

@@ -615,6 +615,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AppVariable 
 @property (nonatomic, strong) CloudPlansModel * _Nullable cloudPlansModel;
 @property (nonatomic, strong) StartUpModel * _Nullable startUpModel;
 @property (nonatomic) BOOL loadAlertError;
+@property (nonatomic) BOOL ShouldEncrypt;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
