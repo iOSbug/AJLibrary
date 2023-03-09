@@ -775,6 +775,28 @@ public let FetchInfosApi: Swift.String
   @objc required dynamic public init()
   @objc deinit
 }
+public enum LevelEnum : Swift.String {
+  case Low
+  case Normal
+  case High
+  case Custom
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum MotionDetectLevel : Swift.Int {
+  case Low
+  case Normal
+  case High
+  case Custom
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers public class SirenConfig : AJLibrary.ResultModel {
   @objc public var toggle: Swift.String
   @objc public var autoPolicy: AJLibrary.AutoPolicy?
@@ -902,12 +924,21 @@ public enum AutoLightMode : Swift.String {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class DetectionShare : AJLibrary.ResultModel {
+  @objc public var name: Swift.String?
+  @objc public var susceptiveness: Swift.Int
+  @objc public var fullViewport: Swift.Bool
+  @objc public var areas: [Swift.String]?
   public func coordinateArea() -> (Swift.Int?, Swift.Int?, Swift.Int?, Swift.Int?)
   @objc required dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class LightingFreqConfig : AJLibrary.ResultModel {
   @objc public var freqValue: Swift.Int
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class WhiteLightConfig : AJLibrary.ResultModel {
+  @objc public var lightMode: Swift.Int
   @objc required dynamic public init()
   @objc deinit
 }
@@ -937,6 +968,22 @@ public enum AutoLightMode : Swift.String {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class LiveSecToken : AJLibrary.ResultModel {
+  @objc public var reqType: Swift.String?
+  @objc public var reqServer: Swift.String?
+  @objc public var stream: AJLibrary.Stream?
+  @objc public var token: Swift.String?
+  @objc public var encrytMode: Swift.String?
+  @objc public var sessionKey: Swift.String?
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class CloudStorageGroupModel : AJLibrary.ResultModel {
+  @objc public var groups: [AJLibrary.CloudStorageModel]?
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class GroupCalendarModel : AJLibrary.ResultModel {
+  @objc public var cdates: [Swift.String]?
   @objc required dynamic public init()
   @objc deinit
 }
@@ -3494,6 +3541,12 @@ extension AJLibrary.ReceiveStatus : Swift.RawRepresentable {}
 extension AJLibrary.CameraStatus : Swift.Equatable {}
 extension AJLibrary.CameraStatus : Swift.Hashable {}
 extension AJLibrary.CameraStatus : Swift.RawRepresentable {}
+extension AJLibrary.LevelEnum : Swift.Equatable {}
+extension AJLibrary.LevelEnum : Swift.Hashable {}
+extension AJLibrary.LevelEnum : Swift.RawRepresentable {}
+extension AJLibrary.MotionDetectLevel : Swift.Equatable {}
+extension AJLibrary.MotionDetectLevel : Swift.Hashable {}
+extension AJLibrary.MotionDetectLevel : Swift.RawRepresentable {}
 extension AJLibrary.AutoLightMode : Swift.Equatable {}
 extension AJLibrary.AutoLightMode : Swift.Hashable {}
 extension AJLibrary.AutoLightMode : Swift.RawRepresentable {}

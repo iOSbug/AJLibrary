@@ -1169,6 +1169,14 @@ SWIFT_CLASS("_TtC9AJLibrary28CloudStorageDeleRealDayModel")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class CloudStorageModel;
+
+SWIFT_CLASS("_TtC9AJLibrary22CloudStorageGroupModel")
+@interface CloudStorageGroupModel : ResultModel
+@property (nonatomic, copy) NSArray<CloudStorageModel *> * _Nullable groups;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 
 SWIFT_CLASS("_TtC9AJLibrary17CloudStorageModel")
 @interface CloudStorageModel : ResultModel
@@ -1343,6 +1351,10 @@ SWIFT_CLASS("_TtC9AJLibrary5Czech")
 
 SWIFT_CLASS("_TtC9AJLibrary14DetectionShare")
 @interface DetectionShare : ResultModel
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic) NSInteger susceptiveness;
+@property (nonatomic) BOOL fullViewport;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable areas;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1665,6 +1677,13 @@ SWIFT_CLASS("_TtC9AJLibrary6German")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary18GroupCalendarModel")
+@interface GroupCalendarModel : ResultModel
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable cdates;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary13GroupDidModel")
 @interface GroupDidModel : ResultModel
 @property (nonatomic, copy) NSString * _Nullable slot;
@@ -1798,9 +1817,16 @@ SWIFT_CLASS("_TtC9AJLibrary10LivePolicy")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class Stream;
 
 SWIFT_CLASS("_TtC9AJLibrary12LiveSecToken")
 @interface LiveSecToken : ResultModel
+@property (nonatomic, copy) NSString * _Nullable reqType;
+@property (nonatomic, copy) NSString * _Nullable reqServer;
+@property (nonatomic, strong) Stream * _Nullable stream;
+@property (nonatomic, copy) NSString * _Nullable token;
+@property (nonatomic, copy) NSString * _Nullable encrytMode;
+@property (nonatomic, copy) NSString * _Nullable sessionKey;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2687,11 +2713,11 @@ SWIFT_CLASS("_TtC9AJLibrary12UIIconButton")
 
 
 
-
 @interface UIImage (SWIFT_EXTENSION(AJLibrary))
 + (UIImage * _Nullable)mixed_imageNamed:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)static_sdkimage:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 /// 图片在上文字在下
@@ -2980,6 +3006,13 @@ SWIFT_CLASS("_TtC9AJLibrary14WeekPickerView")
 - (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary16WhiteLightConfig")
+@interface WhiteLightConfig : ResultModel
+@property (nonatomic) NSInteger lightMode;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
