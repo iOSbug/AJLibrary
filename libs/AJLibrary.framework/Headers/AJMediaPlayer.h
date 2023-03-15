@@ -171,6 +171,14 @@ typedef void (^snapShotDoneAction)(UIImage *image);
 - (void)setRate:(float)rate;
 
 
+/**
+ *  position 播放进度
+ *
+ *  YES  设置成功
+ *  NO   设置失败
+ *
+ */
+-(BOOL)playPosition:(CGFloat)position;
 
 @end
 
