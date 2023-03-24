@@ -126,7 +126,7 @@ NS_ASSUME_NONNULL_BEGIN
                 failure:(nullable void (^)(AJError *))failure;
 
 
-/// 隐私模式配置
+/// 隐私模式配置 - 定时休眠
 /// @param deviceId 设备 ID
 /// @param enable 隐私模式总开关  0 - 关，1 - 开
 /// @param wholeDayEnable 全天候开关  0 - 关，1 - 开
