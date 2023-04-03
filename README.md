@@ -17,7 +17,7 @@ AJLibrary is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'AJLibrary','2.0.5'     //Alamofire, '4.9.1'
+pod 'AJLibrary','2.0.6'     //Alamofire, '4.9.1'
 
 pod 'AJLibrary','5.1.1'     //Alamofire, '5.6.2' xcode 14.1
 
