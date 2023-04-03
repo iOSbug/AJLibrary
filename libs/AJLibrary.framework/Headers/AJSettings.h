@@ -92,7 +92,7 @@ NS_ASSUME_NONNULL_BEGIN
                   failure:(nullable void (^)(AJError *))failure;
 
 
-/// 夜视配置
+/// 夜视配置（旧设备，暂时不用）
 /// @param deviceId 设备 ID
 /// @param nightMode | 0 - 关闭(全为彩色模式) , 1 - 自动(缺省) |
 /// @param colorWhenOff 0|1, // 当nightMode=0时，此项打开，画面是否保持彩色，若保持则1， 否则0； 当nightMode=1时，colorWhenOff=0
@@ -103,6 +103,23 @@ NS_ASSUME_NONNULL_BEGIN
              colorWhenOff:(NSString * _Nonnull)colorWhenOff
                   success:(nullable void (^)(void))success
                   failure:(nullable void (^)(AJError *))failure;
+
+
+/// 夜视配置
+/// @param deviceId 设备 ID
+/// @param nightMode   0-自动，1-始终黑白，2-始终彩色
+/// @param ledMode       0-自动，1-始终关闭，2-始终开启
+///     自动红外夜视：nightMode=0, ledMode=0
+///     关闭红外夜视自动切换：nightMode=0, ledMode=1
+///     全关闭：nightMode=2, ledMode=1
+///
+/// @param success success
+/// @param failure failure
+- (void)nightVision2Config:(NSString *)deviceId
+                 nightMode:(NSString * _Nonnull)nightMode
+                   ledMode:(NSString * _Nonnull)ledMode
+                   success:(nullable void (^)(void))success
+                   failure:(nullable void (^)(AJError *))failure;
 
 
 /// 开启关闭指示灯

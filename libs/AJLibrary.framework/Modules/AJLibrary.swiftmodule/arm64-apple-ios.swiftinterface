@@ -1211,6 +1211,7 @@ public var DiagnoseTableRowHeight: CoreGraphics.CGFloat
   @objc public func autoHibernateConfig(_ deviceId: Swift.String, enable: Swift.String, wholeDayEnable: Swift.String, wholeStartTime: Swift.String, wholeEndTime: Swift.String, wholeWeekDays: [Swift.String], enable1: Swift.String, startTime1: Swift.String, endTime1: Swift.String, weekDays1: [Swift.String], enable2: Swift.String, startTime2: Swift.String, endTime2: Swift.String, weekDays2: [Swift.String], complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func privateRegionConfig(_ deviceId: Swift.String, enable: Swift.String, areas: [Swift.String]?, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func nightVisionConfig(_ deviceId: Swift.String, nightMode: Swift.String, colorWhenOff: Swift.String, complete: @escaping (AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc public func nightVision2Config(_ deviceId: Swift.String, nightMode: Swift.String, ledMode: Swift.String, complete: @escaping (AJLibrary.ErrorModel?) -> Swift.Void)
   @objc public func localAccountConfig(deviceId: Swift.String, username: Swift.String, password: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func rtspConfig(deviceId: Swift.String, port: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func onvifConfig(deviceId: Swift.String, enable: Swift.String, port: Swift.String, verify: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
