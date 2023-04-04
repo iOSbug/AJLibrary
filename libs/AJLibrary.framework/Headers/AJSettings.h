@@ -145,7 +145,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 隐私模式配置 - 定时休眠
 /// @param deviceId 设备 ID
-/// @param enable 隐私模式总开关  0 - 关，1 - 开
+/// @param enable 定时休眠总开关  0 - 关，1 - 开
 /// @param wholeDayEnable 全天候开关  0 - 关，1 - 开
 /// @param enable1 自定义时间1开关  0 - 关，1 - 开
 /// @param startTime1 自定义1开始时间 (例：传093000，指 09: 30: 00)
@@ -253,13 +253,17 @@ NS_ASSUME_NONNULL_BEGIN
                failure:(nullable void (^)(AJError *))failure;
 
 
-/// 移动检测灵敏度等级配置
+/// 移动检测灵敏度等级和检测区域配置
 /// @param deviceId 设备 ID
 /// @param susceptiveness 灵敏度等级  0 ~ 5
+/// @param fullViewport 是否全屏 0 - 是，1 - 否
+/// @param areas 检测区域  ['x0','y0','x1','y1']，区间：整体最大 --> [0,0,10000,10000]
 /// @param success success
 /// @param failure failure
 - (void)detectionsConfig:(NSString *)deviceId
           susceptiveness:(NSString *)susceptiveness
+            fullViewport:(NSString *)fullViewport
+                   areas:(NSArray<NSString *> *)areas
                  success:(nullable void (^)(void))success
                  failure:(nullable void (^)(AJError *))failure;
 
