@@ -6,20 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "AJError.h"
 #import "AJDeviceInfoModel.h"
 #import "AJCloudStorageModel.h"
 #import "AJAlarmListModel.h"
 #import "AJCloudStorageDeleteModel.h"
 #import "AJQualityModel.h"
-#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef void(^tfSuccess)(NSString* portNum);
 
 typedef void(^tfFailure)(AJError *error);
-
 
 typedef enum {
     AJDeviceConnectStatusConnecting=1,
@@ -108,7 +107,6 @@ typedef enum : NSUInteger {
 
 
 - (void)connectionShouldEncrypt:(BOOL)ShouldEncrypt DeviceId:(NSString *)deviceId;
-
 
 
 /**

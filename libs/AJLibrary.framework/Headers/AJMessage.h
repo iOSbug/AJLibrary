@@ -6,9 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UserNotifications/UserNotifications.h>
 #import "AJError.h"
 #import "AJAlertSurveyModel.h"
-#import <UserNotifications/UserNotifications.h>
 #import "AJAlertsCalendarModel.h"
 #import "AJAlertsListModel.h"
 
@@ -30,7 +30,6 @@ typedef enum : NSUInteger {
  *    初始化推送参数
  */
 - (void)initPush;
-
 
 /**
  *    设置firebase的pushtoken

@@ -145,7 +145,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 隐私模式配置 - 定时休眠
 /// @param deviceId 设备 ID
-/// @param enable 定时休眠总开关  0 - 关，1 - 开
+/// @param enable 隐私模式总开关  0 - 关，1 - 开
 /// @param wholeDayEnable 全天候开关  0 - 关，1 - 开
 /// @param enable1 自定义时间1开关  0 - 关，1 - 开
 /// @param startTime1 自定义1开始时间 (例：传093000，指 09: 30: 00)
@@ -170,6 +170,50 @@ NS_ASSUME_NONNULL_BEGIN
                   weekDays2:(NSArray<NSString *> *)weekDays2
                     success:(nullable void (^)(void))success
                     failure:(nullable void (^)(AJError *))failure;
+
+
+/// 庭院灯灯光控制
+/// @param deviceId 设备ID
+/// @param toggle 开关：开 - "on"，关 - "off"
+/// @param brightness 亮度 1-100
+/// @param success success
+/// @param failure failure
+- (void)floodlightControl:(NSString *)deviceId
+                   toggle:(NSString *)toggle
+               brightness:(NSString *)brightness
+                  success:(nullable void (^)(void))success
+                  failure:(nullable void (^)(AJError *))failure;
+
+
+/// 声音告警监测配置
+/// @param deviceId 设备 ID
+/// @param enable 隐私模式总开关  0 - 关，1 - 开
+/// @param susceptiveness 灵敏度等级  0 ~ 5
+/// @param wholeDayEnable 全天候开关  0 - 关，1 - 开
+/// @param enable1 自定义时间1开关  0 - 关，1 - 开
+/// @param startTime1 自定义1开始时间 (例：传093000，指 09: 30: 00)
+/// @param endTime1 自定义1结束时间 (例：传173000，指 17: 30: 00)
+/// @param weekDays1 自定义1重复天 ( 例：@[@"1", @"3", @"5", @"6"]，周一、三、五、六 )
+/// @param enable2 自定义2开关  0 - 关，1 - 开
+/// @param startTime2 自定义2开始时间 (例：传093000，指 09: 30: 00)
+/// @param endTime2 自定义2结束时间 (例：传173000，指 17: 30: 00)
+/// @param weekDays2 自定义2重复天 ( 例：@[@"1", @"3", @"5", @"6"]，周一、三、五、六 )
+/// @param success success
+/// @param failure failure
+- (void)soundMonitorConfig:(NSString *)deviceId
+                    enable:(NSString *)enable
+            susceptiveness:(NSString *)susceptiveness
+            wholeDayEnable:(NSString *)wholeDayEnable
+                   enable1:(NSString *)enable1
+                startTime1:(NSString *)startTime1
+                  endTime1:(NSString *)endTime1
+                 weekDays1:(NSArray<NSString *> *)weekDays1
+                   enable2:(NSString *)enable2
+                startTime2:(NSString *)startTime2
+                  endTime2:(NSString *)endTime2
+                 weekDays2:(NSArray<NSString *> *)weekDays2
+                   success:(nullable void (^)(void))success
+                   failure:(nullable void (^)(AJError *))failure;
 
 
 /// 隐私区域设置
@@ -253,7 +297,7 @@ NS_ASSUME_NONNULL_BEGIN
                failure:(nullable void (^)(AJError *))failure;
 
 
-/// 移动检测灵敏度等级和检测区域配置
+/// 移动检测灵敏度等级和检测区域配置langge
 /// @param deviceId 设备 ID
 /// @param susceptiveness 灵敏度等级  0 ~ 5
 /// @param fullViewport 是否全屏 0 - 是，1 - 否
