@@ -204,7 +204,29 @@ public enum ReceiveStatus : Swift.String {
   @objc required dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class ShareSendReceiverExtModel : AJLibrary.ResultModel {
+  @objc public var deviceType: Swift.String?
+  @objc public var prodName: Swift.String?
+  @objc required dynamic public init()
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ShareSendReceiverModel : AJLibrary.ResultModel {
+  @objc public var createTs: Swift.String?
+  @objc public var member: Swift.String?
+  @objc public var deviceId: Swift.String?
+  @objc public var sendStatus: Swift.String?
+  @objc public var senderName: Swift.String?
+  @objc public var senderUid: Swift.String?
+  @objc public var senderType: Swift.String?
+  @objc public var rcvStatus: Swift.String?
+  @objc public var receiverName: Swift.String?
+  @objc public var receiverUid: Swift.String?
+  @objc public var receiverType: Swift.String?
+  @objc public var url: Swift.String?
+  @objc public var inviteCode: Swift.String?
+  @objc public var optStatus: Swift.String?
+  @objc public var validTs: Swift.String?
+  @objc public var ext: AJLibrary.ShareSendReceiverExtModel?
   public func inviteTime() -> Swift.String?
   public func receiveStatus() -> AJLibrary.ReceiveStatus
   public func senderStatus() -> AJLibrary.InviteStatus
@@ -1234,6 +1256,14 @@ public var DiagnoseTableRowHeight: CoreGraphics.CGFloat
   @objc public func setSnapshot(_ deviceId: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func restart(_ deviceId: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func retoreFactory(_ deviceId: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func enableShareEntry(_ deviceId: Swift.String, receiverUid: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func disableShareEntry(_ deviceId: Swift.String, receiverUid: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func delNewShare(_ deviceId: Swift.String, receiverUid: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func getShareSendInfo(_ deviceId: Swift.String, complete: (([AJLibrary.ShareSendReceiverModel]?, AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func createNewShare(_ deviceId: Swift.String, receiverName: Swift.String, receiverType: Swift.String, prodName: Swift.String, complete: ((AJLibrary.ShareSendReceiverModel?, AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func delReceiveNewShare(_ deviceId: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func reviceSharedCamera(_ deviceId: Swift.String, senderUid: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func getShareReceiveInfo(_ complete: (([AJLibrary.ShareSendReceiverModel]?, AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2095,11 +2125,11 @@ public enum RequestResult {
   @_Concurrency.MainActor(unsafe) @objc public func textView(_ textView: UIKit.UITextView, shouldInteractWith URL: Foundation.URL, in characterRange: Foundation.NSRange) -> Swift.Bool
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class UIBaseTableViewController : AJLibrary.BaseViewController, UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class UIBaseTableViewController : AJLibrary.BaseViewController, UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
   @_Concurrency.MainActor(unsafe) final public let tableView: UIKit.UITableView
   @_Concurrency.MainActor(unsafe) final public let cellId: Swift.String
   @_Concurrency.MainActor(unsafe) public var itemGroups: [AJLibrary.CommonTableGroup]
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
   @_Concurrency.MainActor(unsafe) public func initData()
   @_Concurrency.MainActor(unsafe) @objc public func numberOfSections(in tableView: UIKit.UITableView) -> Swift.Int
   @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
@@ -2687,6 +2717,10 @@ extension AJLibrary.TSDownloader {
 }
 @objc @_inheritsConvenienceInitializers public class ActionDetectModel : AJLibrary.ResultModel {
   @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SliderItem : AJLibrary.CommonTableItem {
+  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class AJQRBinderManager : ObjectiveC.NSObject {
@@ -3283,13 +3317,13 @@ extension AVKit.AVPlayerViewController {
   @objc required dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class BaseViewController : UIKit.UIViewController, UIKit.UIGestureRecognizerDelegate {
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class BaseViewController : UIKit.UIViewController, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) public func setNavigation()
   @discardableResult
-  @objc @_Concurrency.MainActor(unsafe) public func PopPrevious() -> UIKit.UIViewController?
+  @objc @_Concurrency.MainActor(unsafe) open func PopPrevious() -> UIKit.UIViewController?
   @_Concurrency.MainActor(unsafe) public func PopToRootViewController()
   @_Concurrency.MainActor(unsafe) public func PopToViewController<T>(_ viewControllerType: T.Type) where T : UIKit.UIViewController
   @_Concurrency.MainActor(unsafe) public func Dissmiss()

@@ -50,6 +50,8 @@
 #import <AJLibrary/AJCloudStorageModel.h>
 #import <AJLibrary/AJAlarmListModel.h>
 #import <AJLibrary/AJCloudStorageDeleteModel.h>
+#import <AJLibrary/AJShare.h>
+#import <AJLibrary/AJShareSendReceiverModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

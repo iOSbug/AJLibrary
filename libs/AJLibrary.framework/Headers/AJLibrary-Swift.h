@@ -312,6 +312,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJQRBinderMa
 
 @class AutoPolicy;
 @class TimePolicy;
+@class ShareSendReceiverModel;
 
 SWIFT_CLASS("_TtC9AJLibrary17AJSettingsManager")
 @interface AJSettingsManager : NSObject
@@ -348,6 +349,14 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJSettingsMa
 - (void)setSnapshot:(NSString * _Nonnull)deviceId complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)restart:(NSString * _Nonnull)deviceId complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)retoreFactory:(NSString * _Nonnull)deviceId complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)enableShareEntry:(NSString * _Nonnull)deviceId receiverUid:(NSString * _Nonnull)receiverUid complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)disableShareEntry:(NSString * _Nonnull)deviceId receiverUid:(NSString * _Nonnull)receiverUid complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)delNewShare:(NSString * _Nonnull)deviceId receiverUid:(NSString * _Nonnull)receiverUid complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)getShareSendInfo:(NSString * _Nonnull)deviceId complete:(void (^ _Nullable)(NSArray<ShareSendReceiverModel *> * _Nullable, ErrorModel * _Nullable))complete;
+- (void)createNewShare:(NSString * _Nonnull)deviceId receiverName:(NSString * _Nonnull)receiverName receiverType:(NSString * _Nonnull)receiverType prodName:(NSString * _Nonnull)prodName complete:(void (^ _Nullable)(ShareSendReceiverModel * _Nullable, ErrorModel * _Nullable))complete;
+- (void)delReceiveNewShare:(NSString * _Nonnull)deviceId complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)reviceSharedCamera:(NSString * _Nonnull)deviceId senderUid:(NSString * _Nonnull)senderUid complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)getShareReceiveInfo:(void (^ _Nullable)(NSArray<ShareSendReceiverModel *> * _Nullable, ErrorModel * _Nullable))complete;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2212,8 +2221,32 @@ SWIFT_CLASS("_TtC9AJLibrary32ShareCameraSettingViewController")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary25ShareSendReceiverExtModel")
+@interface ShareSendReceiverExtModel : ResultModel
+@property (nonatomic, copy) NSString * _Nullable deviceType;
+@property (nonatomic, copy) NSString * _Nullable prodName;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary22ShareSendReceiverModel")
 @interface ShareSendReceiverModel : ResultModel
+@property (nonatomic, copy) NSString * _Nullable createTs;
+@property (nonatomic, copy) NSString * _Nullable member;
+@property (nonatomic, copy) NSString * _Nullable deviceId;
+@property (nonatomic, copy) NSString * _Nullable sendStatus;
+@property (nonatomic, copy) NSString * _Nullable senderName;
+@property (nonatomic, copy) NSString * _Nullable senderUid;
+@property (nonatomic, copy) NSString * _Nullable senderType;
+@property (nonatomic, copy) NSString * _Nullable rcvStatus;
+@property (nonatomic, copy) NSString * _Nullable receiverName;
+@property (nonatomic, copy) NSString * _Nullable receiverUid;
+@property (nonatomic, copy) NSString * _Nullable receiverType;
+@property (nonatomic, copy) NSString * _Nullable url;
+@property (nonatomic, copy) NSString * _Nullable inviteCode;
+@property (nonatomic, copy) NSString * _Nullable optStatus;
+@property (nonatomic, copy) NSString * _Nullable validTs;
+@property (nonatomic, strong) ShareSendReceiverExtModel * _Nullable ext;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2229,6 +2262,12 @@ SWIFT_CLASS("_TtC9AJLibrary11SirenConfig")
 @interface SirenConfig : ResultModel
 @property (nonatomic, copy) NSString * _Nonnull toggle;
 @property (nonatomic, strong) AutoPolicy * _Nullable autoPolicy;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary10SliderItem")
+@interface SliderItem : CommonTableItem
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2629,11 +2668,11 @@ SWIFT_CLASS("_TtC9AJLibrary12UIIconButton")
 
 
 
-
 @interface UIImage (SWIFT_EXTENSION(AJLibrary))
 + (UIImage * _Nullable)mixed_imageNamed:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)static_sdkimage:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 /// 图片在上文字在下
