@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/AJBinder.h</key>
 		<data>
-		FR2PHlXoPgD47dswFI+UFFAtimk=
+		1uyWh7vG0CPfvP/6g64PytKaIO4=
 		</data>
 		<key>Headers/AJCloudStorageDeleteModel.h</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Headers/AJDevice.h</key>
 		<data>
-		9eqwcBIcf7cKBeH3oNn1jagZD1o=
+		8QMWq7Y55IAvB6Oi1FyhgxWn8VU=
 		</data>
 		<key>Headers/AJDeviceInfoModel.h</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Headers/AJLib.h</key>
 		<data>
-		J+w3dPynWqAbtPopxFHLNHJBkTg=
+		wrhUTA+EiwTSVdo6VirLgcpENlY=
 		</data>
 		<key>Headers/AJLibrary-Swift.h</key>
 		<data>
-		RgeKaG3q2NEGpF/jMb+gTSbX1rQ=
+		Q0niK8rqN2y1vnIBMvOnUqFDuW0=
 		</data>
 		<key>Headers/AJLibrary.h</key>
 		<data>
@@ -74,11 +74,15 @@
 		</data>
 		<key>Headers/AJMediaPlayer.h</key>
 		<data>
-		zowME1wQVfqG+7cT7EqXURrTeTE=
+		VIfRCV/LeT+qKzhy+oF6DfxkZ+A=
 		</data>
 		<key>Headers/AJMessage.h</key>
 		<data>
-		xJoeDQFeOPXLh1D9VuU96Jb1q9I=
+		HDc4uvpzC1+PTyGsDrfcIg4vzu4=
+		</data>
+		<key>Headers/AJPlayViewController.h</key>
+		<data>
+		OFPrboQ2HfSApr46hA8p154GM6w=
 		</data>
 		<key>Headers/AJQualityModel.h</key>
 		<data>
@@ -90,7 +94,7 @@
 		</data>
 		<key>Headers/AJShare.h</key>
 		<data>
-		XwUoefbAmSrjnfoZA7st9vNchBw=
+		tn16ggZNE4s5FlJYEtjE4UnfiKo=
 		</data>
 		<key>Headers/AJShareSendReceiverModel.h</key>
 		<data>
@@ -110,7 +114,7 @@
 		</data>
 		<key>Headers/CameraConnectionModel.h</key>
 		<data>
-		20h/zjrkQXpADRU0RNqHCZtakx4=
+		R1ib9OHvqPIqG5DcCwl7GSoy+Fs=
 		</data>
 		<key>Headers/CameraStatusManager.h</key>
 		<data>
@@ -188,10 +192,6 @@
 		<data>
 		g6S4VIgkOSJdoykj+Xznmd72Vkc=
 		</data>
-		<key>Headers/PlayViewController.h</key>
-		<data>
-		kU7mZbBzX07ALqtKGfu3lv9mBDA=
-		</data>
 		<key>Headers/SimplePingHelper.h</key>
 		<data>
 		P2CoYocb9AL87wKnvjLpYZxx94w=
@@ -234,7 +234,7 @@
 		</data>
 		<key>Headers/WVGetPlayUrlManager.h</key>
 		<data>
-		mextlRDPdtY2Ir/wSfQYLF3NG6c=
+		rdctbziSJRBp5pa+//J5th9XN7k=
 		</data>
 		<key>Headers/WVNoDataHelpView.h</key>
 		<data>
@@ -266,43 +266,35 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		zZJqvMjB2hidgdKisHjo9Id4EO8=
+		bS9MvDFy5gwf5nYYdQX7J/f+Xxg=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		da4nLRfHZnCw+KbyfdT0fcGIpYQ=
+		VMc0xeINvsmYtpAIOFo+mCwgA8I=
 		</data>
-		<key>Modules/AJLibrary.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		da4nLRfHZnCw+KbyfdT0fcGIpYQ=
+		9lnTKjCdQInh0Vuv0Rku+WLk52Q=
+		</data>
+		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
+		<data>
+		yS55MqV4+USCtrXHugNOjFnLWeQ=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		HAvJVYal7j1o0x2QXoQHlQhPzqI=
+		xszIIlpFQSjvWwngGFR0IQunaFM=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		62i7pBUseAwsXsyHyTcbliNfkQk=
+		yS55MqV4+USCtrXHugNOjFnLWeQ=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		+BmKFXCBSJ/KhLOVJ3EGZgiXXNM=
-		</data>
-		<key>Modules/AJLibrary.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		HAvJVYal7j1o0x2QXoQHlQhPzqI=
-		</data>
-		<key>Modules/AJLibrary.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		62i7pBUseAwsXsyHyTcbliNfkQk=
-		</data>
-		<key>Modules/AJLibrary.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		+BmKFXCBSJ/KhLOVJ3EGZgiXXNM=
+		6ImFvjbQzCq0gIredgyebbEMwvg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		GkOFeMoQFLZU5DKsz1SnTU1BobU=
+		s4oJCbltA0TC5c4SSXySgwGt2rI=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -366,11 +358,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FR2PHlXoPgD47dswFI+UFFAtimk=
+			1uyWh7vG0CPfvP/6g64PytKaIO4=
 			</data>
 			<key>hash2</key>
 			<data>
-			Lq8SeGPnzaBfYhQIZ4nQi1pRZpO+7TMsgYgUXGjstHA=
+			jHOYMpUln/2KyUk3WFQLFX2Tayr+qsBrz+QqeWC9kQw=
 			</data>
 		</dict>
 		<key>Headers/AJCloudStorageDeleteModel.h</key>
@@ -399,11 +391,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			9eqwcBIcf7cKBeH3oNn1jagZD1o=
+			8QMWq7Y55IAvB6Oi1FyhgxWn8VU=
 			</data>
 			<key>hash2</key>
 			<data>
-			c+Nfz5yxZXNjxVnChu2oK2fUZ+AiAOv2bo19A6L7RLw=
+			mlJRgMght19vyi6L1Eax0Xw4xd3OAtRLu5CXxtUf8So=
 			</data>
 		</dict>
 		<key>Headers/AJDeviceInfoModel.h</key>
@@ -465,22 +457,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			J+w3dPynWqAbtPopxFHLNHJBkTg=
+			wrhUTA+EiwTSVdo6VirLgcpENlY=
 			</data>
 			<key>hash2</key>
 			<data>
-			WeW9ez3V6u0fDYLrEmYs4dH0LJ5IGscTVQSPcV88Mhw=
+			GjnBW9bmS6cisp9njYUsX0maQIuYqlsnuQgisuz/ym8=
 			</data>
 		</dict>
 		<key>Headers/AJLibrary-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			RgeKaG3q2NEGpF/jMb+gTSbX1rQ=
+			Q0niK8rqN2y1vnIBMvOnUqFDuW0=
 			</data>
 			<key>hash2</key>
 			<data>
-			FXD4liaDZZxzgcK93dZvPFtw97SwIW95TjkuYisezMs=
+			pxK7blqwhZQ71oODLGjX0WofXicMBq3zJyz2QT3arpw=
 			</data>
 		</dict>
 		<key>Headers/AJLibrary.h</key>
@@ -498,22 +490,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zowME1wQVfqG+7cT7EqXURrTeTE=
+			VIfRCV/LeT+qKzhy+oF6DfxkZ+A=
 			</data>
 			<key>hash2</key>
 			<data>
-			knpvCVLSPhw+2VuP8xu6SO65i61V+mjIusVJohIwoyI=
+			A9ngcJOTG75gSi3eS7Njvw071lnRy4m0Hh/PQ5J9f7E=
 			</data>
 		</dict>
 		<key>Headers/AJMessage.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xJoeDQFeOPXLh1D9VuU96Jb1q9I=
+			HDc4uvpzC1+PTyGsDrfcIg4vzu4=
 			</data>
 			<key>hash2</key>
 			<data>
-			aH3MeU07QgjPaWny1eVJsO//H5wYtz53u5zWO1ZqKRk=
+			UcDedPuILe3UNJZ1gb4oubs7nkOj6EBiHMg3nDiNnXk=
+			</data>
+		</dict>
+		<key>Headers/AJPlayViewController.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OFPrboQ2HfSApr46hA8p154GM6w=
+			</data>
+			<key>hash2</key>
+			<data>
+			RSq67csLhuKZGRbbjDzq0ltASSLDMN+32sd5W4QKtX4=
 			</data>
 		</dict>
 		<key>Headers/AJQualityModel.h</key>
@@ -542,11 +545,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XwUoefbAmSrjnfoZA7st9vNchBw=
+			tn16ggZNE4s5FlJYEtjE4UnfiKo=
 			</data>
 			<key>hash2</key>
 			<data>
-			OLKw7esa1V4Y6amMb3mydT5Q0sZukwkSLAciG4DUryA=
+			Q91N7IdsEx+ezYMEskyIN9pd6QfTGZMbw1KwyFTiuiU=
 			</data>
 		</dict>
 		<key>Headers/AJShareSendReceiverModel.h</key>
@@ -597,11 +600,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			20h/zjrkQXpADRU0RNqHCZtakx4=
+			R1ib9OHvqPIqG5DcCwl7GSoy+Fs=
 			</data>
 			<key>hash2</key>
 			<data>
-			/Q+RBSA2ACgot8BPyMDHQ08FeS+Hthn5RCIz2EMUNZw=
+			SvAxctp+va44axHu/jvlA2jh/hydn4/lvgHmM3Rm+uI=
 			</data>
 		</dict>
 		<key>Headers/CameraStatusManager.h</key>
@@ -813,17 +816,6 @@
 			wcaT6ooYKGI+cVkOY0XnD7EzifQWdeIPFS4hMYNzcLs=
 			</data>
 		</dict>
-		<key>Headers/PlayViewController.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			kU7mZbBzX07ALqtKGfu3lv9mBDA=
-			</data>
-			<key>hash2</key>
-			<data>
-			k4DogGLFtzuPAoIn8zHV4afEVhVnDqGuFQ6uYpj+AzQ=
-			</data>
-		</dict>
 		<key>Headers/SimplePingHelper.h</key>
 		<dict>
 			<key>hash</key>
@@ -938,11 +930,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mextlRDPdtY2Ir/wSfQYLF3NG6c=
+			rdctbziSJRBp5pa+//J5th9XN7k=
 			</data>
 			<key>hash2</key>
 			<data>
-			z4xa9V059pHCStQ8trZFvfmn2I7H1x6Ke0vMZVGNHbY=
+			a1fKBCfN50Yw/jvIQRG5+30k/PoVmbmom8Cvpt+TiGE=
 			</data>
 		</dict>
 		<key>Headers/WVNoDataHelpView.h</key>
@@ -1026,99 +1018,77 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			da4nLRfHZnCw+KbyfdT0fcGIpYQ=
+			VMc0xeINvsmYtpAIOFo+mCwgA8I=
 			</data>
 			<key>hash2</key>
 			<data>
-			tcLKRLs89PVksFQha088Upuq/p4XV1Vg9o4gQ/QhPzs=
+			rY8p/PDHEjBvYGm2/Rh9MnHoWv6A25xxgmZ1no62rw0=
 			</data>
 		</dict>
-		<key>Modules/AJLibrary.swiftmodule/Project/arm64.swiftsourceinfo</key>
+		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			da4nLRfHZnCw+KbyfdT0fcGIpYQ=
+			9lnTKjCdQInh0Vuv0Rku+WLk52Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			tcLKRLs89PVksFQha088Upuq/p4XV1Vg9o4gQ/QhPzs=
+			nlUGeyb+GXkGrsOhjVr9RZHjNvD1+305LSTajPmLObY=
+			</data>
+		</dict>
+		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			yS55MqV4+USCtrXHugNOjFnLWeQ=
+			</data>
+			<key>hash2</key>
+			<data>
+			as8jnUR0Kn5F9uA5+/Sf9cReaLKktKafkeJlKSxg2t4=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HAvJVYal7j1o0x2QXoQHlQhPzqI=
+			xszIIlpFQSjvWwngGFR0IQunaFM=
 			</data>
 			<key>hash2</key>
 			<data>
-			0kj1f3y50gVY6ZI1R6M6QjEAmfDdrZV1XTZzeoEIYuk=
+			5ElWBF//nquXqgbkN1kSjz6jwyPFmPxf3aG5MFrRpz0=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			62i7pBUseAwsXsyHyTcbliNfkQk=
+			yS55MqV4+USCtrXHugNOjFnLWeQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			tzUc6tijVZRN5FxndeyIZyGFOgAB6uYi9R6e2qoF9yA=
+			as8jnUR0Kn5F9uA5+/Sf9cReaLKktKafkeJlKSxg2t4=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			+BmKFXCBSJ/KhLOVJ3EGZgiXXNM=
+			6ImFvjbQzCq0gIredgyebbEMwvg=
 			</data>
 			<key>hash2</key>
 			<data>
-			eZ04D6aMdayu+TRwVQhkEGW47lFf+2z4fpSYURn1BZ8=
-			</data>
-		</dict>
-		<key>Modules/AJLibrary.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			HAvJVYal7j1o0x2QXoQHlQhPzqI=
-			</data>
-			<key>hash2</key>
-			<data>
-			0kj1f3y50gVY6ZI1R6M6QjEAmfDdrZV1XTZzeoEIYuk=
-			</data>
-		</dict>
-		<key>Modules/AJLibrary.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			62i7pBUseAwsXsyHyTcbliNfkQk=
-			</data>
-			<key>hash2</key>
-			<data>
-			tzUc6tijVZRN5FxndeyIZyGFOgAB6uYi9R6e2qoF9yA=
-			</data>
-		</dict>
-		<key>Modules/AJLibrary.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+BmKFXCBSJ/KhLOVJ3EGZgiXXNM=
-			</data>
-			<key>hash2</key>
-			<data>
-			eZ04D6aMdayu+TRwVQhkEGW47lFf+2z4fpSYURn1BZ8=
+			vm2X2UB/PfQiHg3HFM4xNVVAkObQ3q4K84+RIKNhuGc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GkOFeMoQFLZU5DKsz1SnTU1BobU=
+			s4oJCbltA0TC5c4SSXySgwGt2rI=
 			</data>
 			<key>hash2</key>
 			<data>
-			uSBXkAqsulGQaJvK45YHgeJRpifNXWQmz8b0aQFBxn8=
+			IljVbWpp/frGWPYj0s4VnSIk+Cbrk4dyIYBp3Z9qwBo=
 			</data>
 		</dict>
 	</dict>
