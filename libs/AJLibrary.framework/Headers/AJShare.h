@@ -23,9 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Sender创建一个分享实例
 /// @param deviceId 设备ID
-/// @param receiverName 接受分享者的账号
+/// @param receiverName 接受分享者的账号(trueID登录返回的sub)
 /// @param receiverType 接收者账号类型 ("email", "phone", "ally"(三方快捷登录), "allyCode"(SDK))
-/// @param prodName 设备prodName
+/// @param prodName 设备prodName（cameraInfo.base.prodName）
 /// @param success success
 /// @param failure failure
 - (void)createNewShare:(NSString *)deviceId
@@ -106,6 +106,15 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)rejectShare:(NSString *)deviceId
             success:(nullable void (^)(void))success
             failure:(nullable void (^)(AJError *))failure;
+
+
+/// Receiver删除分享摄像头
+/// @param deviceId 设备ID
+/// @param success success
+/// @param failure failure
+- (void)deteleSharedCamera:(NSString *)deviceId
+                   success:(nullable void (^)(void))success
+                   failure:(nullable void (^)(AJError *))failure;
 
 @end
 

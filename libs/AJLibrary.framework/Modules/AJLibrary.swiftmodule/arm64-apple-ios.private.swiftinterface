@@ -1307,6 +1307,7 @@ public let DiagnoseTableRowHeight: CoreFoundation.CGFloat
   @objc public func getShareSendInfo(_ deviceId: Swift.String, complete: (([AJLibrary.ShareSendReceiverModel]?, AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func createNewShare(_ deviceId: Swift.String, receiverName: Swift.String, receiverType: Swift.String, prodName: Swift.String, complete: ((AJLibrary.ShareSendReceiverModel?, AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func delReceiveNewShare(_ deviceId: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func rejectReceiveNewShare(_ deviceId: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func reviceSharedCamera(_ deviceId: Swift.String, senderUid: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func getShareReceiveInfo(_ complete: (([AJLibrary.ShareSendReceiverModel]?, AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc override dynamic public init()

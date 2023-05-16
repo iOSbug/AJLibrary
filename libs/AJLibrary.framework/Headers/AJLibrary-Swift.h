@@ -400,6 +400,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJSettingsMa
 - (void)getShareSendInfo:(NSString * _Nonnull)deviceId complete:(void (^ _Nullable)(NSArray<ShareSendReceiverModel *> * _Nullable, ErrorModel * _Nullable))complete;
 - (void)createNewShare:(NSString * _Nonnull)deviceId receiverName:(NSString * _Nonnull)receiverName receiverType:(NSString * _Nonnull)receiverType prodName:(NSString * _Nonnull)prodName complete:(void (^ _Nullable)(ShareSendReceiverModel * _Nullable, ErrorModel * _Nullable))complete;
 - (void)delReceiveNewShare:(NSString * _Nonnull)deviceId complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)rejectReceiveNewShare:(NSString * _Nonnull)deviceId complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)reviceSharedCamera:(NSString * _Nonnull)deviceId senderUid:(NSString * _Nonnull)senderUid complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)getShareReceiveInfo:(void (^ _Nullable)(NSArray<ShareSendReceiverModel *> * _Nullable, ErrorModel * _Nullable))complete;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
