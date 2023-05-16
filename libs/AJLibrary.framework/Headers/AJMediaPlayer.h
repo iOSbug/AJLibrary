@@ -170,7 +170,6 @@ typedef void (^snapShotDoneAction)(UIImage *image);
  */
 - (void)setRate:(float)rate;
 
-
 /**
  *  position 播放进度
  *
