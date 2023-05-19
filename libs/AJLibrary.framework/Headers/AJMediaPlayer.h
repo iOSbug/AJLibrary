@@ -104,7 +104,7 @@ typedef void (^snapShotDoneAction)(UIImage *image);
 - (void)showPlaceHolderImage:(UIImage *)image;
 /**
  *  截图动画
- *  @param     image                图片
+ *  @param     snapImage                图片
  */
 - (void)showSnapAnimation:(UIImage *)snapImage;
 /**
@@ -169,6 +169,7 @@ typedef void (^snapShotDoneAction)(UIImage *image);
  *
  */
 - (void)setRate:(float)rate;
+
 
 /**
  *  position 播放进度
