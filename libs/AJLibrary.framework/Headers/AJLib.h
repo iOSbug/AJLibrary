@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <AJLibrary/DiagnoseTCPManager.h>
 #import <AJLibrary/ObjcUtils.h>
-#import <AJLibrary/AJPlayViewController.h>
+#import <AJLibrary/PlayViewController.h>
 #import <AJLibrary/HXCacheFileViewController.h>
 #import <AJLibrary/HXCacheFileManager.h>
 #import <AJLibrary/WVAlertDetailViewController.h>
