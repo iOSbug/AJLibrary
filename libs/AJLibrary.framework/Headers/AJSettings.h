@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shared;
 
-/// 修改主设备的别名
+/// 修改主设备的别名 （暂不使用，修改设备名称可直接使用changeUACDeviceAliasName）
 /// @param deviceId 设备 ID
 /// @param aliasName 别名
 /// @param success success
