@@ -407,6 +407,26 @@ public var FetchInfosApi: Swift.String
   public func autoTrackConfig(_ deviceId: Swift.String, toggle: Swift.String, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   @objc public func BatterySingleWakeUp(_ deviceId: Swift.String, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   @objc public func alarmRekConfig(_ deviceId: Swift.String, humanoid: Swift.String, package: Swift.String, pet: Swift.String, vehicle: Swift.String, pnmO1: Swift.String, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  public func fastBind(_ deviceId: Swift.String, bindToken: Swift.String, complete: @escaping (AJLibrary.SuccessResultModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class AddDeviceModel : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class AddDeviceViewController : AJLibrary.BaseViewController, UIKit.UICollectionViewDataSource, UIKit.UICollectionViewDelegate {
+  @_Concurrency.MainActor(unsafe) public var addDevices: [AJLibrary.AddDeviceModel]
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func initDatas()
+  @_Concurrency.MainActor(unsafe) @objc public func numberOfSections(in collectionView: UIKit.UICollectionView) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, cellForItemAt indexPath: Foundation.IndexPath) -> UIKit.UICollectionViewCell
+  @_Concurrency.MainActor(unsafe) @objc public func collectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) public func addSuspendBtn()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class CloudPlansModel : AJLibrary.ResultModel {
@@ -469,12 +489,15 @@ public var FetchInfosApi: Swift.String
   @objc public var continent: Swift.String?
   @objc public var country: Swift.String?
   @objc public var deviceType: Swift.Int
+  @objc public var bizRestricted: Swift.String?
+  @objc public var aclid: Swift.String?
   @objc public var prodName: Swift.String?
   @objc public var status: AJLibrary.CameraStatus {
     @objc get
   }
   public func setAlarmNeedRestartDevice() -> Swift.Bool
   @objc public func isCharging() -> Swift.Bool
+  @objc public func isUnauthorizedSim() -> Swift.Bool
   @objc public func fwHaveNewVersion() -> Swift.Bool
   @objc required dynamic public init()
   @objc deinit
@@ -1377,7 +1400,17 @@ public enum ShareDeviceStatus : Swift.String {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class CameraSummaryModel : AJLibrary.ResultModel {
+  @objc public var devGatewayUrl: Swift.String?
+  @objc public var deviceId: Swift.String?
+  @objc public var gatewayUrl: Swift.String?
+  @objc public var tunnelUrl: Swift.String?
+  @objc public var cloudStorUrl: Swift.String?
+  @objc public var devCloudStorUrl: Swift.String?
   @objc public var devEmcUrl: Swift.String?
+  @objc public var emcUrl: Swift.String?
+  @objc public var stunServers: Swift.String?
+  @objc public var appKeepAliveUrl: Swift.String?
+  @objc public var subDevConfigs: [Swift.String : Swift.String]?
   @objc required dynamic public init()
   @objc deinit
 }
@@ -1689,10 +1722,12 @@ public enum NetEntrance {
   }
 }
 @objc public enum NetConfigurationType : Swift.Int {
+  case Cellular
   case QR
   case SoftAP
   case Eth
   case OnlineSetWiFi
+  case FastBind
   public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
@@ -2005,7 +2040,8 @@ public var orderHistoryTableViewCellIdentifier: Swift.String
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class ImageTypeUtils : ObjectiveC.NSObject {
-  @objc public static func objcDeviceIconImage(_ productName: Swift.String) -> UIKit.UIImage?
+  @objc public static func deviceModeIconImage(deviceMode: Swift.String?) -> UIKit.UIImage?
+  @objc public static func objcDeviceIconImage(_ deviceId: Swift.String) -> UIKit.UIImage?
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2311,9 +2347,17 @@ public enum ProductNameType : Swift.String {
   case Name_W7
   case Name_GLY_Y1
   case Name_GLY_G2
+  case Name_GLY_G6
   case Name_GLY_G7
   case Name_GLY_Y4
   case Name_Q7
+  case Name_P1
+  case Name_R1
+  case Name_G8
+  case Name_WVC_Y1
+  case Name_R2
+  case Name_WVC_G6
+  case Name_PM
   case Name_S40
   case Name_S60
   case Name_H20
@@ -2328,6 +2372,8 @@ public enum ProductNameType : Swift.String {
   case Name_FLC
   case Name_830
   case Name_FDC1
+  case Name_4G
+  case Name_IPC
   case Name_Wob_812
   case Name_hgd_outdoor_1_led
   case Name_hgd_outdoor_2_led
@@ -2354,6 +2400,8 @@ public enum ProductNameType : Swift.String {
   public func deviceType() -> AJLibrary.DeviceModeType?
   public func isInListTop() -> Swift.Bool
   @objc public func devAliasName() -> Swift.String?
+  @objc public func deviceTypeName() -> Swift.String?
+  public func productNameType() -> AJLibrary.ProductNameType
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2583,6 +2631,8 @@ public var TextFieldTableViewCellId: Swift.String
   @objc public var battery: Swift.String?
   @objc public var diagnose: Swift.String?
   @objc public var duplexVoice: Swift.String?
+  @objc public var lvsType: Swift.String?
+  @objc public var dualLens: Swift.Bool
   @objc public var encryptMode: Swift.String?
   @objc public var localStorRmt: Swift.String?
   @objc public var localStorageTypes: Swift.String?
@@ -2594,6 +2644,7 @@ public var TextFieldTableViewCellId: Swift.String
   @objc public var opticalZoom: Swift.String?
   @objc public var variFocus: Swift.String?
   @objc public var qualities: Swift.String?
+  @objc public var dualLensZoomVerge: Swift.String?
   @objc public var streams: Swift.String?
   @objc public var voiceDetect: Swift.String?
   @objc public var privLiveStream: Swift.String?
@@ -2613,11 +2664,11 @@ public var TextFieldTableViewCellId: Swift.String
   @objc public var floodlightBrightCtrl: Swift.Bool
   @objc public var floodlightTimeCtrl: Swift.Bool
   @objc public var siren: Swift.Bool
-  @objc public var feeding: Swift.Bool
   @objc public var genAlarmThumb: Swift.Bool
   @objc public var localStorFullDay: Swift.Bool
   @objc public var cloudStorFullDay: Swift.Bool
   @objc public var privateBase: Swift.Bool
+  @objc public var privateRegion: Swift.Bool
   @objc public var nightVisionColorCtrl: Swift.Bool
   @objc public var lowPowerStorage: Swift.Bool
   @objc public var nightVision2: Swift.Bool
@@ -2625,7 +2676,23 @@ public var TextFieldTableViewCellId: Swift.String
   @objc public var floodlightTiming: Swift.Bool
   @objc public var floodlightDual: Swift.Bool
   @objc public var staticLocalIp: Swift.Bool
+  @objc public var osdCtrl: Swift.Int
+  @objc public var sims: Swift.Int
+  @objc public var simsCtrl: Swift.Int
+  @objc public var alarmMediaTypes: Swift.String?
+  @objc public var showChargingCapacity: Swift.Bool
+  @objc public var insideCognitiveTypes: Swift.String
+  @objc public var soundDetect: Swift.Bool
+  @objc public var lpRetriggerIntervalType: Swift.Bool
+  public func haveInsideCognitiveHumanoid() -> Swift.Bool
+  public func haveInsideCognitiveVehicle() -> Swift.Bool
+  public func haveInsideCognitivePet() -> Swift.Bool
+  public func haveInsideCognitivePackage() -> Swift.Bool
+  public func supportOSD() -> Swift.Bool
+  @objc public func supportSims() -> Swift.Bool
+  public func alarmMediaTypesSupportVideoAndImageConfig() -> Swift.Bool
   public func qualitiesArr() -> [AJLibrary.QualityModel]
+  @objc public func creatQualitiesArr(qualitiesStr: Swift.String) -> [AJLibrary.QualityModel]
   public func isEthernetCamera() -> Swift.Bool
   public func supportTf() -> Swift.Bool
   @objc public func isOldLightDevice() -> Swift.Bool
@@ -2823,23 +2890,6 @@ extension AJLibrary.CloudManager {
 }
 public var CameraAddTableViewCellIdentifier: Swift.String
 public var CameraAddCellHeight: CoreGraphics.CGFloat
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class ConnectModeViewController : AJLibrary.BaseViewController, UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
-  @_Concurrency.MainActor(unsafe) public var networkConfig: Swift.String?
-  @_Concurrency.MainActor(unsafe) public var isFromNotHeard: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var isFromScanQRCode: Swift.Bool
-  @_Concurrency.MainActor(unsafe) public var deviceId: Swift.String
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
-  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
-  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
-  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
-  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, heightForHeaderInSection section: Swift.Int) -> CoreGraphics.CGFloat
-  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, heightForFooterInSection section: Swift.Int) -> CoreGraphics.CGFloat
-  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
-  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, viewForFooterInSection section: Swift.Int) -> UIKit.UIView?
-  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
-  @objc deinit
-}
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class AJCWebView : WebKit.WKWebView {
   @objc deinit
 }

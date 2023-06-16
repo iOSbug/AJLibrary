@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "网关需要尽量靠近摄像机";
 "add_connect_hotspot" = "连接设备热点";
 "add_connect_wansview_wifi" = "请将手机连接到名为\"AJCxxx\"的无线网";
-"add_return_to_wansview_cloud" = "连接成功之后返回AJCloud App";
+"add_return_to_wansview_cloud" = "连接成功之后返回%@ App";
 "add_not_find_hotspot" = "没有找到热点？";
 "add_go_to_settings" = "去设置";
 "add_wifi_setting" = "无线网设置";

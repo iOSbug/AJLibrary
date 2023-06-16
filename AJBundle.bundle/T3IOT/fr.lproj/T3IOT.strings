@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "La passerelle doit toujours être près de la caméra";
 "add_connect_hotspot" = "Connecter un point d'accès sans fil";
 "add_connect_wansview_wifi" = "Veuillez connecter votre réseau Wi-Fi mobile à \"AJCxxx\"";
-"add_return_to_wansview_cloud" = "Une fois la connexion établie, retournez à l'application AJCloud.";
+"add_return_to_wansview_cloud" = "Une fois la connexion établie, retournez à l'application %@.";
 "add_not_find_hotspot" = "Vous n'avez pas trouvé le point d'accès?";
 "add_go_to_settings" = "Aller aux paramètres";
 "add_wifi_setting" = "Paramètre de Wi-Fi";

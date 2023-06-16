@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "Cổng phải luôn ở gần camera";
 "add_connect_hotspot" = "Kết nối với điểm phát sóng thiết bị";
 "add_connect_wansview_wifi" = "Vui lòng kết nối điện thoại của bạn với Wi-Fi có tên \"FAMxxx\"";
-"add_return_to_wansview_cloud" = "Quay lại ứng dụng AJCloud sau khi kết nối thành công.";
+"add_return_to_wansview_cloud" = "Quay lại ứng dụng %@ sau khi kết nối thành công.";
 "add_not_find_hotspot" = "Không tìm thấy điểm phát sóng?";
 "add_go_to_settings" = "Đi đến Cài đặt";
 "add_wifi_setting" = "Cài đặt Wi-Fi";

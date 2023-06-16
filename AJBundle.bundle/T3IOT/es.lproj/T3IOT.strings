@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "El portal siempre debe estar cerca de la cámara.";
 "add_connect_hotspot" = "Conecte el punto de acceso del dispositivo";
 "add_connect_wansview_wifi" = "Conecte su Wi-Fi móvil a \"AJCxxx\"";
-"add_return_to_wansview_cloud" = "Después de que la conexión sea exitosa, regrese a la aplicación en la nube AJCloud.";
+"add_return_to_wansview_cloud" = "Después de que la conexión sea exitosa, regrese a la aplicación en la nube %@.";
 "add_not_find_hotspot" = "¿No encontraste el punto de acceso?";
 "add_go_to_settings" = "Ir a la configuración";
 "add_wifi_setting" = "Configuración de wifi";

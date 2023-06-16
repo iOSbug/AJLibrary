@@ -419,6 +419,42 @@ SWIFT_CLASS("_TtC9AJLibrary10ActionItem")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC9AJLibrary14AddDeviceModel")
+@interface AddDeviceModel : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary18BaseViewController")
+@interface BaseViewController : UIViewController <UIGestureRecognizerDelegate>
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (UIViewController * _Nullable)PopPrevious;
++ (UIViewController * _Nullable)TopViewController SWIFT_WARN_UNUSED_RESULT;
+- (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+@class UICollectionView;
+@class NSIndexPath;
+@class UICollectionViewCell;
+
+SWIFT_CLASS("_TtC9AJLibrary23AddDeviceViewController")
+@interface AddDeviceViewController : BaseViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+- (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)animated;
+- (void)viewWillDisappear:(BOOL)animated;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView * _Nonnull)collectionView SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)collectionView:(UICollectionView * _Nonnull)collectionView numberOfItemsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
+- (UICollectionViewCell * _Nonnull)collectionView:(UICollectionView * _Nonnull)collectionView cellForItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
+- (void)collectionView:(UICollectionView * _Nonnull)collectionView didSelectItemAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
 @class AlarmModel;
 
 SWIFT_CLASS("_TtC9AJLibrary14AlarmListModel")
@@ -605,21 +641,7 @@ SWIFT_CLASS("_TtC9AJLibrary19AutoHibernateConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-
-SWIFT_CLASS("_TtC9AJLibrary18BaseViewController")
-@interface BaseViewController : UIViewController <UIGestureRecognizerDelegate>
-- (void)viewDidLoad;
-- (void)viewWillAppear:(BOOL)animated;
-- (void)viewWillDisappear:(BOOL)animated;
-- (UIViewController * _Nullable)PopPrevious;
-+ (UIViewController * _Nullable)TopViewController SWIFT_WARN_UNUSED_RESULT;
-- (void)didReceiveMemoryWarning;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
-@end
-
 @class UITableView;
-@class NSIndexPath;
 @class UITableViewCell;
 @class UIView;
 
@@ -685,9 +707,12 @@ SWIFT_CLASS("_TtC9AJLibrary11BaseSetting")
 @property (nonatomic, copy) NSString * _Nullable continent;
 @property (nonatomic, copy) NSString * _Nullable country;
 @property (nonatomic) NSInteger deviceType;
+@property (nonatomic, copy) NSString * _Nullable bizRestricted;
+@property (nonatomic, copy) NSString * _Nullable aclid;
 @property (nonatomic, copy) NSString * _Nullable prodName;
 @property (nonatomic, readonly) enum CameraStatus status;
 - (BOOL)isCharging SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isUnauthorizedSim SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)fwHaveNewVersion SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -769,6 +794,7 @@ SWIFT_CLASS("_TtC9AJLibrary16CameraInfomation")
 @property (nonatomic, strong) ConDeviceModel * _Nullable conDevice;
 @property (nonatomic, strong) OrdersModel * _Nullable orderModel;
 - (NSString * _Nullable)devAliasName SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)deviceTypeName SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -899,7 +925,17 @@ typedef SWIFT_ENUM(NSInteger, CameraStatus, open) {
 
 SWIFT_CLASS("_TtC9AJLibrary18CameraSummaryModel")
 @interface CameraSummaryModel : ResultModel
+@property (nonatomic, copy) NSString * _Nullable devGatewayUrl;
+@property (nonatomic, copy) NSString * _Nullable deviceId;
+@property (nonatomic, copy) NSString * _Nullable gatewayUrl;
+@property (nonatomic, copy) NSString * _Nullable tunnelUrl;
+@property (nonatomic, copy) NSString * _Nullable cloudStorUrl;
+@property (nonatomic, copy) NSString * _Nullable devCloudStorUrl;
 @property (nonatomic, copy) NSString * _Nullable devEmcUrl;
+@property (nonatomic, copy) NSString * _Nullable emcUrl;
+@property (nonatomic, copy) NSString * _Nullable stunServers;
+@property (nonatomic, copy) NSString * _Nullable appKeepAliveUrl;
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nullable subDevConfigs;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1259,21 +1295,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL supportsSecureC
 - (enum DeviceModeType)curDeviceType SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isShareVaild SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isShareDevice SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-SWIFT_CLASS("_TtC9AJLibrary25ConnectModeViewController")
-@interface ConnectModeViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
-- (void)viewDidLoad;
-- (NSInteger)tableView:(UITableView * _Nonnull)tableView numberOfRowsInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (UITableViewCell * _Nonnull)tableView:(UITableView * _Nonnull)tableView cellForRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath SWIFT_WARN_UNUSED_RESULT;
-- (void)tableView:(UITableView * _Nonnull)tableView didSelectRowAtIndexPath:(NSIndexPath * _Nonnull)indexPath;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForHeaderInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (CGFloat)tableView:(UITableView * _Nonnull)tableView heightForFooterInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (UIView * _Nullable)tableView:(UITableView * _Nonnull)tableView viewForHeaderInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (UIView * _Nullable)tableView:(UITableView * _Nonnull)tableView viewForFooterInSection:(NSInteger)section SWIFT_WARN_UNUSED_RESULT;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
@@ -1666,7 +1687,8 @@ SWIFT_CLASS("_TtC9AJLibrary20ImageDownloadManager")
 
 SWIFT_CLASS("_TtC9AJLibrary14ImageTypeUtils")
 @interface ImageTypeUtils : NSObject
-+ (UIImage * _Nullable)objcDeviceIconImage:(NSString * _Nonnull)productName SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)deviceModeIconImageWithDeviceMode:(NSString * _Nullable)deviceMode SWIFT_WARN_UNUSED_RESULT;
++ (UIImage * _Nullable)objcDeviceIconImage:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1901,10 +1923,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) NetAPI * _No
 @end
 
 typedef SWIFT_ENUM(NSInteger, NetConfigurationType, open) {
-  NetConfigurationTypeQR = 0,
-  NetConfigurationTypeSoftAP = 1,
-  NetConfigurationTypeEth = 2,
-  NetConfigurationTypeOnlineSetWiFi = 3,
+  NetConfigurationTypeCellular = 0,
+  NetConfigurationTypeQR = 1,
+  NetConfigurationTypeSoftAP = 2,
+  NetConfigurationTypeEth = 3,
+  NetConfigurationTypeOnlineSetWiFi = 4,
+  NetConfigurationTypeFastBind = 5,
 };
 
 
@@ -2647,14 +2671,14 @@ SWIFT_CLASS("_TtC9AJLibrary14UIExplainLabel")
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
++ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -2795,6 +2819,8 @@ SWIFT_CLASS("_TtC9AJLibrary11WCapability")
 @property (nonatomic, copy) NSString * _Nullable battery;
 @property (nonatomic, copy) NSString * _Nullable diagnose;
 @property (nonatomic, copy) NSString * _Nullable duplexVoice;
+@property (nonatomic, copy) NSString * _Nullable lvsType;
+@property (nonatomic) BOOL dualLens;
 @property (nonatomic, copy) NSString * _Nullable encryptMode;
 @property (nonatomic, copy) NSString * _Nullable localStorRmt;
 @property (nonatomic, copy) NSString * _Nullable localStorageTypes;
@@ -2806,6 +2832,7 @@ SWIFT_CLASS("_TtC9AJLibrary11WCapability")
 @property (nonatomic, copy) NSString * _Nullable opticalZoom;
 @property (nonatomic, copy) NSString * _Nullable variFocus;
 @property (nonatomic, copy) NSString * _Nullable qualities;
+@property (nonatomic, copy) NSString * _Nullable dualLensZoomVerge;
 @property (nonatomic, copy) NSString * _Nullable streams;
 @property (nonatomic, copy) NSString * _Nullable voiceDetect;
 @property (nonatomic, copy) NSString * _Nullable privLiveStream;
@@ -2825,11 +2852,11 @@ SWIFT_CLASS("_TtC9AJLibrary11WCapability")
 @property (nonatomic) BOOL floodlightBrightCtrl;
 @property (nonatomic) BOOL floodlightTimeCtrl;
 @property (nonatomic) BOOL siren;
-@property (nonatomic) BOOL feeding;
 @property (nonatomic) BOOL genAlarmThumb;
 @property (nonatomic) BOOL localStorFullDay;
 @property (nonatomic) BOOL cloudStorFullDay;
 @property (nonatomic) BOOL privateBase;
+@property (nonatomic) BOOL privateRegion;
 @property (nonatomic) BOOL nightVisionColorCtrl;
 @property (nonatomic) BOOL lowPowerStorage;
 @property (nonatomic) BOOL nightVision2;
@@ -2837,6 +2864,16 @@ SWIFT_CLASS("_TtC9AJLibrary11WCapability")
 @property (nonatomic) BOOL floodlightTiming;
 @property (nonatomic) BOOL floodlightDual;
 @property (nonatomic) BOOL staticLocalIp;
+@property (nonatomic) NSInteger osdCtrl;
+@property (nonatomic) NSInteger sims;
+@property (nonatomic) NSInteger simsCtrl;
+@property (nonatomic, copy) NSString * _Nullable alarmMediaTypes;
+@property (nonatomic) BOOL showChargingCapacity;
+@property (nonatomic, copy) NSString * _Nonnull insideCognitiveTypes;
+@property (nonatomic) BOOL soundDetect;
+@property (nonatomic) BOOL lpRetriggerIntervalType;
+- (BOOL)supportSims SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<QualityModel *> * _Nonnull)creatQualitiesArrWithQualitiesStr:(NSString * _Nonnull)qualitiesStr SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isOldLightDevice SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end

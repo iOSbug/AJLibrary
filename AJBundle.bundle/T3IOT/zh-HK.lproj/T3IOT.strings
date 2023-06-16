@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "基站需要儘量靠近攝像機";
 "add_connect_hotspot" = "連接設備熱點";
 "add_connect_wansview_wifi" = "請將手機連接到名為\"AJCxxx\"的無線網";
-"add_return_to_wansview_cloud" = "連接成功之後返回AJCloud App";
+"add_return_to_wansview_cloud" = "連接成功之後返回%@ App";
 "add_not_find_hotspot" = "沒有找到熱點？";
 "add_go_to_settings" = "去設置";
 "add_wifi_setting" = "無線網設置";

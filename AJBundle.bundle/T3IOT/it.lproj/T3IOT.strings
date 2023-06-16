@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "La stazione base deve stare sempre vicino alla camera ";
 "add_connect_hotspot" = "Collega l'hotspot del dispositivo";
 "add_connect_wansview_wifi" = "Collega il tuo telefono Wi-Fi a \"AJCxxx\"";
-"add_return_to_wansview_cloud" = "Al termine della connessione, ritorna a AJCloud app";
+"add_return_to_wansview_cloud" = "Al termine della connessione, ritorna a %@ app";
 "add_not_find_hotspot" = "Non hai trovato l'hotspot?";
 "add_go_to_settings" = "Vai alle impostazioni ";
 "add_wifi_setting" = "Impostazione Wi-Fi";

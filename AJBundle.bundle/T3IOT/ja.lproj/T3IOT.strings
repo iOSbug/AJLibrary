@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "ゲートウェイは常にカメラの近くになければなりません";
 "add_connect_hotspot" = "デバイスホットスポットを接続";
 "add_connect_wansview_wifi" = "モバイルWi-Fiを「AJCxxx」に接続してください";
-"add_return_to_wansview_cloud" = "接続に成功した後、AJCloudクラウドアプリに戻ります。";
+"add_return_to_wansview_cloud" = "接続に成功した後、%@クラウドアプリに戻ります。";
 "add_not_find_hotspot" = "ホットスポットが見つかりません？";
 "add_go_to_settings" = "設定に行き";
 "add_wifi_setting" = "Wi-Fi設定";

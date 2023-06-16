@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "Ağ geçidi daima kameranın yanında olmalı";
 "add_connect_hotspot" = "Cihaz etkin noktasını bağlayın";
 "add_connect_wansview_wifi" = "Lütfen mobil Wi-Fi'nizi \"AJCxxx\" e bağlayın";
-"add_return_to_wansview_cloud" = "Bağlantı başarılı olduktan sonra AJCloud uygulamasına geri dönün.";
+"add_return_to_wansview_cloud" = "Bağlantı başarılı olduktan sonra %@ uygulamasına geri dönün.";
 "add_not_find_hotspot" = "Hotspotu bulamadınız mı?";
 "add_go_to_settings" = "Ayarlara git";
 "add_wifi_setting" = "Wi-Fi Ayarı";
@@ -188,7 +188,8 @@
 "add_start_doorbell" = "Kapı zilini başlat";
 "add_start_doorbell_detial_tips" = "1.Pilin takılı olduğundan emin olun.\n\n2. Sesli uyarıyı duyana kadar Kapı zilinin arkasındaki güç düğmesini 3 saniye basılı tutun.";
 "add_confirm_starting" = "Başlatmayı onayla";
-"add_confirm_doorbell_power_tips" = "Kapı zilinin önündeki düğmeye dokunun ve eğer\nışık yanar ve bir zil çalar ise operasyon başarılı";
+"add_confirm_doorbell_power_tips" = "Kapı zilinin önündeki düğmeye dokunun ve eğer
+\nışık yanar ve bir zil çalar ise operasyon başarılı";
 "add_not_powered" = "Daha açılmadı mı?";
 "add_confirm_camera_power_on" = "%1$@ cihazının açık olduğunu onaylayın";
 "add_confirm_camera_power_on_detail" = "Herhangi bir LED'in bir kez yandığını görürseniz veya LED'in yandığını görmek için \"RST\" düğmesine basarsanız, kamera açılır.";
@@ -441,7 +442,9 @@
 "cloud_no_device_add" = "Eklenebilecek cihaz yok";
 "cloud_useable_for" = "için kullanılıyor";
 "cloud_buy_new_Plan" = "Daha fazla plana abone olun";
-"cloud_cancel_fail_tips" = "Bulut depolama planı aboneliği iptal edilemedi. Sistem meşgul olabilir, daha sonra tekrar denemenizi öneririz.\n\nBu abonelik PayPal kanalı üzerinden yapılıyorsa, iptal etmek için PayPal web sitesinde de oturum açabilirsiniz. Daha fazla bilgi edinin.\n\nKredi kartı kanalıyla yapılıyorsa, kartınızı veren kuruluşla da iletişime geçebilirsiniz.";
+"cloud_cancel_fail_tips" = "Bulut depolama planı aboneliği iptal edilemedi. Sistem meşgul olabilir, daha sonra tekrar denemenizi öneririz.\n
+\nBu abonelik PayPal kanalı üzerinden yapılıyorsa, iptal etmek için PayPal web sitesinde de oturum açabilirsiniz. Daha fazla bilgi edinin.\n
+\nKredi kartı kanalıyla yapılıyorsa, kartınızı veren kuruluşla da iletişime geçebilirsiniz.";
 "cloud_cancel_fail_tips_color" = "Daha fazla öğren";
 "cloud_add_subsidy_list" = "Şimdi sınırlı süreli indirimler!";
 "cloud_subsidy_detail" = "İndirim sunuyoruz. Artık bulut depolama planına abone olursanız %1$@ indirimin keyfini çıkarabilirsiniz. Promosyonun bitiminden önce yapın.";

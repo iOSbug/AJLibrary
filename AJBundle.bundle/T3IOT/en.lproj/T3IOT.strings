@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "The gateway must always be near the camera";
 "add_connect_hotspot" = "Connect to device hotspot";
 "add_connect_wansview_wifi" = "Please connect your mobile Wi-Fi to \"AJCxxx\"";
-"add_return_to_wansview_cloud" = "After the connection is successful, go back to T3IOT app.";
+"add_return_to_wansview_cloud" = "After the connection is successful, go back to %@ app.";
 "add_not_find_hotspot" = "Don't find the hotspot?";
 "add_go_to_settings" = "Go to settings";
 "add_wifi_setting" = "Wi-Fi Setting";

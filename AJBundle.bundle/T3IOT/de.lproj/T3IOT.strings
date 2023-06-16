@@ -94,7 +94,7 @@
 "add_gateway_near_camera" = "Das Gateway muss sich immer in der Nähe der Kamera befinden";
 "add_connect_hotspot" = "Verbinden Sie den Geräte Hotspot";
 "add_connect_wansview_wifi" = "Bitte verbinden Sie Ihr mobiles WLAN mit \"AJCxxx\"";
-"add_return_to_wansview_cloud" = "Nach erfolgreicher Verbindung kehren Sie zur AJCloud App zurück.";
+"add_return_to_wansview_cloud" = "Nach erfolgreicher Verbindung kehren Sie zur %@ App zurück.";
 "add_not_find_hotspot" = "Hotspot nicht gefunden?";
 "add_go_to_settings" = "Gehe zu den Einstellungen";
 "add_wifi_setting" = "WLAN Einstellung";
