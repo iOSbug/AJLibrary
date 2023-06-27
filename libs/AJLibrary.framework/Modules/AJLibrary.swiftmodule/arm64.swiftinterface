@@ -2602,6 +2602,14 @@ public var TextFieldTableViewCellId: Swift.String
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CheckFlashViewController : AJLibrary.BaseViewController {
+  @_Concurrency.MainActor(unsafe) public var networkConfig: Swift.String?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func didReceiveMemoryWarning()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class WeekPickerView : UIKit.UIView, UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
   @objc @_Concurrency.MainActor(unsafe) public var confirmExcute: (([Swift.String]) -> Swift.Void)?
   @objc @_Concurrency.MainActor(unsafe) public init(weekdays: [Swift.String])

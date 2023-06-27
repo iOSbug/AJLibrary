@@ -989,6 +989,15 @@ SWIFT_CLASS("_TtC9AJLibrary19CamerasSummaryModel")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary24CheckFlashViewController")
+@interface CheckFlashViewController : BaseViewController
+- (void)viewDidLoad;
+- (void)didReceiveMemoryWarning;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary15SupportLanguage")
 @interface SupportLanguage : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -2671,14 +2680,14 @@ SWIFT_CLASS("_TtC9AJLibrary14UIExplainLabel")
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
++ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
@@ -2693,11 +2702,11 @@ SWIFT_CLASS("_TtC9AJLibrary12UIIconButton")
 
 
 
+
 @interface UIImage (SWIFT_EXTENSION(AJLibrary))
 + (UIImage * _Nullable)mixed_imageNamed:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)static_sdkimage:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 @end
-
 
 
 /// 图片在上文字在下
