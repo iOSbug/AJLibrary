@@ -992,6 +992,7 @@ SWIFT_CLASS("_TtC9AJLibrary19CamerasSummaryModel")
 SWIFT_CLASS("_TtC9AJLibrary24CheckFlashViewController")
 @interface CheckFlashViewController : BaseViewController
 - (void)viewDidLoad;
+- (UIViewController * _Nullable)PopPrevious SWIFT_WARN_UNUSED_RESULT;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
