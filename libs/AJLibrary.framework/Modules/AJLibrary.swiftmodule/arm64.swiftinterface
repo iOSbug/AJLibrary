@@ -1195,6 +1195,7 @@ public var DiagnoseTableRowHeight: CoreGraphics.CGFloat
   @objc public static var shared: AJLibrary.AJLibManager
   @objc public static func sdkInit(_ appKey: Swift.String, appSecret: Swift.String, success: @escaping (() -> ()), failure: @escaping ((AJLibrary.ErrorModel?) -> ()))
   @objc public static func fastSignIn(_ allyName: Swift.String, allyToken: Swift.String, account: Swift.String, success: @escaping (() -> ()), failure: @escaping ((AJLibrary.ErrorModel?) -> ()))
+  @objc public static func logout()
   @objc override dynamic public init()
   @objc deinit
 }

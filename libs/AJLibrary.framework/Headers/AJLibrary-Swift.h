@@ -296,6 +296,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJLibManager
 + (AJLibManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 + (void)sdkInit:(NSString * _Nonnull)appKey appSecret:(NSString * _Nonnull)appSecret success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(ErrorModel * _Nullable))failure;
 + (void)fastSignIn:(NSString * _Nonnull)allyName allyToken:(NSString * _Nonnull)allyToken account:(NSString * _Nonnull)account success:(void (^ _Nonnull)(void))success failure:(void (^ _Nonnull)(ErrorModel * _Nullable))failure;
++ (void)logout;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
