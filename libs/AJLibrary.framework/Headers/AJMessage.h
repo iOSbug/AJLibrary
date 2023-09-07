@@ -32,6 +32,11 @@ typedef enum : NSUInteger {
 - (void)initPush;
 
 /**
+ *    初始化推送参数，回调获取到的firebase的deivcetoken
+ */
+- (void)initPush:(nullable void (^)(NSString *))deviceToken;
+
+/**
  *    设置firebase的pushtoken
  */
 - (void)setFirebasePushToken:(NSString *)deviceToken;
