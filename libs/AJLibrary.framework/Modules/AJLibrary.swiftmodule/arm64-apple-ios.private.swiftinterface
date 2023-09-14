@@ -3412,6 +3412,7 @@ extension AVKit.AVPlayerViewController {
   }
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class EMCNetManager : AJLibrary.BaseNetManager {
+  @objc public var pushsetStartBlock: (([Swift.String : Any]) -> ())?
   @objc public static let shared: AJLibrary.EMCNetManager
   @objc public func fetchAlarmsCalendar(_ deviceId: Swift.String, tzValue: Swift.String, accessKey: Swift.String, complete: @escaping (AJLibrary.AlarmsCalendarModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchFeedLogs(_ deviceId: Swift.String, ctime: Swift.String, limit: ObjectiveC.NSInteger, complete: @escaping (AJLibrary.feedLogsModel?, AJLibrary.ErrorModel?) -> Swift.Void)

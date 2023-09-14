@@ -1541,6 +1541,7 @@ enum OrderType : NSInteger;
 
 SWIFT_CLASS("_TtC9AJLibrary13EMCNetManager")
 @interface EMCNetManager : BaseNetManager
+@property (nonatomic, copy) void (^ _Nullable pushsetStartBlock)(NSDictionary<NSString *, id> * _Nonnull);
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) EMCNetManager * _Nonnull shared;)
 + (EMCNetManager * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
 /// 告警日历
