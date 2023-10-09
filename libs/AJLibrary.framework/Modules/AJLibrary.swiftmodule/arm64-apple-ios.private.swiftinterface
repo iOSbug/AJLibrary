@@ -122,11 +122,11 @@ public enum NetHTTPMethod : Swift.String {
   }
 }
 public protocol NetDecodable : HandyJSON.HandyJSON {
-  static func parse(json: Any) -> (Self?, AJLibrary.ErrorModel?)
+  static func parse(json: Any) -> (AJLibrary.NetDecodable?, AJLibrary.ErrorModel?)
 }
 extension AJLibrary.NetDecodable {
-  public static func parse(json: Any) -> (Self?, AJLibrary.ErrorModel?)
-  public static func parseArr(json: Any) -> ([Self]?, AJLibrary.ErrorModel?)
+  public static func parse(json: Any) -> (AJLibrary.NetDecodable?, AJLibrary.ErrorModel?)
+  public static func parseArr(json: Any) -> ([AJLibrary.NetDecodable]?, AJLibrary.ErrorModel?)
 }
 public protocol NetRequest {
   var host: Swift.String { get set }
