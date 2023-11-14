@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJLibrary'
-  s.version          = '2.2.2'
+  s.version          = '2.2.3'
   s.summary          = 'A short description of AJLibrary.'
 
 # This description is used to generate tags and improve search results.
@@ -55,11 +55,9 @@ TODO: Add long description of the pod here.
   s.dependency 'MJRefresh'
   ss.dependency 'Material'
   ss.dependency 'lottie-ios','2.5.0'
-  ss.dependency 'EFMarkdown'
   ss.dependency 'SDWebImage', "~> 5.11.0"
   ss.dependency 'AFNetworking', "~> 4.0.1"
   ss.dependency 'FCUUID'
-  ss.dependency 'CocoaSecurity'
   ss.dependency 'Sodium', '0.8.0'
   ss.dependency 'AliyunOSSiOS'
   ss.dependency 'Masonry'
