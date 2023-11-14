@@ -12,14 +12,12 @@ import AudioToolbox
 import AuthenticationServices
 import SystemConfiguration.CaptiveNetwork
 import CocoaAsyncSocket
-import CocoaSecurity
 import CoreImage
 import CoreLocation
 import CoreMedia
 import CoreTelephony
-import EFMarkdown
 import FCUUID
-import Firebase
+import FirebaseCore
 import FirebaseMessaging
 import Foundation
 import HandyJSON
