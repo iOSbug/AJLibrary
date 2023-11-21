@@ -1087,6 +1087,18 @@ SWIFT_CLASS("_TtC9AJLibrary12CloudBuyView")
 @end
 
 
+SWIFT_CLASS("_TtC9AJLibrary16CloudDeviceModel")
+@interface CloudDeviceModel : ResultModel
+@property (nonatomic, copy) NSString * _Nullable did;
+@property (nonatomic, copy) NSString * _Nullable devGatewayUrl;
+@property (nonatomic, copy) NSString * _Nullable devCloudStorUrl;
+@property (nonatomic, copy) NSString * _Nullable devTzName;
+@property (nonatomic, copy) NSString * _Nullable devTzValue;
+@property (nonatomic, copy) NSString * _Nullable devVendorCode;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary26CloudExplainViewController")
 @interface CloudExplainViewController : BaseViewController <UITableViewDataSource, UITableViewDelegate>
 - (nonnull instancetype)initWithIsBattery:(BOOL)isBattery OBJC_DESIGNATED_INITIALIZER;
@@ -2048,9 +2060,18 @@ SWIFT_CLASS("_TtC9AJLibrary11OnvifConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class ProductModel;
 
 SWIFT_CLASS("_TtC9AJLibrary10OrderModel")
 @interface OrderModel : ResultModel
+@property (nonatomic, strong) ProductModel * _Nullable product;
+@property (nonatomic, copy) NSString * _Nullable status;
+@property (nonatomic, copy) NSString * _Nullable payMode;
+@property (nonatomic, copy) NSArray<CloudDeviceModel *> * _Nullable devices;
+@property (nonatomic, copy) NSString * _Nullable trialPeriod;
+@property (nonatomic, copy) NSString * _Nullable validTsStart;
+@property (nonatomic, copy) NSString * _Nullable validTsEnd;
+@property (nonatomic, copy) NSString * _Nullable name;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -2229,6 +2250,15 @@ SWIFT_CLASS("_TtC9AJLibrary19PrivateRegionConfig")
 @property (nonatomic) BOOL enable;
 @property (nonatomic, copy) NSString * _Nullable name;
 @property (nonatomic, copy) NSArray<NSString *> * _Nonnull areas;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC9AJLibrary12ProductModel")
+@interface ProductModel : ResultModel
+@property (nonatomic, copy) NSString * _Nullable serviceMonths;
+@property (nonatomic, copy) NSString * _Nullable buyMode;
+@property (nonatomic, copy) NSString * _Nullable unit;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

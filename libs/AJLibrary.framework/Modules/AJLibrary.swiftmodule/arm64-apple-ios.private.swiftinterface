@@ -3120,6 +3120,23 @@ public let CommonTableCellId: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class ProductModel : AJLibrary.ResultModel {
+  @objc public var serviceMonths: Swift.String?
+  @objc public var buyMode: Swift.String?
+  @objc public var unit: Swift.String?
+  @objc required dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class CloudDeviceModel : AJLibrary.ResultModel {
+  @objc public var did: Swift.String?
+  @objc public var devGatewayUrl: Swift.String?
+  @objc public var devCloudStorUrl: Swift.String?
+  @objc public var devTzName: Swift.String?
+  @objc public var devTzValue: Swift.String?
+  @objc public var devVendorCode: Swift.String?
+  @objc required dynamic public init()
+  @objc deinit
+}
 public enum OrderStatusEnum : Swift.String {
   case isInUse
   case isCanceled
@@ -3131,6 +3148,14 @@ public enum OrderStatusEnum : Swift.String {
   }
 }
 @objc @_inheritsConvenienceInitializers public class OrderModel : AJLibrary.ResultModel {
+  @objc public var product: AJLibrary.ProductModel?
+  @objc public var status: Swift.String?
+  @objc public var payMode: Swift.String?
+  @objc public var devices: [AJLibrary.CloudDeviceModel]?
+  @objc public var trialPeriod: Swift.String?
+  @objc public var validTsStart: Swift.String?
+  @objc public var validTsEnd: Swift.String?
+  @objc public var name: Swift.String?
   public func isFullTimeOrder() -> Swift.Bool
   public func isFromAjcard() -> Swift.Bool
   public func isIpcType() -> Swift.Bool

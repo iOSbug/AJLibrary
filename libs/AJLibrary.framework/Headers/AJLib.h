@@ -53,6 +53,8 @@
 #import <AJLibrary/AJShare.h>
 #import <AJLibrary/AJShareSendReceiverModel.h>
 #import <AJLibrary/AJCocoaSecurity.h>
+#import <AJLibrary/AJCloud.h>
+#import <AJLibrary/AJCloudStorageModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
