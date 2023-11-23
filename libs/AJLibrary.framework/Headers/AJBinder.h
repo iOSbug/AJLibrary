@@ -9,7 +9,7 @@
 #import "AJError.h"
 #import "AJWifiListModel.h"
 #import "AJDiscoverDeviceModel.h"
-
+#import "AJDeviceInfoModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,7 +34,7 @@ typedef enum : NSUInteger {
  *    @param     success                成功 回调
  *    @param     failure                失败回调
  */
-- (void)startBinderView:(nullable void (^)(void))success
+- (void)startBinderView:(nullable void (^)(AJDeviceInfoModel *))success
                 failure:(nullable void (^)(AJError *))failure;
 
 

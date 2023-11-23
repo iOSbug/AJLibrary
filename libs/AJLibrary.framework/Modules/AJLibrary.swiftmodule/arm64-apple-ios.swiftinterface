@@ -1211,7 +1211,7 @@ public let DiagnoseTableRowHeight: CoreFoundation.CGFloat
 }
 @objc @_inheritsConvenienceInitializers public class AJBinderResponse : ObjectiveC.NSObject {
   @objc public static let shared: AJLibrary.AJBinderResponse
-  @objc public var ajBinderSuccessBlock: (() -> ())?
+  @objc public var ajBinderSuccessBlock: ((AJLibrary.AJDeviceInfoModel?) -> ())?
   @objc public var ajBinderFailBlock: ((AJLibrary.AJError?) -> ())?
   @objc override dynamic public init()
   @objc deinit

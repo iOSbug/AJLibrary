@@ -286,13 +286,14 @@ SWIFT_CLASS("_TtC9AJLibrary26AJBaseNavigationController")
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class AJDeviceInfoModel;
 @class AJError;
 
 SWIFT_CLASS("_TtC9AJLibrary16AJBinderResponse")
 @interface AJBinderResponse : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJBinderResponse * _Nonnull shared;)
 + (AJBinderResponse * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic, copy) void (^ _Nullable ajBinderSuccessBlock)(void);
+@property (nonatomic, copy) void (^ _Nullable ajBinderSuccessBlock)(AJDeviceInfoModel * _Nullable);
 @property (nonatomic, copy) void (^ _Nullable ajBinderFailBlock)(AJError * _Nullable);
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
