@@ -17,6 +17,16 @@ NS_ASSUME_NONNULL_BEGIN
 */
 + (instancetype)shared;
 
+/**
+ *    获取云存套餐状态
+ *
+ *    @param     success                成功 回调
+ *    @param     failure                失败回调
+ */
+- (void)queryCloudOrderStatus:(NSString *)deviceId
+                      success:(nullable void (^)(AJCloudOrderStatusModel *))success
+                      failure:(nullable void (^)(AJError *))failure;
+
 
 /**
  *    获取云存套餐列表

@@ -45,4 +45,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(strong,nonatomic) NSString *trialPeriod;
 @end
 
+
+@interface AJCloudOrderStatusModel : NSObject
+
+///0-无套餐； 1-套餐正常  5-套餐暂停
+@property(strong,nonatomic) NSString *status;
+
+@end
+
 NS_ASSUME_NONNULL_END

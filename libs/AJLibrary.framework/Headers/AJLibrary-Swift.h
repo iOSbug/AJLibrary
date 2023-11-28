@@ -2076,6 +2076,14 @@ SWIFT_CLASS("_TtC9AJLibrary10OrderModel")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+
+SWIFT_CLASS("_TtC9AJLibrary16OrderStatusModel")
+@interface OrderStatusModel : ResultModel
+/// 0-无套餐； 1-套餐正常 5-套餐暂停
+@property (nonatomic, copy) NSString * _Nullable status;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
 typedef SWIFT_ENUM(NSInteger, OrderType, open) {
   OrderTypeUpsert = 1,
   OrderTypeRemove = 2,
@@ -2226,6 +2234,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PlayViewDataManager * 
 - (void)fetchCloudPlanListWithRefresh:(BOOL)refresh supportDevType:(NSInteger)supportDevType saleRegion:(NSInteger)saleRegion complete:(void (^ _Nonnull)(CloudPlansModel * _Nullable, ErrorModel * _Nullable))complete;
 - (NSString * _Nonnull)getWeekdaysText:(NSArray<NSString *> * _Nonnull)weekDays SWIFT_WARN_UNUSED_RESULT;
 - (void)fetchOrderList_exWithRefresh:(BOOL)refresh masterUid:(NSString * _Nullable)masterUid supportDevType:(NSInteger)supportDevType status:(NSArray<NSString *> * _Nonnull)status complete:(void (^ _Nonnull)(OrdersModel * _Nullable, ErrorModel * _Nullable))complete;
+- (void)fetchOrderStatusWithDeviceId:(NSString * _Nonnull)deviceId complete:(void (^ _Nonnull)(OrderStatusModel * _Nullable, ErrorModel * _Nullable))complete;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

@@ -3196,6 +3196,11 @@ public enum OrderStatusEnum : Swift.String {
   @objc required dynamic public init()
   @objc deinit
 }
+@objc @_inheritsConvenienceInitializers public class OrderStatusModel : AJLibrary.ResultModel {
+  @objc public var status: Swift.String?
+  @objc required dynamic public init()
+  @objc deinit
+}
 public let DevConfigApi: Swift.String
 @_hasMissingDesignatedInitializers public class VolumeControl {
   @objc deinit
@@ -3561,6 +3566,7 @@ public enum OnlineSetResult : Swift.Int {
   @objc public func fetchCloudPlanList(refresh: Swift.Bool = false, supportDevType: Swift.Int = IPCSupportDevType, saleRegion: Swift.Int = CloudSaleRegion, complete: @escaping (AJLibrary.CloudPlansModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   @objc public func getWeekdaysText(_ weekDays: [Swift.String]) -> Swift.String
   @objc public func fetchOrderList_ex(refresh: Swift.Bool = false, masterUid: Swift.String? = nil, supportDevType: Swift.Int = IPCSupportDevType, status: [Swift.String], complete: @escaping (AJLibrary.OrdersModel?, AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc public func fetchOrderStatus(deviceId: Swift.String, complete: @escaping (AJLibrary.OrderStatusModel?, AJLibrary.ErrorModel?) -> Swift.Void)
   @objc override dynamic public init()
   @objc deinit
 }
