@@ -160,7 +160,7 @@ public enum LoginType : Swift.String {
   @objc public class func curUid() -> Swift.String?
   public class func curPassword() -> Swift.String?
   public class func saveOauth(_ oauthModel: AJLibrary.OauthModel)
-  public class func userOauth() -> AJLibrary.OauthModel?
+  @objc public class func userOauth() -> AJLibrary.OauthModel?
   public class func isNewAccount(_ username: Swift.String) -> Swift.Bool
   public class func clearCurrentUser()
   public class func saveLoginCountry(_ country: AJLibrary.CountryModel, _ name: Swift.String)
@@ -2769,6 +2769,7 @@ extension UIKit.UILabel {
   @objc deinit
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(OauthModel) public class OauthModel : AJLibrary.ResultModel, Foundation.NSCoding {
+  @objc public var bizFlag: Swift.String?
   public func accountRegion() -> Swift.String?
   public func isChinaAccount() -> Swift.Bool
   public func getAlly(_ loginType: AJLibrary.LoginType = Login.getAccountLoginType()) -> AJLibrary.AllyModel?

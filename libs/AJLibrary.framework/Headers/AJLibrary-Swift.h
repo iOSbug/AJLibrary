@@ -1889,6 +1889,7 @@ SWIFT_CLASS("_TtC9AJLibrary15LocalStorConfig")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+@class OauthModel;
 
 SWIFT_CLASS("_TtC9AJLibrary5Login")
 @interface Login : NSObject
@@ -1897,6 +1898,7 @@ SWIFT_CLASS("_TtC9AJLibrary5Login")
 + (NSString * _Nullable)curUsername SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)accountUsername SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)curUid SWIFT_WARN_UNUSED_RESULT;
++ (OauthModel * _Nullable)userOauth SWIFT_WARN_UNUSED_RESULT;
 + (void)saveUacNode:(NSString * _Nonnull)uacNodeKey model:(AccessNodeModel * _Nonnull)model;
 + (AccessNodeModel * _Nullable)getUacNode:(NSString * _Nonnull)uacNodeKey SWIFT_WARN_UNUSED_RESULT;
 + (void)saveWXLoginUnion:(NSString * _Nonnull)unionid;
@@ -2040,6 +2042,8 @@ SWIFT_CLASS("_TtC9AJLibrary17NightVisionConfig")
 
 SWIFT_CLASS_NAMED("OauthModel")
 @interface OauthModel : ResultModel <NSCoding>
+@property (nonatomic, copy) NSString * _Nullable bizFlag;
+/// 是否存在私有云的数据
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 - (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
