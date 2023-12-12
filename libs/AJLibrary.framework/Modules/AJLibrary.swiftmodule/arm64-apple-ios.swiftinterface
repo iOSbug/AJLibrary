@@ -1269,6 +1269,7 @@ public let DiagnoseTableRowHeight: CoreFoundation.CGFloat
   @objc public func rtspConfig(deviceId: Swift.String, port: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func onvifConfig(deviceId: Swift.String, enable: Swift.String, port: Swift.String, verify: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func setTimezone(deviceId: Swift.String, tzName: Swift.String, tzValue: Swift.String, autoAdjust: Swift.String, tzDistrict: Swift.String?, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
+  @objc public func fetchTimezone(_ complete: (([[Any]]?, AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func detectionsConfig(_ deviceId: Swift.String, susceptiveness: Swift.Int, fullViewport: Swift.String, areas: [Swift.String]?, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func moveMonitorConfig(_ deviceId: Swift.String, enable: Swift.String, genAlarmThumb: Swift.String, wholeDayEnable: Swift.String, wholeStartTime: Swift.String, wholeEndTime: Swift.String, wholeWeekDays: [Swift.String], enable1: Swift.String, startTime1: Swift.String, endTime1: Swift.String, weekDays1: [Swift.String], enable2: Swift.String, startTime2: Swift.String, endTime2: Swift.String, weekDays2: [Swift.String], complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
   @objc public func alarmRekConfig(_ deviceId: Swift.String, humanoid: Swift.String, package: Swift.String, pet: Swift.String, vehicle: Swift.String, pnmO1: Swift.String, complete: ((AJLibrary.ErrorModel?) -> Swift.Void)?)
@@ -1875,6 +1876,26 @@ public enum SupportLanguageOption : Swift.String {
     get
   }
   @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc(TimezoneModel) public class TimezoneModel : AJLibrary.ResultModel, Foundation.NSCoding {
+  @objc public var tzGmt: Swift.String?
+  @objc public var tzName: Swift.String?
+  @objc public var tzString: Swift.String?
+  @objc public var tzUtc: Swift.String?
+  @objc public var tzValue: Swift.String?
+  @objc public var en: Swift.String?
+  @objc public var zh: Swift.String?
+  @objc public var fr: Swift.String?
+  @objc public var de: Swift.String?
+  @objc public var es: Swift.String?
+  @objc public var pt: Swift.String?
+  @objc public var jp: Swift.String?
+  @objc public var it: Swift.String?
+  @objc public var ko: Swift.String?
+  @objc public var tr: Swift.String?
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc required public init?(coder aDecoder: Foundation.NSCoder)
   @objc deinit
 }
 public func GetImage(named: Swift.String) -> UIKit.UIImage?

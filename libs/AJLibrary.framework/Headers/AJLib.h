@@ -55,6 +55,7 @@
 #import <AJLibrary/AJCocoaSecurity.h>
 #import <AJLibrary/AJCloud.h>
 #import <AJLibrary/AJCloudStorageModel.h>
+#import <AJLibrary/AJTimezoneModel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

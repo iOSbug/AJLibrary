@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "AJError.h"
 #import "AJDiagnoseModel.h"
+#import "AJTimezoneModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -296,6 +297,13 @@ NS_ASSUME_NONNULL_BEGIN
                success:(nullable void (^)(void))success
                failure:(nullable void (^)(AJError *))failure;
 
+/// 时区列表
+/// @param success success
+/// @param failure failure
+- (void)getTimezonelist:(nullable void (^)(NSArray<AJTimezoneModel *> *))success
+                failure:(nullable void (^)(AJError *))failure;
+
+
 
 /// 移动检测灵敏度等级和检测区域配置langge
 /// @param deviceId 设备 ID
@@ -557,6 +565,29 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)restart:(NSString *)deviceId
         success:(nullable void (^)(void))success
         failure:(nullable void (^)(AJError *))failure;
+
+
+/// 报警开关控制
+/// @param deviceId 设备 ID
+/// @param isOn  0:关 1:开
+/// @param success success
+/// @param failure failure
+- (void)sirenControl:(NSString *)deviceId
+                isOn:(NSString *)isOn
+             success:(nullable void (^)(void))success
+             failure:(nullable void (^)(AJError *))failure;
+
+
+
+/// 移动触发报警开关控制
+/// @param deviceId 设备 ID
+/// @param isOn  0:关 1:开
+/// @param success success
+/// @param failure failure
+- (void)sirenByMotionCtrl:(NSString *)deviceId
+                     isOn:(NSString *)isOn
+                  success:(nullable void (^)(void))success
+                  failure:(nullable void (^)(AJError *))failure;
 
 
 /// 加载诊断服务器地址

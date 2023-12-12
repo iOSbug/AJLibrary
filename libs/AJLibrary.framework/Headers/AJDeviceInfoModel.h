@@ -23,6 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 分享设备状态
 @property (nonatomic, assign) BOOL isShareVaild;
 
+/// 设备WIFI Mac
+@property (nonatomic, strong) NSString *wifiMac;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -385,6 +385,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJSettingsMa
 - (void)rtspConfigWithDeviceId:(NSString * _Nonnull)deviceId port:(NSString * _Nonnull)port complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)onvifConfigWithDeviceId:(NSString * _Nonnull)deviceId enable:(NSString * _Nonnull)enable port:(NSString * _Nonnull)port verify:(NSString * _Nonnull)verify complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)setTimezoneWithDeviceId:(NSString * _Nonnull)deviceId tzName:(NSString * _Nonnull)tzName tzValue:(NSString * _Nonnull)tzValue autoAdjust:(NSString * _Nonnull)autoAdjust tzDistrict:(NSString * _Nullable)tzDistrict complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
+- (void)fetchTimezone:(void (^ _Nullable)(NSArray<NSArray *> * _Nullable, ErrorModel * _Nullable))complete;
 - (void)detectionsConfig:(NSString * _Nonnull)deviceId susceptiveness:(NSInteger)susceptiveness fullViewport:(NSString * _Nonnull)fullViewport areas:(NSArray<NSString *> * _Nullable)areas complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)moveMonitorConfig:(NSString * _Nonnull)deviceId enable:(NSString * _Nonnull)enable genAlarmThumb:(NSString * _Nonnull)genAlarmThumb wholeDayEnable:(NSString * _Nonnull)wholeDayEnable wholeStartTime:(NSString * _Nonnull)wholeStartTime wholeEndTime:(NSString * _Nonnull)wholeEndTime wholeWeekDays:(NSArray<NSString *> * _Nonnull)wholeWeekDays enable1:(NSString * _Nonnull)enable1 startTime1:(NSString * _Nonnull)startTime1 endTime1:(NSString * _Nonnull)endTime1 weekDays1:(NSArray<NSString *> * _Nonnull)weekDays1 enable2:(NSString * _Nonnull)enable2 startTime2:(NSString * _Nonnull)startTime2 endTime2:(NSString * _Nonnull)endTime2 weekDays2:(NSArray<NSString *> * _Nonnull)weekDays2 complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
 - (void)alarmRekConfig:(NSString * _Nonnull)deviceId humanoid:(NSString * _Nonnull)humanoid package:(NSString * _Nonnull)package pet:(NSString * _Nonnull)pet vehicle:(NSString * _Nonnull)vehicle pnmO1:(NSString * _Nonnull)pnmO1 complete:(void (^ _Nullable)(ErrorModel * _Nullable))complete;
@@ -2561,6 +2562,30 @@ SWIFT_CLASS("_TtC9AJLibrary17TimeZoneDataModel")
 @end
 
 
+SWIFT_CLASS_NAMED("TimezoneModel")
+@interface TimezoneModel : ResultModel <NSCoding>
+@property (nonatomic, copy) NSString * _Nullable tzGmt;
+@property (nonatomic, copy) NSString * _Nullable tzName;
+@property (nonatomic, copy) NSString * _Nullable tzString;
+@property (nonatomic, copy) NSString * _Nullable tzUtc;
+@property (nonatomic, copy) NSString * _Nullable tzValue;
+@property (nonatomic, copy) NSString * _Nullable en;
+@property (nonatomic, copy) NSString * _Nullable zh;
+@property (nonatomic, copy) NSString * _Nullable fr;
+@property (nonatomic, copy) NSString * _Nullable de;
+@property (nonatomic, copy) NSString * _Nullable es;
+@property (nonatomic, copy) NSString * _Nullable pt;
+@property (nonatomic, copy) NSString * _Nullable jp;
+@property (nonatomic, copy) NSString * _Nullable it;
+@property (nonatomic, copy) NSString * _Nullable ko;
+@property (nonatomic, copy) NSString * _Nullable tr;
+- (void)encodeWithCoder:(NSCoder * _Nonnull)aCoder;
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC9AJLibrary25TimingLightViewController")
 @interface TimingLightViewController : UIBaseTableViewController <TimePickerDelegate>
 @property (nonatomic, copy) NSString * _Nonnull deviceId;
@@ -2773,14 +2798,14 @@ SWIFT_CLASS("_TtC9AJLibrary14UIExplainLabel")
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
-+ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
 @end
 
 
 @interface UIFont (SWIFT_EXTENSION(AJLibrary))
-+ (BOOL)mixed_registerFont:(NSBundle * _Nullable)bundle filename:(NSString * _Nonnull)fileName type:(NSString * _Nullable)type error:(NSError * _Nullable * _Nullable)error;
++ (UIFont * _Nullable)mixed_58SmileFontBold:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Regular:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
++ (UIFont * _Nullable)mixed_don58Medium:(CGFloat)fontSize SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

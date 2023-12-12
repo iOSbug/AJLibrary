@@ -54,7 +54,7 @@
 		</data>
 		<key>Headers/AJDeviceInfoModel.h</key>
 		<data>
-		jX4HZLwfxywfRV7NhJn3eOtZjoE=
+		VWUmNzhWfIG7RfVFFvHoMHwWUZQ=
 		</data>
 		<key>Headers/AJDiagnoseModel.h</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>Headers/AJLib.h</key>
 		<data>
-		2ql5dAbpqwtdzrNPveP1REGAo3Y=
+		U9y/BIncPm2hSczDyvzUSS1M5uk=
 		</data>
 		<key>Headers/AJLibrary-Swift.h</key>
 		<data>
-		CjhbPstCyCMCfr8CXdteINtJVrM=
+		nj6eOjvX23+wZOn0EzNP9qk3clw=
 		</data>
 		<key>Headers/AJLibrary.h</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>Headers/AJSettings.h</key>
 		<data>
-		asDjxdCe+oym6qobcOYHq784nes=
+		r2nXLG4+gy92a//zXtdRjgWpKuY=
 		</data>
 		<key>Headers/AJShare.h</key>
 		<data>
@@ -107,6 +107,10 @@
 		<key>Headers/AJShareSendReceiverModel.h</key>
 		<data>
 		xt4eOuu7Q+TUe93Q2nIZVDTqLCE=
+		</data>
+		<key>Headers/AJTimezoneModel.h</key>
+		<data>
+		Rth2D4l7tl0xtyw05voQwpjmAXo=
 		</data>
 		<key>Headers/AJWifiListModel.h</key>
 		<data>
@@ -282,15 +286,15 @@
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		HukyvkTOsWQ8l03voIDlhhorhcE=
+		L8p3LTfPdkLEJf3VOwsF8UE0+y0=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		DTRKwADl3PkQ+x/Oj0lSUoZjuxg=
+		H3zlIou0Iht4SgpLdqiLddKzGdg=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		a9k4ds8RcdR2BRem4IHCnSfM7+I=
+		yHHodvCdJv2NrggZ3wO0byGseLg=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -298,11 +302,11 @@
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		a9k4ds8RcdR2BRem4IHCnSfM7+I=
+		yHHodvCdJv2NrggZ3wO0byGseLg=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		TUHCDZq2l2Q9Ge+Xy0I9d1583M8=
+		HOuFj6hoWWJSI8iVgmaFSZLMUQU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -447,11 +451,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jX4HZLwfxywfRV7NhJn3eOtZjoE=
+			VWUmNzhWfIG7RfVFFvHoMHwWUZQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			ln3Qgjfd+a+kwsiOdWUTLa2yRjDw53kvL1EsriAz0PI=
+			HgfVahr+3vx4lnVjn37QgkdA3QAIMfug6MtvLgVwBeQ=
 			</data>
 		</dict>
 		<key>Headers/AJDiagnoseModel.h</key>
@@ -502,22 +506,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2ql5dAbpqwtdzrNPveP1REGAo3Y=
+			U9y/BIncPm2hSczDyvzUSS1M5uk=
 			</data>
 			<key>hash2</key>
 			<data>
-			yGjFp3oNbqlNA9Aw1yw1saEpOSM+4Sh0CHWFPnLqaiU=
+			rIXJIiBWYl3SOsN75Mg4GXR6ay9fPLHEslg4prLYGwU=
 			</data>
 		</dict>
 		<key>Headers/AJLibrary-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			CjhbPstCyCMCfr8CXdteINtJVrM=
+			nj6eOjvX23+wZOn0EzNP9qk3clw=
 			</data>
 			<key>hash2</key>
 			<data>
-			lEObZYu5rZDPwsnjneeO4ogjWbz4vZPEuQUEcOz4aw8=
+			ezwzZFYua2sUxmzGCuM+VnTtniMpg1ggO5//M9VV/xA=
 			</data>
 		</dict>
 		<key>Headers/AJLibrary.h</key>
@@ -568,11 +572,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			asDjxdCe+oym6qobcOYHq784nes=
+			r2nXLG4+gy92a//zXtdRjgWpKuY=
 			</data>
 			<key>hash2</key>
 			<data>
-			6ruUAhotQ+Jb/Y60vWwZGp7527oTGepqAzcnuKVJhW8=
+			2asnkz1aR2LjudPZ/0051h1vpfRCHzuWWUa57ChVzSI=
 			</data>
 		</dict>
 		<key>Headers/AJShare.h</key>
@@ -595,6 +599,17 @@
 			<key>hash2</key>
 			<data>
 			IGjum78UGHlDXMc0GOEefuJWxIeaUHr+mAVbcr4Apro=
+			</data>
+		</dict>
+		<key>Headers/AJTimezoneModel.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Rth2D4l7tl0xtyw05voQwpjmAXo=
+			</data>
+			<key>hash2</key>
+			<data>
+			5RioquhNtauSh9HTNzxq3yK29rngF0Qa/mrZQbrIrvU=
 			</data>
 		</dict>
 		<key>Headers/AJWifiListModel.h</key>
@@ -1063,33 +1078,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HukyvkTOsWQ8l03voIDlhhorhcE=
+			L8p3LTfPdkLEJf3VOwsF8UE0+y0=
 			</data>
 			<key>hash2</key>
 			<data>
-			gdbqVhK0VZGRUUvP3giEC1d9IYioAbdrYpV2PhuNBo8=
+			iwl0YyO+1J1MT1DubnK4qRzzOR8WY96saHlnHr3LokQ=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			DTRKwADl3PkQ+x/Oj0lSUoZjuxg=
+			H3zlIou0Iht4SgpLdqiLddKzGdg=
 			</data>
 			<key>hash2</key>
 			<data>
-			XiZG2iK6gybBQ7Ti20DWK6Pm2yzz2LWrJbHtSwaA6Tk=
+			0y6yWLq16JeZENTQodfP80x+iCtbi9J0m75SrHEpDTk=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			a9k4ds8RcdR2BRem4IHCnSfM7+I=
+			yHHodvCdJv2NrggZ3wO0byGseLg=
 			</data>
 			<key>hash2</key>
 			<data>
-			W5jvWCigpXtRwH+XjcETxiEy+LKj+amlw0wSTC9BnB8=
+			hmbgfcv2CnyKdOYCP05gukGfKPLuiiXJAKel9lIL8bA=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -1107,22 +1122,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			a9k4ds8RcdR2BRem4IHCnSfM7+I=
+			yHHodvCdJv2NrggZ3wO0byGseLg=
 			</data>
 			<key>hash2</key>
 			<data>
-			W5jvWCigpXtRwH+XjcETxiEy+LKj+amlw0wSTC9BnB8=
+			hmbgfcv2CnyKdOYCP05gukGfKPLuiiXJAKel9lIL8bA=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TUHCDZq2l2Q9Ge+Xy0I9d1583M8=
+			HOuFj6hoWWJSI8iVgmaFSZLMUQU=
 			</data>
 			<key>hash2</key>
 			<data>
-			+6uc1UaJIvZEBJrHq/ewzGLbLmYnfNdeyEEJt8iZo+A=
+			J85QgcCYfgOCGq+m0+qNk8xozuoAXEefUWB94ByU65k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
