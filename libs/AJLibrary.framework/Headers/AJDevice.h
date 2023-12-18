@@ -70,6 +70,16 @@ typedef enum : NSUInteger {
              failure:(nullable void (^)(AJError *))failure;
 
 
+/**
+ *    获取单个设备详情
+ *
+ *    @param     success                成功 回调
+ *    @param     failure                失败回调
+ */
+- (void)queryDeviceInfo:(NSString *)deviceId
+                success:(nullable void (^)(void))success
+                failure:(nullable void (^)(AJError *))failure;
+
 
 /**
  *    加载摄像头页面

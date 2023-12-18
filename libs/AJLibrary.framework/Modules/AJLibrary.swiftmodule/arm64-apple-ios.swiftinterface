@@ -2461,6 +2461,7 @@ public enum ProductNameType : Swift.String {
   public func fetchCamerasSummaryInfo(_ deviceId: Swift.String, deviceType: AJLibrary.DeviceModeType, sdcUrl: Swift.String, complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchCamerasSummaryInfo(deviceIds: [Swift.String], deviceTypesDic: [Swift.String : AJLibrary.DeviceModeType], complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchCamerasInfos(_ devicesIds: [Swift.String], deviceTypesDic: [Swift.String : AJLibrary.DeviceModeType], complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc public func fetchCameraInfo(_ deviceId: Swift.String, complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchCameraInfo(_ deviceId: Swift.String, deviceTypesDic: [Swift.String : AJLibrary.DeviceModeType] = [:], complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
   public func refreshCamerasState(_ camerasIds: [Swift.String])
   public func fetchDevicesArray(modeDevicesTypes: [AJLibrary.DeviceModeType]) -> [Swift.String]

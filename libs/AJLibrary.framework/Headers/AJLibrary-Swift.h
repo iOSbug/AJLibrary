@@ -1487,6 +1487,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) DevicesManager * _Nonn
 - (void)fetchDevicesListWithComplete:(void (^ _Nonnull)(NSArray<NSString *> * _Nonnull, ErrorModel * _Nullable))complete;
 /// 获取摄像头id列表
 - (void)fetchCamerasListWithComplete:(void (^ _Nonnull)(NSString * _Nonnull, ErrorModel * _Nullable))complete;
+- (void)fetchCameraInfo:(NSString * _Nonnull)deviceId complete:(void (^ _Nonnull)(NSString * _Nonnull, ErrorModel * _Nullable))complete;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
