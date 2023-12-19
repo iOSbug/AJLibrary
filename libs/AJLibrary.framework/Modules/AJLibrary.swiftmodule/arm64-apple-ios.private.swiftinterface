@@ -2310,6 +2310,7 @@ public let SmsResetPassword: Swift.String
 public let AccountActiveApi: Swift.String
 public let FastSignInApi: Swift.String
 public let SDKInitApi: Swift.String
+public let SDKVersion: Swift.String
 @objc @_inheritsConvenienceInitializers public class BaseNetManager : ObjectiveC.NSObject {
   public func modelName() -> Swift.String
   public func agentName() -> Swift.String
@@ -2461,7 +2462,7 @@ public enum ProductNameType : Swift.String {
   public func fetchCamerasSummaryInfo(_ deviceId: Swift.String, deviceType: AJLibrary.DeviceModeType, sdcUrl: Swift.String, complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchCamerasSummaryInfo(deviceIds: [Swift.String], deviceTypesDic: [Swift.String : AJLibrary.DeviceModeType], complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchCamerasInfos(_ devicesIds: [Swift.String], deviceTypesDic: [Swift.String : AJLibrary.DeviceModeType], complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
-  @objc public func fetchCameraInfo(_ deviceId: Swift.String, complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
+  @objc public func fetchDeviceInfo(_ deviceId: Swift.String, complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
   public func fetchCameraInfo(_ deviceId: Swift.String, deviceTypesDic: [Swift.String : AJLibrary.DeviceModeType] = [:], complete: @escaping (_ deviceId: Swift.String, AJLibrary.ErrorModel?) -> Swift.Void)
   public func refreshCamerasState(_ camerasIds: [Swift.String])
   public func fetchDevicesArray(modeDevicesTypes: [AJLibrary.DeviceModeType]) -> [Swift.String]
