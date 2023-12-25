@@ -806,6 +806,7 @@ public let FetchInfosApi: Swift.String
   public func settingWifiSignalImage() -> UIKit.UIImage?
   public func settingHeaderNetworkImage() -> UIKit.UIImage?
   public func settingHeaderNetworkString() -> Swift.String?
+  @objc public func floatingSignalImage_4G() -> UIKit.UIImage?
   public func homeNetworkImage() -> UIKit.UIImage?
   @objc public func playerNetworkImage() -> UIKit.UIImage?
   @objc public func homeWifiSignalImage() -> UIKit.UIImage?
@@ -2717,7 +2718,9 @@ public let TextFieldTableViewCellId: Swift.String
   @objc public var insideCognitiveTypes: Swift.String
   @objc public var soundDetect: Swift.Bool
   @objc public var lpRetriggerIntervalType: Swift.Bool
+  @objc public var lvs1Qualities: Swift.String?
   public func haveInsideCognitiveHumanoid() -> Swift.Bool
+  public func lvsQualitiesArr() -> [AJLibrary.QualityModel]
   public func haveInsideCognitiveVehicle() -> Swift.Bool
   public func haveInsideCognitivePet() -> Swift.Bool
   public func haveInsideCognitivePackage() -> Swift.Bool
@@ -3516,8 +3519,11 @@ public enum OnlineSetResult : Swift.Int {
   @objc public func deleteAlarm(_ deviceId: Swift.String, cdate: Swift.String, ctss: [Swift.String], complete: @escaping (Swift.String?) -> Swift.Void)
   @objc public func getCameraReslutionArray(_ deviceId: Swift.String) -> [AJLibrary.QualityModel]?
   @objc public func getDefaultCameraReslutionNum(_ deviceId: Swift.String) -> Swift.String?
+  @objc public func getDualLensCameraReslutionArray(_ deviceId: Swift.String) -> [AJLibrary.QualityModel]?
   @objc public func getQuadScreenDefaultCameraReslutionNum(_ deviceId: Swift.String) -> Swift.String?
+  @objc public func updateCameraReslutionArray(_ deviceId: Swift.String, capabilitySTR: Swift.String) -> [AJLibrary.QualityModel]?
   @objc public func getCameraAccessKey(_ deviceId: Swift.String) -> Swift.String?
+  @objc public func cameraOnlyHaveOneStream(_ deviceId: Swift.String) -> Swift.Bool
   @objc public func getCameraLightMode(_ deviceId: Swift.String) -> Swift.String?
   @objc public func cameraIsSupportPtz(_ deviceId: Swift.String) -> Swift.String?
   @objc public func cameraIsSupportFeeding(_ deviceId: Swift.String) -> Swift.Bool
@@ -3525,6 +3531,7 @@ public enum OnlineSetResult : Swift.Int {
   @objc public func cameraIsSupportFloodlightBrightnessChange(_ deviceId: Swift.String) -> Swift.Bool
   @objc public func cameraIsSupportFloodlightTimeControl(_ deviceId: Swift.String) -> Swift.Bool
   @objc public func cameraIsSupportAlarmWhistle(_ deviceId: Swift.String) -> Swift.Bool
+  @objc public func cameraIsSupportdualLens(_ deviceId: Swift.String) -> Swift.Bool
   @objc public func cameraCognitiveTypes(_ deviceId: Swift.String) -> Swift.String?
   @objc public func cameraIsSupportPrivLiveStream(_ deviceId: Swift.String) -> Swift.Bool
   @objc public func cameraAlarmWhistleIsOn(_ deviceId: Swift.String) -> Swift.Bool
@@ -3535,6 +3542,8 @@ public enum OnlineSetResult : Swift.Int {
   @objc public func foodIsEmpty(_ deviceId: Swift.String) -> Swift.Bool
   @objc public func foodisEmptyDescLabel(_ deviceId: Swift.String) -> UIKit.UIView
   @objc public func cameraFloodlightAutoIsOn(_ deviceId: Swift.String) -> Swift.Bool
+  @objc public func cameraIsSupportdualScreen_realLens(_ deviceId: Swift.String) -> Swift.Bool
+  @objc public func cameraVenderCode(_ deviceId: Swift.String) -> Swift.String?
   @objc public func cameraFloodlightTimeIsOn(_ deviceId: Swift.String) -> Swift.Bool
   @objc public func cameraFloodlightBrightness(_ deviceId: Swift.String) -> Swift.Int
   @objc public func cameraIsSupportWhiteLightCtrl(_ deviceId: Swift.String) -> Swift.Bool
@@ -3554,6 +3563,7 @@ public enum OnlineSetResult : Swift.Int {
   @objc public func cameraPtzControl(_ deviceId: Swift.String, direction: Swift.String)
   @objc public func cameraViewAngleConfig(_ deviceId: Swift.String, viewAngle: Swift.String, name: Swift.String, complete: @escaping (Swift.String?) -> Swift.Void)
   @objc public func cameraViewAngleDele(_ deviceId: Swift.String, viewAngles: [Swift.String], complete: @escaping (Swift.String?) -> Swift.Void)
+  @objc public func cameraIsSupportSimCard(_ deviceId: Swift.String) -> Swift.Bool
   @objc public func cameraViewAngleTurn(_ deviceId: Swift.String, viewAngle: Swift.String)
   @objc public func getAlarmsCalendar(_ deviceId: Swift.String, complete: @escaping ([Swift.String]?, Swift.String?) -> Swift.Void)
   @objc public func getFeedLogs(_ deviceId: Swift.String, ctime: Swift.String, limit: ObjectiveC.NSInteger, complete: @escaping (AJLibrary.feedLogsModel?, Swift.String?) -> Swift.Void)

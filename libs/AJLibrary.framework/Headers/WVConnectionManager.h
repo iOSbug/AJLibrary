@@ -85,9 +85,17 @@ typedef void(^BatterySingleCallBack)(NSInteger localPort);
 -(void)voiceDidChange:(NSInteger )type;
 -(void)resetVoiceChnage;
 -(void)forceDisconenct:(NSString *)cameraID;
--(void)resetP2PSDK;
-@property (nonatomic) ALCdevice     *m_alDevice;
 
+
+-(void)SwitchToSFocus:(NSString *)cameraID;
+-(void)SwitchToLFocus:(NSString *)cameraID;
+-(void)getCurrentLensWiththDeviceID:(NSString *)cameraID;
+-(int)sendVideoData:(NSData *)videoEncodeData index:(NSInteger)videoIndex cameraID:(NSString *)cameraID isIframe:(BOOL)isIframe;
+
+
+
+@property (nonatomic) ALCdevice     *m_alDevice;
+@property(strong,nonatomic) NSMutableDictionary *resolutionDIC;
 
 @end
 

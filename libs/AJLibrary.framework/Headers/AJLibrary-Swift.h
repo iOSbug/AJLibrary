@@ -347,6 +347,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJLibManager
 @end
 
 
+
 SWIFT_CLASS("_TtC9AJLibrary17AJQRBinderManager")
 @interface AJQRBinderManager : NSObject
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) AJQRBinderManager * _Nonnull shared;)
@@ -921,6 +922,7 @@ SWIFT_CLASS("_TtC9AJLibrary11CameraModel")
 @property (nonatomic, strong) TrackConfig * _Nullable trackConfig;
 @property (nonatomic, strong) AlarmRekConfig * _Nullable alarmRekConfig;
 - (BOOL)isCloudEnable SWIFT_WARN_UNUSED_RESULT;
+- (UIImage * _Nullable)floatingSignalImage_4G SWIFT_WARN_UNUSED_RESULT;
 - (UIImage * _Nullable)playerNetworkImage SWIFT_WARN_UNUSED_RESULT;
 - (UIImage * _Nullable)homeWifiSignalImage SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
@@ -2166,8 +2168,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PlayViewDataManager * 
 - (void)deleteAlarm:(NSString * _Nonnull)deviceId cdate:(NSString * _Nonnull)cdate ctss:(NSArray<NSString *> * _Nonnull)ctss complete:(void (^ _Nonnull)(NSString * _Nullable))complete;
 - (NSArray<QualityModel *> * _Nullable)getCameraReslutionArray:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getDefaultCameraReslutionNum:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<QualityModel *> * _Nullable)getDualLensCameraReslutionArray:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getQuadScreenDefaultCameraReslutionNum:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
+- (NSArray<QualityModel *> * _Nullable)updateCameraReslutionArray:(NSString * _Nonnull)deviceId capabilitySTR:(NSString * _Nonnull)capabilitySTR SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getCameraAccessKey:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)cameraOnlyHaveOneStream:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)getCameraLightMode:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)cameraIsSupportPtz:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)cameraIsSupportFeeding:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
@@ -2175,6 +2180,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PlayViewDataManager * 
 - (BOOL)cameraIsSupportFloodlightBrightnessChange:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)cameraIsSupportFloodlightTimeControl:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)cameraIsSupportAlarmWhistle:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)cameraIsSupportdualLens:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nullable)cameraCognitiveTypes:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)cameraIsSupportPrivLiveStream:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)cameraAlarmWhistleIsOn:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
@@ -2186,6 +2192,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PlayViewDataManager * 
 - (BOOL)foodIsEmpty:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (UIView * _Nonnull)foodisEmptyDescLabel:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)cameraFloodlightAutoIsOn:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)cameraIsSupportdualScreen_realLens:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)cameraVenderCode:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)cameraFloodlightTimeIsOn:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (NSInteger)cameraFloodlightBrightness:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)cameraIsSupportWhiteLightCtrl:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
@@ -2204,6 +2212,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) PlayViewDataManager * 
 - (void)cameraPtzControl:(NSString * _Nonnull)deviceId direction:(NSString * _Nonnull)direction;
 - (void)cameraViewAngleConfig:(NSString * _Nonnull)deviceId viewAngle:(NSString * _Nonnull)viewAngle name:(NSString * _Nonnull)name complete:(void (^ _Nonnull)(NSString * _Nullable))complete;
 - (void)cameraViewAngleDele:(NSString * _Nonnull)deviceId viewAngles:(NSArray<NSString *> * _Nonnull)viewAngles complete:(void (^ _Nonnull)(NSString * _Nullable))complete;
+- (BOOL)cameraIsSupportSimCard:(NSString * _Nonnull)deviceId SWIFT_WARN_UNUSED_RESULT;
 - (void)cameraViewAngleTurn:(NSString * _Nonnull)deviceId viewAngle:(NSString * _Nonnull)viewAngle;
 - (void)getAlarmsCalendar:(NSString * _Nonnull)deviceId complete:(void (^ _Nonnull)(NSArray<NSString *> * _Nullable, NSString * _Nullable))complete;
 - (void)getFeedLogs:(NSString * _Nonnull)deviceId ctime:(NSString * _Nonnull)ctime limit:(NSInteger)limit complete:(void (^ _Nonnull)(feedLogsModel * _Nullable, NSString * _Nullable))complete;
@@ -2821,11 +2830,11 @@ SWIFT_CLASS("_TtC9AJLibrary12UIIconButton")
 
 
 
-
 @interface UIImage (SWIFT_EXTENSION(AJLibrary))
 + (UIImage * _Nullable)mixed_imageNamed:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 + (UIImage * _Nullable)static_sdkimage:(NSString * _Nonnull)name SWIFT_WARN_UNUSED_RESULT;
 @end
+
 
 
 /// 图片在上文字在下
@@ -3000,6 +3009,7 @@ SWIFT_CLASS("_TtC9AJLibrary11WCapability")
 @property (nonatomic, copy) NSString * _Nonnull insideCognitiveTypes;
 @property (nonatomic) BOOL soundDetect;
 @property (nonatomic) BOOL lpRetriggerIntervalType;
+@property (nonatomic, copy) NSString * _Nullable lvs1Qualities;
 - (BOOL)supportSims SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<QualityModel *> * _Nonnull)creatQualitiesArrWithQualitiesStr:(NSString * _Nonnull)qualitiesStr SWIFT_WARN_UNUSED_RESULT;
 - (BOOL)isOldLightDevice SWIFT_WARN_UNUSED_RESULT;
