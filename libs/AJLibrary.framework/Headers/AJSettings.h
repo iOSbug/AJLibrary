@@ -220,7 +220,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 隐私区域设置
 /// @param deviceId 设备 ID
 /// @param enable 启用隐私区域开关 0 - 关，1 - 开
-/// @param areas 隐私区域位置 ['x0','y0','x1','y1']，区间：整体最大 --> [0,0,10000,10000]
+/// @param areas 隐私区域位置 ["x0,y0,x1,y1"]，区间：整体最大 --> ["0,0,10000,10000"]
 /// @param success success
 /// @param failure failure
 - (void)privateRegionConfig:(NSString *)deviceId
@@ -309,7 +309,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param deviceId 设备 ID
 /// @param susceptiveness 灵敏度等级  0 ~ 5
 /// @param fullViewport 是否全屏 0 - 是，1 - 否
-/// @param areas 检测区域  ['x0','y0','x1','y1']，区间：整体最大 --> [0,0,10000,10000]
+/// @param areas 检测区域  ["'x0,y0,x1,y1"]，区间：整体最大 --> ["0,0,10000,10000"]
 /// @param success success
 /// @param failure failure
 - (void)detectionsConfig:(NSString *)deviceId

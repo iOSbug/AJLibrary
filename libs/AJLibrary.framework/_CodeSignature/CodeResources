@@ -98,7 +98,7 @@
 		</data>
 		<key>Headers/AJSettings.h</key>
 		<data>
-		r2nXLG4+gy92a//zXtdRjgWpKuY=
+		jWe0GrktWJuUAlqRv/O3lV5B4zk=
 		</data>
 		<key>Headers/AJShare.h</key>
 		<data>
@@ -286,7 +286,7 @@
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		xJs7Ry4kfmEtCkcdcxESC57rGe8=
+		HW6+2cjepbHF19Dnbh1iT4MURaI=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -572,11 +572,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			r2nXLG4+gy92a//zXtdRjgWpKuY=
+			jWe0GrktWJuUAlqRv/O3lV5B4zk=
 			</data>
 			<key>hash2</key>
 			<data>
-			2asnkz1aR2LjudPZ/0051h1vpfRCHzuWWUa57ChVzSI=
+			XhH0OU1V/U1kT61ABONpez1yFjktDQdofLM92Vxan1Y=
 			</data>
 		</dict>
 		<key>Headers/AJShare.h</key>
@@ -1078,11 +1078,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xJs7Ry4kfmEtCkcdcxESC57rGe8=
+			HW6+2cjepbHF19Dnbh1iT4MURaI=
 			</data>
 			<key>hash2</key>
 			<data>
-			cSL1DMVul3rCOBxh6nS3HkdQihbsxLtg7xrg0+Kx+Zc=
+			rCE3aPHObUNmiMK2ppQYwTZpWISlXmtht9m/ZC651sM=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
