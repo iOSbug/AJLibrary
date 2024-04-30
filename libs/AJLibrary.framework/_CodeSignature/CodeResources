@@ -78,7 +78,7 @@
 		</data>
 		<key>Headers/AJLibrary-Swift.h</key>
 		<data>
-		mTqGcRDgVRaQiPlvH8+iD4HRzkY=
+		tpfcXtp6iVGiz4wVNbhL0Gd9oXs=
 		</data>
 		<key>Headers/AJLibrary.h</key>
 		<data>
@@ -282,35 +282,35 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HccegQT4ptG2ZxYnWqsvJyW5fP8=
+		4i4uJEv6fkDh0hgQV+CbCRcJjsE=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		ZI6LByMcFYhzm49bY0xn/XWg1XU=
+		Z0cGIiud/chXtdoKbc0eOLurmxY=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		F0XkGfXloy4cdtDgjBmqpLxU9J8=
+		2+OVPNf6N+vpcwJ5zr007J6Ec7Y=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		fOY6gLnHKeZESfBs9ntI32ASii0=
+		bufLj6nTR6GojLutoe9cMWwtQ10=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		zm67tB3/eo4r94HCyGbu2zS0u0I=
+		30/ZmvyTaJzbP0jKkNJoaGdlYzk=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		fOY6gLnHKeZESfBs9ntI32ASii0=
+		bufLj6nTR6GojLutoe9cMWwtQ10=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		u0o3tLzN/oF4rS6Lan/NQNyo3l8=
+		oh+xrfs2tXaD7S6TLbupKX3GGfY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		s4oJCbltA0TC5c4SSXySgwGt2rI=
+		QyUnrrfoQ8ciQpg+phuLPnIVRfU=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -517,11 +517,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mTqGcRDgVRaQiPlvH8+iD4HRzkY=
+			tpfcXtp6iVGiz4wVNbhL0Gd9oXs=
 			</data>
 			<key>hash2</key>
 			<data>
-			vvFFwAw8MEowvAAwAPAlW6wWolMTj2ppot8As4joQ+c=
+			EaIG6YPhNWKf/BNIMAUUitGtm/uo8L1+O4AfzidAA0g=
 			</data>
 		</dict>
 		<key>Headers/AJLibrary.h</key>
@@ -1078,77 +1078,77 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZI6LByMcFYhzm49bY0xn/XWg1XU=
+			Z0cGIiud/chXtdoKbc0eOLurmxY=
 			</data>
 			<key>hash2</key>
 			<data>
-			iPFoh0Gc0K/TH6T5SQqhx7fYZdDVah6N3MW/z+br5PU=
+			FBOs1Qp5WL7h6Htr2lSe7GTBeIbzxV2q+mGKS9gT8UU=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F0XkGfXloy4cdtDgjBmqpLxU9J8=
+			2+OVPNf6N+vpcwJ5zr007J6Ec7Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			tVVlSsTNP1WpapKQw/3K9zSpwuSwQqgoPsZ3H7iuhLg=
+			bM+/C3rF+La5TlOlPOzaiHh4N8rAlHlEzr8ecdX/T/8=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fOY6gLnHKeZESfBs9ntI32ASii0=
+			bufLj6nTR6GojLutoe9cMWwtQ10=
 			</data>
 			<key>hash2</key>
 			<data>
-			VuG6aQS+H1h8er2WvEulHW00/xESmkdKOkgwMAJYP4g=
+			d2uPtsay71WchvQ3jGxD2uckUUb7Mkw6BFThVPjgsmc=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zm67tB3/eo4r94HCyGbu2zS0u0I=
+			30/ZmvyTaJzbP0jKkNJoaGdlYzk=
 			</data>
 			<key>hash2</key>
 			<data>
-			oHM/VIgNLMrkfyD10IKuPHIiRQgEnqEI0aGOJXKFeuc=
+			ZLeFYnfWmRAZ+y+LGDB4Sa+IfvLU+0JGvQPly6tMg04=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			fOY6gLnHKeZESfBs9ntI32ASii0=
+			bufLj6nTR6GojLutoe9cMWwtQ10=
 			</data>
 			<key>hash2</key>
 			<data>
-			VuG6aQS+H1h8er2WvEulHW00/xESmkdKOkgwMAJYP4g=
+			d2uPtsay71WchvQ3jGxD2uckUUb7Mkw6BFThVPjgsmc=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			u0o3tLzN/oF4rS6Lan/NQNyo3l8=
+			oh+xrfs2tXaD7S6TLbupKX3GGfY=
 			</data>
 			<key>hash2</key>
 			<data>
-			g3TnS685IlKnE+FhPMAMVd8toQYJpO3v47uEGqFoe6w=
+			5NNeYItfBQExAlmQGFV+eEhTnEoCVzoYUwBVDTEZKBQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			s4oJCbltA0TC5c4SSXySgwGt2rI=
+			QyUnrrfoQ8ciQpg+phuLPnIVRfU=
 			</data>
 			<key>hash2</key>
 			<data>
-			IljVbWpp/frGWPYj0s4VnSIk+Cbrk4dyIYBp3Z9qwBo=
+			/Sl1SBfYlJ0x12rGUyLKJ0P0sBMMJcgl1LR1fTMeMok=
 			</data>
 		</dict>
 	</dict>

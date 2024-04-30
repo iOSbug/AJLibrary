@@ -1,7 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
-// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name AJLibrary
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name AJLibrary
 import AFNetworking
 @_exported import AJLibrary
 import AVFoundation
@@ -47,6 +46,7 @@ import XCGLogger
 import ZipArchive
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 import mobileffmpeg
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class CustomWebViewController : AJLibrary.WebViewController, WebKit.WKNavigationDelegate {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
@@ -55,7 +55,7 @@ import mobileffmpeg
   @objc @_Concurrency.MainActor(unsafe) public func PopVc()
   @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, didStartProvisionalNavigation navigation: WebKit.WKNavigation!)
   @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
-  @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: Swift.Error)
+  @_Concurrency.MainActor(unsafe) @objc public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: any Swift.Error)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func didReceiveMemoryWarning()
   @_Concurrency.MainActor(unsafe) override public init(urlRequest: Foundation.URLRequest, configuration: WebKit.WKWebViewConfiguration = super, activities: [UIKit.UIActivity]? = nil)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
@@ -120,11 +120,11 @@ public enum NetHTTPMethod : Swift.String {
   }
 }
 public protocol NetDecodable : HandyJSON.HandyJSON {
-  static func parse(json: Any) -> (AJLibrary.NetDecodable?, AJLibrary.ErrorModel?)
+  static func parse(json: Any) -> ((any AJLibrary.NetDecodable)?, AJLibrary.ErrorModel?)
 }
 extension AJLibrary.NetDecodable {
-  public static func parse(json: Any) -> (AJLibrary.NetDecodable?, AJLibrary.ErrorModel?)
-  public static func parseArr(json: Any) -> ([AJLibrary.NetDecodable]?, AJLibrary.ErrorModel?)
+  public static func parse(json: Any) -> ((any AJLibrary.NetDecodable)?, AJLibrary.ErrorModel?)
+  public static func parseArr(json: Any) -> ([any AJLibrary.NetDecodable]?, AJLibrary.ErrorModel?)
 }
 public protocol NetRequest {
   var host: Swift.String { get set }
@@ -257,7 +257,7 @@ public protocol TwicketSegmentedControlDelegate : AnyObject {
   @_Concurrency.MainActor(unsafe) public static let height: CoreFoundation.CGFloat
   public struct Constants {
   }
-  @_Concurrency.MainActor(unsafe) weak open var delegate: AJLibrary.TwicketSegmentedControlDelegate?
+  @_Concurrency.MainActor(unsafe) weak open var delegate: (any AJLibrary.TwicketSegmentedControlDelegate)?
   @_Concurrency.MainActor(unsafe) open var defaultTextColor: UIKit.UIColor {
     get
     set
@@ -317,7 +317,7 @@ public protocol TwicketSegmentedControlDelegate : AnyObject {
   @objc optional func renewTime(_ newTime: Swift.String, tag: Swift.Int)
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class UITimePicker : UIKit.UIView {
-  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: AJLibrary.TimePickerDelegate?
+  @objc @_Concurrency.MainActor(unsafe) weak public var delegate: (any AJLibrary.TimePickerDelegate)?
   @_Concurrency.MainActor(unsafe) public var renewTimeBlock: ((Swift.String) -> ())?
   @objc @_Concurrency.MainActor(unsafe) public func timeChange()
   @objc @_Concurrency.MainActor(unsafe) public func show()
@@ -440,10 +440,10 @@ public let FetchInfosApi: Swift.String
 @_hasMissingDesignatedInitializers public class KeychainWrapper {
   public class func hasValueForKey(_ key: Swift.String) -> Swift.Bool
   public class func stringForKey(_ keyName: Swift.String) -> Swift.String?
-  public class func objectForKey(_ keyName: Swift.String) -> Foundation.NSCoding?
+  public class func objectForKey(_ keyName: Swift.String) -> (any Foundation.NSCoding)?
   @discardableResult
   public class func setString(_ value: Swift.String, forKey keyName: Swift.String) -> Swift.Bool
-  public class func setObject(_ value: Foundation.NSCoding, forKey keyName: Swift.String) -> Swift.Bool
+  public class func setObject(_ value: any Foundation.NSCoding, forKey keyName: Swift.String) -> Swift.Bool
   public class func setData(_ value: Foundation.Data, forKey keyName: Swift.String) -> Swift.Bool
   public class func removeObjectForKey(_ keyName: Swift.String) -> Swift.Bool
   @objc deinit
@@ -2534,7 +2534,7 @@ public let LocalTFDownloadHost: Swift.String
   public var downloadPath: Swift.String?
   public var fileName: Swift.String
   public var taskId: Swift.String
-  @objc public var error: Swift.Error?
+  @objc public var error: (any Swift.Error)?
   public var taskModel: AJLibrary.TaskModel
   public var status: AJLibrary.DownloadStatus {
     get
@@ -2601,13 +2601,13 @@ extension AJLibrary.M3U8Task {
 }
 @_hasMissingDesignatedInitializers public class AuthIDUtils {
   public static func localAuthIdStorageStatus(_ username: Swift.String?) -> Swift.Bool
-  public static func isAuthIdEnabel(_ username: Swift.String?) -> (Swift.Bool, Swift.Error?)
+  public static func isAuthIdEnabel(_ username: Swift.String?) -> (Swift.Bool, (any Swift.Error)?)
   public static func setAuthIdEnabel(_ username: Swift.String?, enabel: Swift.Bool)
   public static func clearAuthIdSetting(_ username: Swift.String?)
   public static var isSupportFaceID: Swift.Bool {
     get
   }
-  public static func evaluatePolicy(_ reply: @escaping (Swift.Bool, Swift.Error?) -> Swift.Void)
+  public static func evaluatePolicy(_ reply: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
   public static func canEvaluatePolicy() -> (canEvaluate: Swift.Bool, error: Foundation.NSError?)
   @objc deinit
 }
@@ -3625,7 +3625,7 @@ public enum OnlineSetResult : Swift.Int {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewWillDisappear(_ animated: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLayoutSubviews()
-  @_Concurrency.MainActor(unsafe) @objc public func mailComposeController(_ controller: MessageUI.MFMailComposeViewController, didFinishWith result: MessageUI.MFMailComposeResult, error: Swift.Error?)
+  @_Concurrency.MainActor(unsafe) @objc public func mailComposeController(_ controller: MessageUI.MFMailComposeViewController, didFinishWith result: MessageUI.MFMailComposeResult, error: (any Swift.Error)?)
   @_Concurrency.MainActor(unsafe) @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
   @objc @_Concurrency.MainActor(unsafe) public func loadCloudStorage()
   @_Concurrency.MainActor(unsafe) @objc override public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
