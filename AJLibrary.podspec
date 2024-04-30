@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJLibrary'
-  s.version          = '2.3.7'
+  s.version          = '2.3.8'
   s.summary          = 'A short description of AJLibrary.'
 
 # This description is used to generate tags and improve search results.
@@ -43,7 +43,7 @@ TODO: Add long description of the pod here.
   
   ss.libraries = "c++.1", "iconv", "z", "bz2.1.0"
 
-  ss.dependency 'HandyJSON', :git => 'https://github.com/Miles-Matheson/HandyJSON.git'
+  ss.dependency 'HandyJSON', "~> 5.0.3-beta"
   ss.dependency 'Alamofire', '4.9.1'
   ss.dependency 'Firebase/Crashlytics'
   ss.dependency 'Firebase/Core'
