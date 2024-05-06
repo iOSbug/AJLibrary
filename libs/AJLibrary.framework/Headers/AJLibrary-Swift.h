@@ -1436,6 +1436,10 @@ SWIFT_CLASS("_TtC9AJLibrary5Czech")
 
 SWIFT_CLASS("_TtC9AJLibrary14DetectionShare")
 @interface DetectionShare : ResultModel
+@property (nonatomic, copy) NSString * _Nullable name;
+@property (nonatomic) NSInteger susceptiveness;
+@property (nonatomic) BOOL fullViewport;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable areas;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 

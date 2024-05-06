@@ -947,10 +947,10 @@ public enum AutoLightMode : Swift.String {
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers public class DetectionShare : AJLibrary.ResultModel {
-  public var name: Swift.String?
-  public var susceptiveness: Swift.Int?
-  public var fullViewport: Swift.Bool
-  public var areas: [Swift.String]?
+  @objc public var name: Swift.String?
+  @objc public var susceptiveness: Swift.Int
+  @objc public var fullViewport: Swift.Bool
+  @objc public var areas: [Swift.String]?
   public func coordinateArea() -> (Swift.Int?, Swift.Int?, Swift.Int?, Swift.Int?)
   @objc required dynamic public init()
   @objc deinit

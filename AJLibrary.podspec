@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJLibrary'
-  s.version          = '2.3.8'
+  s.version          = '2.3.9'
   s.summary          = 'A short description of AJLibrary.'
 
 # This description is used to generate tags and improve search results.
