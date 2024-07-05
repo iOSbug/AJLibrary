@@ -55,7 +55,8 @@
 "add_enter_manually" = "Connect it manually";
 "add_qr_scan" = "QR code scanning";
 "add_already_bound_nav" = "Already paired";
-"add_bound_by_other_tips" = "This camera is already bound by \n %1$@";
+"add_bound_by_other_tips" = "This camera is bound by other user.\nPlease unbind that camera first, and try to add device again in this account.";
+"add_bound_by_other_title"="This camera is unavailable";
 "add_contact_owner" = "If you want to add this camera, please contact its owner.";
 "add_5g_tips_title" = "Your Wi-Fi may be 5GHz";
 "add_change_wifi" = "Change";
