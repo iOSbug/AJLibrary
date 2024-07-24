@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJLibrary'
-  s.version          = '2.4.4'
+  s.version          = '2.4.5'
   s.summary          = 'A short description of AJLibrary.'
 
 # This description is used to generate tags and improve search results.
@@ -68,7 +68,7 @@ TODO: Add long description of the pod here.
   ss.dependency 'LSTCategory'
   ss.dependency 'CHIPageControl'
   ss.dependency 'ZKCycleScrollView'
-  ss.dependency 'MobileVLCKit', "~> 3.4.1b11"
+  ss.dependency 'MobileVLCKit', "~> 3.6.0"
   ss.dependency 'mobile-ffmpeg-full', '~> 4.4'
 
  end

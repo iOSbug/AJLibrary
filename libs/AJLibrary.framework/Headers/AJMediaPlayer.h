@@ -13,6 +13,10 @@ typedef enum {
     AJMediaPlayerPrivate
 }AJMediaPlayerDecodeType;
 
+typedef enum {
+    AJMediaPlayerTalkModeFullDuplex=1,
+    AJMediaPlayerTalkModeHalfDuplex
+}AJMediaPlayerTalkMode;
 
 @protocol AJMediaPlayerDelegate <NSObject>
 @optional
@@ -179,6 +183,15 @@ typedef void (^snapShotDoneAction)(UIImage *image);
  *
  */
 -(BOOL)playPosition:(CGFloat)position;
+
+/**
+ *  talkMode 通话模式
+ *
+ *   仅在设备支持全双工的情况下设置
+ *
+ */
+-(void)talkMode:(AJMediaPlayerTalkMode)talkMode;
+
 
 @end
 
