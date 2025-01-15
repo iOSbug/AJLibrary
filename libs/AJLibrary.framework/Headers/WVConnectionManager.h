@@ -80,7 +80,7 @@ typedef void(^BatterySingleCallBack)(NSInteger localPort);
 -(void)openRemoteTFTcpConnection:(NSString *)cameraID;
 -(NSInteger)RecoveryLocalRelayWithCameraID:(NSString *)cameraID;
 -(NSInteger)TFRecoveryLocalRelayWithCameraID:(NSString *)cameraID;
-
+-(NSInteger)TFReloadLocalRelayWithCameraID:(NSString *)cameraID;
 -(void)batteryTaskRecoveryCallBack:(BatterySingleCallBack)callback;
 -(void)voiceDidChange:(NSInteger )type;
 -(void)resetVoiceChnage;

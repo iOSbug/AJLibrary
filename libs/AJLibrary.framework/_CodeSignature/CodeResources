@@ -50,7 +50,7 @@
 		</data>
 		<key>Headers/AJDevice.h</key>
 		<data>
-		2lP5Y8e5neTSfvYpCY59Aca7j9E=
+		DFg0MuBh8wjxBfURgToHyZNtUts=
 		</data>
 		<key>Headers/AJDeviceInfoModel.h</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Headers/AJLibrary-Swift.h</key>
 		<data>
-		qkqvTmrqjABxLbMC47ASLV0oJ08=
+		RDARBAOJnbQdN8PRDyzsvWDsq6Y=
 		</data>
 		<key>Headers/AJLibrary.h</key>
 		<data>
@@ -246,7 +246,7 @@
 		</data>
 		<key>Headers/WVConnectionManager.h</key>
 		<data>
-		TQ9wrPZDUYhTGoDC42sfBohl5+E=
+		OBHIPwmLV6gcMQf5i7ujurVA4MU=
 		</data>
 		<key>Headers/WVGetPlayUrlManager.h</key>
 		<data>
@@ -282,31 +282,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		bFMLQD+dAn4cB81nvbrjOhEP7CE=
+		U/tE06Rw+6w8o3KiPHDmbCd3aho=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		QPZ56/RD+3Jb2ANQAC31QcccPiM=
+		TIlDZTginoPn6vPGV06ydSUVsb4=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		S1uHdRZJiWFmIKg2Kc8u9T8Jt2g=
+		R8sTQ6t4AZXEmDFgUq3bZhxI81Q=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		E+IswqhfqEshjC+0xX2RMDITg3k=
+		i94zR/VcXL9ogYwMnWd0an3QiKI=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		GbIKirDMurhiOAxVv97YfFY0q3Q=
+		OGUe1FBQGgugJKyVQCQmY63X64k=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		E+IswqhfqEshjC+0xX2RMDITg3k=
+		i94zR/VcXL9ogYwMnWd0an3QiKI=
 		</data>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		Jhh7ep6KeoNdP8AI8e9ni3j0xOc=
+		1oWgyH/l1N3jEdxizTpMf4dVzFs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -440,11 +440,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2lP5Y8e5neTSfvYpCY59Aca7j9E=
+			DFg0MuBh8wjxBfURgToHyZNtUts=
 			</data>
 			<key>hash2</key>
 			<data>
-			i2ItKG9SRIrRchtaYDUoTfnAj1veKhjf8essj54CpUc=
+			2q/w8sIULKAkJ8o7H1bK2JvLkcbx+1mUCvE5pgyUYss=
 			</data>
 		</dict>
 		<key>Headers/AJDeviceInfoModel.h</key>
@@ -517,11 +517,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qkqvTmrqjABxLbMC47ASLV0oJ08=
+			RDARBAOJnbQdN8PRDyzsvWDsq6Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			aqEmvZFd222Q5g/lFEz5npfkISJDEXrCoFPJEN41qkM=
+			ATk4coxOj7xzdz+ZgaVmMtX30EEFhvGdTFom9Z7tRjY=
 			</data>
 		</dict>
 		<key>Headers/AJLibrary.h</key>
@@ -979,11 +979,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TQ9wrPZDUYhTGoDC42sfBohl5+E=
+			OBHIPwmLV6gcMQf5i7ujurVA4MU=
 			</data>
 			<key>hash2</key>
 			<data>
-			3WGOpS94V58Y2meOSchfWcKE2xRzYFAB/KA/xcCVka4=
+			wPp+o9JKjrytb5tMNItxKrTC7kS+abofPHMh9J4rjpg=
 			</data>
 		</dict>
 		<key>Headers/WVGetPlayUrlManager.h</key>
@@ -1078,66 +1078,66 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QPZ56/RD+3Jb2ANQAC31QcccPiM=
+			TIlDZTginoPn6vPGV06ydSUVsb4=
 			</data>
 			<key>hash2</key>
 			<data>
-			fTdFeujskH9KSk4YgGuWdRWf9GfekuYcr0UP6YFzJV0=
+			Z1BcBcToaRFFC/0Rico+SI+rjYN+16KGwgyAuLtNN9A=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			S1uHdRZJiWFmIKg2Kc8u9T8Jt2g=
+			R8sTQ6t4AZXEmDFgUq3bZhxI81Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			/ECq7tos6QoWgBwJQc1WDWNRbH8B5vRekA9MW6C8jr4=
+			DMq1117LbmGaWMpbVDyO5y1PLhCOvX1sWOchZz5k27E=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			E+IswqhfqEshjC+0xX2RMDITg3k=
+			i94zR/VcXL9ogYwMnWd0an3QiKI=
 			</data>
 			<key>hash2</key>
 			<data>
-			8D+OfnERwFDXis7BRFuM+uwGupdHsqK/1QU26IAO4TA=
+			AnzHfG7kgCT3CMfOlsHFK28pXYPxYxf/CtRW3JOBh0s=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GbIKirDMurhiOAxVv97YfFY0q3Q=
+			OGUe1FBQGgugJKyVQCQmY63X64k=
 			</data>
 			<key>hash2</key>
 			<data>
-			fxXmDuyUxOrH302F6g2oFYUIKN8fUiVAQTzBCBycRtc=
+			J+u7/yTpTSNPHDdBQ4sSt6ncdxDY35J75C5JExCmDPU=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			E+IswqhfqEshjC+0xX2RMDITg3k=
+			i94zR/VcXL9ogYwMnWd0an3QiKI=
 			</data>
 			<key>hash2</key>
 			<data>
-			8D+OfnERwFDXis7BRFuM+uwGupdHsqK/1QU26IAO4TA=
+			AnzHfG7kgCT3CMfOlsHFK28pXYPxYxf/CtRW3JOBh0s=
 			</data>
 		</dict>
 		<key>Modules/AJLibrary.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Jhh7ep6KeoNdP8AI8e9ni3j0xOc=
+			1oWgyH/l1N3jEdxizTpMf4dVzFs=
 			</data>
 			<key>hash2</key>
 			<data>
-			5r/8PJM5ipK4y74pv5WrZlfFjUPV7p1wfBiZ5frgTHI=
+			5dLthewJu7ymRg5IAK4NSikEDs7K/PjvEIIw1dC4Py0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -227,7 +227,8 @@ typedef enum : NSUInteger {
  */
 - (void)queryTFCardCalendarDeviceId:(NSString *)deviceId
                             success:(nullable void (^)(NSArray<NSString *> *))success
-                            failure:(nullable void (^)(AJError *))failure;
+                            failure:(nullable void (^)(AJError *))failure
+                       refreshBlock:(void (^)(void))refreshBlock;
 
 
 /**
@@ -240,7 +241,8 @@ typedef enum : NSUInteger {
                           dayStartTs:(double)dayStartTs
                             dayEndTs:(double)dayEndTs
                              success:(nullable void (^)(NSArray<AJCloudStorageModel *> *))success
-                             failure:(nullable void (^)(AJError *))failure;
+                             failure:(nullable void (^)(AJError *))failure
+                        refreshBlock:(void (^)(void))refreshBlock;
 
 
 
