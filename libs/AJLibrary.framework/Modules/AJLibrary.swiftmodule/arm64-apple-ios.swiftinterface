@@ -3477,7 +3477,7 @@ public let DevConfigApi: Swift.String
 public func GetWidth(_ width: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
 public func GetHeight(_ height: CoreFoundation.CGFloat) -> CoreFoundation.CGFloat
 @objc @_inheritsConvenienceInitializers open class Utils : ObjectiveC.NSObject {
-  public static func getUserSSID() -> Swift.String
+  public static func getUserSSID(completeSsid: @escaping (Swift.String) -> ())
   @objc override dynamic public init()
   @objc deinit
 }
