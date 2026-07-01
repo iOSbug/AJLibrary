@@ -7,7 +7,8 @@
 //
 
 #import "TCPManager.h"
-#import <CocoaAsyncSocket/GCDAsyncSocket.h>
+
+@class GCDAsyncSocket;
 
 NS_ASSUME_NONNULL_BEGIN
 

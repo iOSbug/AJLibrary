@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CocoaAsyncSocket/GCDAsyncSocket.h>
+
+@class GCDAsyncSocket;
 
 typedef void(^ SocketSuccess)(void);
 typedef void(^ SocketFailed)(NSError *error);
